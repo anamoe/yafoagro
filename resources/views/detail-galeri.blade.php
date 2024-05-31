@@ -150,7 +150,8 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>TRAZFO</span></strong>
+      &copy; Copyright <strong><span>PT. YAFOAGRO INDONESIA</span></strong>
+      
       </div>
 
     </div>

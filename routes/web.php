@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AkunController;
+use App\Http\Controllers\AlpukatController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KontakController;
@@ -44,9 +45,15 @@ Route::middleware(['role:admin'])->group(function () {
         Route::resource('kontak', KontakController::class);
         Route::resource('profilmitra', ProfilMitraController::class);
         Route::resource('akunmitra', AkunController::class);
+
         Route::resource('tanaman', TanamanController::class);
+        Route::get('tanaman/{id}/delete', [TanamanController::class, 'destroy']);
 
         Route::resource('monitoring-talas', TalasController::class);
+        Route::get('monitoring-talas/{id}/delete', [TalasController::class, 'destroy']);
+
+        Route::resource('monitoring-alpukat', AlpukatController::class);
+
         
         Route::resource('berita', BeritaController::class);
         Route::get('berita/{id}/delete', [BeritaController::class, 'destroy']);

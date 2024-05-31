@@ -310,7 +310,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>TRAZFO</span></strong>
+        &copy; Copyright <strong><span>PT. YAFOAGRO INDONESIA</span></strong>
       </div>
 
     </div>
@@ -328,22 +328,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{url('public/landingpage')}}/assets/js/main.js"></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.portfolio-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  });
-</script>
+
 </body>
 
 </html>

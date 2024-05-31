@@ -18,7 +18,7 @@
                         <img src="{{url('public/')}}/user.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end">
+                <ul class="dropdown-menu dropdown-menu-end" style="background-color: white;">
                     <li>
                         <a class="dropdown-item" href="#">
                             <div class="d-flex">

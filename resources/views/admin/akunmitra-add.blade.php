@@ -13,7 +13,16 @@
             <form action="{{url('admin/akunmitra')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-
+                
+                <div class="form-group">
+                    <label for="" class="form-label">Nama Mitra</label>
+                    <select name="user_id" class="form-control">
+                    @foreach ($users as $user)
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                    @endforeach
+                </select>
+                </div>
+                
                 <div class="form-group">
                     <label for="" class="form-label">Nama</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name">

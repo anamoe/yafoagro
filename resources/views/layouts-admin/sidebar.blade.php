@@ -73,8 +73,8 @@
                         <div data-i18n="Kebunku">Talas</div>
                     </a>
                 </li>
-                <li class="submenu-item {{ request()->is('admin/monitoring*') ? 'active' : '' }}">
-                    <a href="{{ url('admin/alpukat') }}" class="dropdown-item">
+                <li class="submenu-item {{ request()->is('admin/monitoring-alpukat*') ? 'active' : '' }}">
+                    <a href="{{ url('admin/monitoring-alpukat') }}" class="dropdown-item">
                         <i class="submenu-icon tf-icons bx bx-bar-chart"></i>
                         <div data-i18n="Monitoring">Alpukat</div>
                     </a>

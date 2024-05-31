@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header bg-primary">
         <h6 class="mb-0 text-white">Monitoring Talas
-            <a href="{{url('admin/tanaman/create')}}" class="btn btn-sm float-end btn-light">Add</a>
+            <a href="{{url('admin/monitoring-talas/create')}}" class="btn btn-sm float-end btn-light">Add</a>
         </h6>
     </div>
     <div class="card-body">
@@ -15,8 +15,9 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Tanaman</th>
-                        <th>Nomor Sertifikat</th>
-                        <th>Nomor Registrasi</th>
+                        <th>Nama Mitra</th>
+                        <th>Judul</th>
+                        <th>Tanggal</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -24,12 +25,13 @@
                     @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$item->name}}</td>
                         <td>{{$item->nama_tanaman}}</td>
-                        <td>{{$item->no_sertifikat}}</td>
-                        <td>{{$item->no_registrasi}}</td>
+                        <td>{{$item->judul}}</td>
+                        <td>{{$item->tanggal}}</td>
                         <td>
-                            <a href="{{url('admin/tanaman/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
-                            <a href="{{url('admin/tanaman/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
+                            <a href="{{url('admin/monitoring-talas/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{url('admin/monitoring-talas/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
                     @empty

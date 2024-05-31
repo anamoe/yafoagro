@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\MonitoringTanaman;
 use App\Models\Tanaman;
+use App\Models\User;
+use Illuminate\Contracts\Queue\Monitor;
 use Illuminate\Http\Request;
 
 class TalasController extends Controller
@@ -25,22 +27,24 @@ class TalasController extends Controller
     public function create()
     {
         //
-        return view('admin.tanaman-add');
+        $users =User::where('role','mitra')->get();
+        return view('admin.monitoringtalas-add',compact('users'));
     }
 
     public function store(Request $request)
     {
         //
+        $tanaman =Tanaman::where('nama_tanaman','talas')->first();
         $data = $request->validate([
     
-            'nama_tanaman'=>'required',
-            'no_sertifikat'=>'required',
-            'no_registrasi'=>'required',
-            'kode_area'=>'required',
-            'jumlah_bibit'=>'required',
-            'alamat_cluster'=>'required',
+            'judul'=>'required',
+            'tanggal'=>'required',
    
         ]);
+            $data['user_id'] = $request->user_id;
+            $data['tanaman_id'] = $tanaman->id;
+          
+
         
         // if($request->hasFile('foto')){
         //     $tujuan_upload = public_path('portfolio');
@@ -50,8 +54,8 @@ class TalasController extends Controller
         //     $data['foto'] = $namaFile;
         // }
 
-        Tanaman::create($data);
-        return redirect('admin/tanaman')
+        MonitoringTanaman::create($data);
+        return redirect('admin/monitoring-talas')
         ->with('success',' Berhasil Ditambahkan');
     }
 
@@ -70,8 +74,13 @@ class TalasController extends Controller
     public function edit(string $id)
     {
         //
-        $data = Tanaman::find($id);
-        return view('admin.tanaman-edit',compact('data','id'));
+        $data = MonitoringTanaman::
+        join('users','monitoring_tanamen.user_id','users.id')
+        ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
+        ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
+        ->where('nama_tanaman','talas')->where('monitoring_tanamen.id',$id)
+        ->first();
+        return view('admin.monitoringtalas-edit',compact('data','id'));
     }
 
     /**
@@ -80,27 +89,16 @@ class TalasController extends Controller
     public function update(Request $request, string $id)
     {
         //
-
         $data = $request->validate([
-            'nama_tanaman'=>'required',
-            'no_sertifikat'=>'required',
-            'no_registrasi'=>'required',
-            'kode_area'=>'required',
-            'jumlah_bibit'=>'required',
-            'alamat_cluster'=>'required',
+    
+            'judul'=>'required',
+            'tanggal'=>'required',
+   
         ]);
-        
-        // if($request->hasFile('foto')){
-        //     $tujuan_upload = public_path('portfolio');
-        //     $file = $request->file('foto');
-        //     $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
-        //     File::delete($tujuan_upload.'/'.Portfolio::find($id)->foto);
-        //     $file->move($tujuan_upload, $namaFile);
-        //     $data['foto'] = $namaFile;
-        // }
+       
 
-        Tanaman::findOrFail($id)->update($data);
-        return redirect('admin/tanaman')
+        MonitoringTanaman::findOrFail($id)->update($data);
+        return redirect('admin/monitoring-talas')
         ->with('success',' Berhasil DiUpdate');
     }
 
@@ -110,7 +108,7 @@ class TalasController extends Controller
     public function destroy(string $id)
     {
         //
-        Tanaman::findOrFail($id)->delete();
+        MonitoringTanaman::findOrFail($id)->delete();
         return redirect()->back()->with('success',' Berhasil DiHapus');
     }
 }
