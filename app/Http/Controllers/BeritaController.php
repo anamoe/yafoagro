@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Portfolio;
+use App\Models\BeritaArtike;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class PortfolioController extends Controller
+class BeritaController extends Controller
 {
     public function index()
     {
-        $data = Portfolio::all();
-        return view('admin.portfolio',compact('data'));
+        $data = BeritaArtike::all();
+        return view('admin.berita',compact('data'));
     }
 
     /**
@@ -21,7 +21,7 @@ class PortfolioController extends Controller
     public function create()
     {
         //
-        return view('admin.portfolio-add');
+        return view('admin.berita-add');
     }
 
     public function store(Request $request)
@@ -29,20 +29,21 @@ class PortfolioController extends Controller
         //
         $data = $request->validate([
     
+            'judul'=>'required',
+            'link'=>'required',
             'foto'=>'required',
-   
         ]);
         
         if($request->hasFile('foto')){
-            $tujuan_upload = public_path('portfolio');
+            $tujuan_upload = public_path('berita');
             $file = $request->file('foto');
             $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
             $file->move($tujuan_upload, $namaFile);
             $data['foto'] = $namaFile;
         }
 
-        Portfolio::create($data);
-        return redirect('admin/portfolio')
+        BeritaArtike::create($data);
+        return redirect('admin/berita')
         ->with('success',' Berhasil Ditambahkan');
     }
 
@@ -61,8 +62,8 @@ class PortfolioController extends Controller
     public function edit(string $id)
     {
         //
-        $data = Portfolio::find($id);
-        return view('admin.portfolio-edit',compact('data','id'));
+        $data = BeritaArtike::find($id);
+        return view('admin.berita-edit',compact('data','id'));
     }
 
     /**
@@ -73,20 +74,21 @@ class PortfolioController extends Controller
         //
 
         $data = $request->validate([
-  
+            'judul'=>'required',
+            'link'=>'required',
         ]);
         
         if($request->hasFile('foto')){
-            $tujuan_upload = public_path('portfolio');
+            $tujuan_upload = public_path('berita');
             $file = $request->file('foto');
             $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
-            File::delete($tujuan_upload.'/'.Portfolio::find($id)->foto);
+            File::delete($tujuan_upload.'/'.BeritaArtike::find($id)->foto);
             $file->move($tujuan_upload, $namaFile);
             $data['foto'] = $namaFile;
         }
 
-        Portfolio::findOrFail($id)->update($data);
-        return redirect('admin/portfolio')
+        BeritaArtike::findOrFail($id)->update($data);
+        return redirect('admin/berita')
         ->with('success',' Berhasil DiUpdate');
     }
 
@@ -95,14 +97,12 @@ class PortfolioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
-
-       $p= Portfolio::findOrFail($id);
-        $tujuan_upload = public_path('portfolio');
+        $p= BeritaArtike::findOrFail($id);
+        $tujuan_upload = public_path('berita');
         if($p){
 
            
-            File::delete($tujuan_upload . '/' . Portfolio::find($id)->foto);
+            File::delete($tujuan_upload . '/' . BeritaArtike::find($id)->foto);
         }
         $p->delete();
         return redirect()->back()->with('success',' Berhasil DiHapus');

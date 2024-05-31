@@ -7,12 +7,14 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard</title>
+    <title>YAFOAGRO - ADMIN</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <!-- <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" /> -->
+    <link href="{{url('public/logo')}}/LOGO YAFO aja.png" rel="icon">
+  <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,15 +40,66 @@
 
     <!-- Helpers -->
     <script src="{{url('public/sneat')}}/assets/vendor/js/helpers.js"></script>
-    <link rel="stylesheet" href="{{asset('/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{asset('public/arfa/toastr/toastr.min.css') }}">
 
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{url('public/sneat')}}/assets/js/config.js"></script>
+    <style>
+           .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .menu-item {
+    position: relative;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-link .menu-icon {
+    margin-right: 10px;
+}
+
+.menu-item.active > .menu-link {
+    background-color: #f0f0f0;
+}
+
+.dropdown-menu {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    color: #666;
+    text-decoration: none;
+}
+
+.dropdown-item .submenu-icon {
+    margin-right: 8px;
+}
+
+.submenu-item.active > .dropdown-item {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+    </style>
 </head>
 
-<body>
+<body style="background-color: #85e697;">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
@@ -81,9 +134,9 @@
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script>
-                                , made with ❤️ by
+                               
                                 <a href="" target="_blank"
-                                    class="footer-link fw-bolder">Ekatalog</a>
+                                    class="footer-link fw-bolder">PT. YAFOAGRO INDONESIA</a>
                             </div>
                             
                         </div>
@@ -126,7 +179,7 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- <script src="{{asset('arfa/toastr/toastr.min.js') }}"></script> -->
-    <script src="{{url('toastr')}}/toastr.min.js"></script>
+    <script src="{{url('public/arfa/toastr')}}/toastr.min.js"></script>
 
     <script>
     toastr.options.timeOut = 1500;

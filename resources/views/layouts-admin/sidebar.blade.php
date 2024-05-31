@@ -1,9 +1,9 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="" class="app-brand-link">
+        <a href="#" class="app-brand-link">
             <span class="app-brand-logo demo">
-            <img src="{{url('public/logo')}}/LOGO YAFO aja.png" class="logo" alt="" height="40px" width="40px">
-             
+                <img style="margin-right: 10px;" src="{{url('public/logo')}}/LOGO YAFO aja.png" class="logo" alt="" height="40px" width="40px">
+
             </span>
 
             <span class="" style="color: green;">YAFOAGRO</span>
@@ -18,51 +18,69 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item {{request()->is('admin/dashboard') ? 'active' : ''}}">
-            <a href="{{url('admin/dashboard')}}" class="menu-link">
+        <li class="menu-item {{request()->is('admin/tentangkami*') ? 'active' : ''}}">
+            <a href="{{url('admin/tentangkami')}}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-info-circle"></i>
+                <div data-i18n="Analytics">Tentang Kami</div>
+            </a>
+        </li>
+        <li class="menu-item {{request()->is('admin/berita*') ? 'active' : ''}}">
+            <a href="{{url('admin/berita')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-news"></i>
+                <div data-i18n="Analytics">Berita Artikel</div>
+            </a>
+        </li>
+
+
+        <li class="menu-item {{request()->is('admin/profilmitra*') ? 'active' : ''}}">
+            <a href="{{url('admin/profilmitra')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+
+                <div data-i18n="Analytics">Profil Mitra</div>
+            </a>
+        </li>
+        <li class="menu-item {{request()->is('admin/portfolio*') ? 'active' : ''}} ">
+            <a href="{{url('admin/portfolio')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
+
+                <div data-i18n="Analytics">Galeri</div>
+            </a>
+        </li>
+        <li class="menu-item {{request()->is('admin/kontak*') ? 'active' : ''}}">
+            <a href="{{url('admin/kontak')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-phone"></i>
+                <div data-i18n="Analytics">Kontak Informasi</div>
+            </a>
+        </li>
+
+
+        <li class="menu-item {{request()->is('admin/tanaman*') ? 'active' : ''}}">
+            <a href="{{url('admin/tanaman')}}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Tanaman</div>
+            </a>
+        </li>
+
+        <li class="menu-item dropdown">
+            <div class="menu-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
-            </a>
-        </li>
-        <li class="menu-item {{request()->is('admin/mitra') ? 'active' : ''}} ">
-            <a href="{{url('admin/mitra')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxl-magento"></i>
-                <div data-i18n="Analytics">Mitra</div>
-            </a>
-        </li>
-        <li class="menu-item {{request()->is('admin/agen') ? 'active' : ''}}">
-            <a href="{{url('admin/agen')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxl-trip-advisor"></i>
-                <div data-i18n="Analytics">Agen</div>
-            </a>
-        </li>
-
-        <li class="menu-item {{request()->is('admin/property') ? 'active' : ''}}">
-            <a href="{{url('admin/property')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-arch"></i>
-                <div data-i18n="Analytics">Property</div>
-            </a>
-        </li>
-        <li class="menu-item {{request()->is('admin/faq') ? 'active' : ''}}">
-            <a href="{{url('admin/faq')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-message-square-dots"></i>
-                <div data-i18n="Analytics">FAQ</div>
-            </a>
+                <div data-i18n="Analytics">Kebunku</div>
+            </div>
+            <ul class="dropdown-menu">
+                <li class="submenu-item {{ request()->is('admin/monitoring-talas*') ? 'active' : '' }}">
+                    <a href="{{ url('admin/monitoring-talas') }}" class="dropdown-item">
+                    <i class="submenu-icon tf-icons bx bx-bar-chart"></i>
+                        <div data-i18n="Kebunku">Talas</div>
+                    </a>
+                </li>
+                <li class="submenu-item {{ request()->is('admin/monitoring*') ? 'active' : '' }}">
+                    <a href="{{ url('admin/alpukat') }}" class="dropdown-item">
+                        <i class="submenu-icon tf-icons bx bx-bar-chart"></i>
+                        <div data-i18n="Monitoring">Alpukat</div>
+                    </a>
+                </li>
+            </ul>
         </li>
 
-        <li class="menu-item {{request()->is('admin/about') ? 'active' : ''}}">
-            <a href="{{url('admin/about')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-info-circle"></i>
-                <div data-i18n="Analytics">About</div>
-            </a>
-        </li>
-        <li class="menu-item {{request()->is('admin/tiket') ? 'active' : ''}}">
-            <a href="{{url('admin/tiket')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-discount"></i>
-                <div data-i18n="Analytics">Tiket</div>
-            </a>
-        </li>
-
-     
     </ul>
-</aside>    
+</aside>

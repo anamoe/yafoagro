@@ -1,30 +1,17 @@
-@extends('theme.admin.master')
+@extends('layouts-admin.master')
 @section('content')
 
 <div class="card">
     <div class="card-header bg-primary">
-        <h6 class="mb-0 text-white">Tambah Agen
-            <a href="{{url('admin/agen')}}" class="btn btn-sm float-end btn-light">Kembali</a>
+        <h6 class="mb-0 text-white">Add GALERY
+            <a href="{{url('admin/portfolio')}}" class="btn btn-sm float-end btn-light">Kembali</a>
         </h6>
     </div>
  
 <div class="card">
     <div class="card-body">
-        <form action="{{url('admin/agen')}}" method="post" enctype="multipart/form-data">
+        <form action="{{url('admin/portfolio')}}" method="post" enctype="multipart/form-data">
             @csrf
-          
-            <div class="form-group">
-                <label for="" class="form-label">Nama Agen</label>
-                <input type="text" class="form-control @error('nama_agent') is-invalid @enderror" name="nama_agent">
-            </div>
-            <div class="form-group">
-                <label for="" class="form-label">Email</label>
-                <input type="text" class="form-control @error('email') is-invalid @enderror" name="email">
-            </div>
-            <div class="form-group">
-                <label for="" class="form-label">No  HP</label>
-                <input type="text" class="form-control @error('nohp') is-invalid @enderror" name="nohp">
-            </div>
    
             <div class="form-group">
                 <label for="" class="form-label">Foto</label>

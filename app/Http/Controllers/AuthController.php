@@ -10,8 +10,20 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     //
-    
-    public function login(){
+
+    public function login()
+    {
+        if(auth()->check()){
+            switch (Auth::user()->role) {
+                case 'admin':
+                    return redirect('/admin/akunmitra');
+                    break;
+                case 'mitra':
+                    // return redirect('/mitra/dashboard');
+                    return 'mitra';
+                    break;
+            }
+        }
         return view('auth.login');
     }
     public function postlogin(Request $request)
@@ -38,9 +50,16 @@ class AuthController extends Controller
 
         if (User::where('username', '=', $input['username'])->first() == true) {
             if (auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
-  
+                switch (auth()->user()->role) {
+                    case 'admin':
                         return redirect('admin/portfolio');
-       
+
+                        break;
+                    case 'mitra':
+                        return 'mitra';
+                        return redirect('mitra/dashboard');
+                        break;
+                }
             } else {
                 return redirect()->back()
                     ->with('error', 'Password salah');
@@ -56,5 +75,11 @@ class AuthController extends Controller
 
         Auth::logout();
         return redirect('/');
+    }
+
+    public function profil()
+    {
+        $users = User::where('id', auth()->user()->id)->first();
+        return view('admin.profil', compact('users'));
     }
 }

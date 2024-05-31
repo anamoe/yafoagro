@@ -3,8 +3,8 @@
 
 <div class="card">
     <div class="card-header bg-primary">
-        <h6 class="mb-0 text-white">GALERY
-            <a href="{{url('admin/portfolio/create')}}" class="btn btn-sm float-end btn-light">Add</a>
+        <h6 class="mb-0 text-white">Monitoring Talas
+            <a href="{{url('admin/tanaman/create')}}" class="btn btn-sm float-end btn-light">Add</a>
         </h6>
     </div>
     <div class="card-body">
@@ -14,7 +14,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Foto</th>
+                        <th>Nama Tanaman</th>
+                        <th>Nomor Sertifikat</th>
+                        <th>Nomor Registrasi</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -22,13 +24,12 @@
                     @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-
+                        <td>{{$item->nama_tanaman}}</td>
+                        <td>{{$item->no_sertifikat}}</td>
+                        <td>{{$item->no_registrasi}}</td>
                         <td>
-                            <img src="{{asset('public/portfolio/'.$item->foto)}}" width="50" alt="">
-                        </td>
-                        <td>
-                            <a href="{{url('admin/portfolio/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
-                            <a href="{{url('admin/portfolio/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
+                            <a href="{{url('admin/tanaman/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{url('admin/tanaman/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
                     @empty

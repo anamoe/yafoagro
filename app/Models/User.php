@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password','username'
+        'password','username','role'
     ];
 
     /**
@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function mitra()
+    {
+        return $this->hasOne(ProfilMitra::class); 
+        
+    }
 }
