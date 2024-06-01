@@ -18,6 +18,7 @@
                         <th>Nama Mitra</th>
                         <th>Judul</th>
                         <th>Tanggal</th>
+                        <th>Foto</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -25,10 +26,13 @@
                     @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$item->name}}</td>
                         <td>{{$item->nama_tanaman}}</td>
+                        <td>{{$item->name}}</td>
                         <td>{{$item->judul}}</td>
                         <td>{{$item->tanggal}}</td>
+                        <td>
+                            <img src="{{asset('public/monitoring-talas/'.$item->foto)}}" width="50" alt="">
+                        </td>
                         <td>
                             <a href="{{url('admin/monitoring-talas/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
                             <a href="{{url('admin/monitoring-talas/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>

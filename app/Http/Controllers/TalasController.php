@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\MonitoringTanaman;
 use App\Models\Tanaman;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Contracts\Queue\Monitor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class TalasController extends Controller
 {
@@ -46,13 +48,13 @@ class TalasController extends Controller
           
 
         
-        // if($request->hasFile('foto')){
-        //     $tujuan_upload = public_path('portfolio');
-        //     $file = $request->file('foto');
-        //     $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
-        //     $file->move($tujuan_upload, $namaFile);
-        //     $data['foto'] = $namaFile;
-        // }
+        if($request->hasFile('foto')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto'] = $namaFile;
+        }
 
         MonitoringTanaman::create($data);
         return redirect('admin/monitoring-talas')
@@ -95,6 +97,14 @@ class TalasController extends Controller
             'tanggal'=>'required',
    
         ]);
+        if($request->hasFile('foto')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto'] = $namaFile;
+        }
        
 
         MonitoringTanaman::findOrFail($id)->update($data);
@@ -108,7 +118,13 @@ class TalasController extends Controller
     public function destroy(string $id)
     {
         //
-        MonitoringTanaman::findOrFail($id)->delete();
+        $p= MonitoringTanaman::findOrFail($id);
+        $tujuan_upload = public_path('monitoring-talas');
+        if($p){
+           
+            File::delete($tujuan_upload . '/' . MonitoringTanaman::find($id)->foto);
+        }
+        $p->delete();
         return redirect()->back()->with('success',' Berhasil DiHapus');
     }
 }

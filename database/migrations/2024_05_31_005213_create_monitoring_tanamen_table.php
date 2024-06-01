@@ -17,6 +17,9 @@ return new class extends Migration
             $table->foreignId('tanaman_id')->constrained();
             $table->string('judul');
             $table->date('tanggal');
+            $table->string('foto');
+            $table->string('video')->nullable();
+
             $table->timestamps();
         });
     }

@@ -23,7 +23,10 @@
                     <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{$data->tanggal}}">
                 </div>
 
-
+                <div class="form-group">
+                <label for="" class="form-label">Foto</label>
+                <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" accept="image/*">
+            </div>
 
 
                 <button type="submit" class="btn btn-primary float-end mt-3">Update</button>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('username')->unique();
             // $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('token_reset')->nullable();
             // $table->rememberToken();
             $table->timestamps();
         });
@@ -28,6 +29,13 @@ return new class extends Migration
             'username'=>'admin',
             'password'=>bcrypt(123),
             'role'=>'admin'
+
+        ]);
+        User::create([
+            'name'=>'Mitra anam',
+            'username'=>'anam',
+            'password'=>bcrypt(123),
+            'role'=>'mitra'
 
         ]);
     }

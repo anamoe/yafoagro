@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('judul');
             $table->longText('isi');
             $table->string('foto')->nullable();
+            $table->string('username_sosmed')->nullable();
             $table->timestamps();
         });
 
@@ -37,11 +38,13 @@ return new class extends Migration
             'type'=>'tiktok',
             'judul'=>'TIKTOK',
             'isi'=>'https://www.tiktok.com/@yafoagro_indonesia?_t=8mkX44rvTfT&_r=1',
+            'username_sosmed'=>'@yafoagro_indonesia',
         ]);
         Kontak::create([
             'type'=>'instagram',
             'judul'=>'INSTAGRAM',
             'isi'=>'https://www.instagram.com/yafoagroindonesia/?igsh=OGlreHNja2E2cWNl',
+            'username_sosmed'=>'@yafoagroindonesia',
         ]);
         Kontak::create([
             'type'=>'email',

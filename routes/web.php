@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\MitraController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfilMitraController;
 use App\Http\Controllers\TalasController;
@@ -23,17 +24,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+// Route::get('/mitra', function () {
+//     return view('mitra.dashboard-mitra');
 // });
+
 
 Route::get('/', [LandingPageController::class, 'index']);
 Route::get('/detail-berita', [LandingPageController::class, 'detailberita']);
 Route::get('/detail-galeri', [LandingPageController::class, 'detailgaleri']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/profil', [AuthController::class, 'profil']);
+Route::post('/profil/{id}', [AuthController::class, 'profile_update']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('login-post', [AuthController::class, 'postlogin']);
+Route::get('lupa-password', [AuthController::class, 'lupa_password']);
+Route::post('lupa-password', [AuthController::class, 'lupa_password_post']);
+Route::get('password-baru/{token_reset}', [AuthController::class, 'password_baru']);
+Route::post('password-baru/{token_reset}', [AuthController::class, 'password_baru_post']);
 
 
 Route::middleware(['role:admin'])->group(function () {
@@ -66,5 +73,10 @@ Route::middleware(['role:admin'])->group(function () {
 
 Route::middleware(['role:mitra'])->group(function () {
     Route::prefix('mitra')->group(function () {
+
+Route::get('dashboard', [MitraController::class, 'dashboard']);
+Route::get('profil-mitra', [MitraController::class, 'profilmitra']);
+Route::get('info-mitra', [MitraController::class, 'infomitra']);
+
     });
 });

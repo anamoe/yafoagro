@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('public/arfa/vendor/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="{{asset('public/arfa/toastr/toastr.min.css') }}">
    
 
 
@@ -40,20 +41,6 @@
 
                         </center>
                         <h1 class="fs-4 text-center fw-bold mb-4" style="color: green;">LOGIN</h1>
-                        @if(session()->has('message'))
-
-                        <div class=" toastrDefaultSuccess" role="alert" id="notif">
-
-                        </div>
-                        @endif
-
-                        @if(session()->has('message_lupapassword'))
-
-                        <div class=" toastrDefaultSuccess2" role="alert" id="notif">
-
-                        </div>
-                        @endif
-
                         @if(session()->has('error'))
                         <div class="alert alert-danger" role="alert" id="notif">
 
@@ -114,34 +101,34 @@
                                 <button type="submit" class="btn btn-success" style="background-color: green;">Login</button>
                             </div>
                         </form>
+                        <div class="d-flex align-items-center justify-content-center">
+                                <a class="text-success fw-bold ms-0" ></a>
+                                <a href="{{url('lupa-password')}}">
+                                <p class="fs-5 mb-0">Lupa Password?</p>
 
+                                </a>
+                            </div>
 
                     </div>
 
                 </div>
             </div>
     </section>
-    <script src="{{asset('public/arfa/assets/js/login.js')}}"></script>
-    <script src="{{asset('public/arfa/plugins/toastr/toastr.min.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="{{url('public/arfa/toastr')}}/toastr.min.js"></script>
+
     <script>
-        $(function() {
-
-
-            //   toastr.success('Berhasil Mendaftar akun')
-
-            $('.toastrDefaultSuccess').addClass(function() {
-
-                toastr.success('Berhasil Mendaftar akun. Silahkan login')
-            });
-
-            $('.toastrDefaultSuccess2').addClass(function() {
-
-                toastr.success('Berhasil Merubah Password. Silahkan login')
-            });
-
-
-        });
-    </script>
+    toastr.options.timeOut = 1500;
+    toastr.options.showMethod = 'slideDown';
+    toastr.options.hideMethod = 'slideUp';
+    toastr.options.closeMethod = 'slideUp';
+    @if(session()->has('success'))
+        toastr.success('{{session()->get("success")}}')
+    @elseif(session()->has('error'))
+        toastr.error('{{session()->get("error")}}')
+    @endif
+</script>
 </body>
 
 </html>

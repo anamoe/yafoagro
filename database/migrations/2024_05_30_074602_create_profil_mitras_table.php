@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ProfilMitra;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -29,6 +30,27 @@ return new class extends Migration
             $table->string('bukti_transfer')->nullable();
             $table->timestamps();
         });
+
+        ProfilMitra::create([
+            'user_id'=>2,
+            'nik'=>'3131313',
+            'tgl_lahir'=>'2020-10-02',
+            'tempat_lahir'=>'banyuwangi',
+            'alamat'=>'banyuwangi saja',
+            'kode_pos'=>'685413',
+            'ahli_waris'=>'akulah',
+            'no_hp'=>'081319083013',
+            'nama_rekening'=>'anam',
+            'no_rekening'=>'13131',
+            'luas_lahan'=>'80',
+            'bibit'=>'2000',
+            'kemitraan'=>'5000000',
+            'bukti_transfer'=>'transfer.jpg',
+
+
+
+
+        ]);
     }
 
     /**

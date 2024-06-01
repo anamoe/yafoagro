@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Tanaman;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -21,6 +23,15 @@ return new class extends Migration
             $table->string('alamat_cluster');
             $table->timestamps();
         });
+
+        Tanaman::create([
+            'nama_tanaman'=>'Talas',
+            'no_sertifikat'=>'198391893',
+            'no_registrasi'=>'012121',
+            'kode_area'=>'020',
+            'jumlah_bibit'=>'200',
+            'alamat_cluster'=>'banyuwangi'
+        ]);
     }
 
     /**
