@@ -130,11 +130,11 @@
         </a>
         <a href="#" class="active" style="text-decoration:underline;">
             <i class="fas fa-info"></i><br>
-            Menu
+            Informasi
         </a>
         <a href="{{url('mitra/profil-mitra')}}">
             <i class="fas fa-user"></i><br>
-            Profil
+            Data Mitra
         </a>
     </div>
 

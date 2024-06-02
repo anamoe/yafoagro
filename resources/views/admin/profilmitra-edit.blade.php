@@ -15,26 +15,26 @@
                 @method('patch')
                 <div class="row">
 
-<div class="col-md-4">
-    <div class="form-group">
-        <label for="" class="form-label">Nama</label>
-        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$user->name}}">
-    </div>
-</div>
-<div class="col-md-4">
-    <div class="form-group">
-        <label for="" class="form-label">Username</label>
-        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{$user->username}}">
-    </div>
-</div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="form-label">Nama</label>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$data->name}}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="form-label">Username</label>
+                            <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{$data->username}}">
+                        </div>
+                    </div>
 
-<div class="col-md-4">
-<div class="form-group">
-    <label for="" class="form-label">Password</label>
-    <input type="password" class="form-control" name="password">
-</div>
-</div>
-</div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="row">
 

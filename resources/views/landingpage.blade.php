@@ -75,25 +75,25 @@
     .news .btn:hover {
       background-color: darkgreen;
     }
-
-
   </style>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" style="background-color: green;" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="{{url('login')}}" style="color: white;font-family: 'Times New Roman', Times, serif;">YAFO AGRO</a></h1>
+        <img src="{{url('public/logo')}}/LOGO YAFO aja.png" alt="">
+        <a href="#" style="color: green;font-family: 'Times New Roman', Times, serif;">
+          YAFO AGRO INDONESIA</a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul s>
+        <ul>
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto" href="#services">Visi Misi</a></li>
@@ -101,13 +101,18 @@
           <li><a class="nav-link scrollto " href="#portfolio">Galeri</a></li>
           <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+
       </nav><!-- .navbar -->
 
       <div class="header-social-links d-flex align-items-center">
-        <a href="{{$instagram->isi}}" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="{{$tiktok->isi}}" class="linkedin"><i class="bi bi-tiktok"></i></i></a>
+        <a href="{{url('login')}}">
+          <button class="btn btn-success" style="background-color: #e3b11b;color:green">MASUK</button>
+
+        </a>
       </div>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+
+
 
     </div>
   </header><!-- End Header -->
@@ -116,19 +121,24 @@
   <section id="hero">
 
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
-          <div>
+    <div class="row">
+    <div class="col-lg-6 order-1 order-lg-2 pt-5 pt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up">
+        <div>
+            <h1 style="color: #e3b11b; font-family: 'Times New Roman', Times, serif;">GREEN PROPERTI</h1>
             <h1 style="color: green; font-family: 'Times New Roman', Times, serif;">{{$beranda->judul}}</h1>
-            <h2 style="color: green;font-family: 'Times New Roman', Times, serif">{{$beranda->judul}}</h2>
-            <a href="#about" class="btn-get-started scrollto" 
-            style="font-family: 'Times New Roman', Times, serif;">MULAI</a>
-          </div>
+            <h2 style="color: green; font-family: 'Times New Roman', Times, serif">{{$beranda->judul}}</h2>
+            <div class="header-social-links d-flex align-items-center">
+                <a href="{{$instagram->isi}}" class="instagram"><i class="bi bi-instagram" style="color: green;"></i></a>
+                <a href="{{$tiktok->isi}}" class="linkedin"><i class="bi bi-tiktok" style="color: green;"></i></i></a>
+                <a href="{{$email->isi}}" class="email"><i class="bi bi-envelope" style="color: green;"></i></i></a>
+            </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-          <img src="{{url('public/logo')}}/{{$beranda->foto}}" class="img-fluid" alt="">
-        </div>
-      </div>
+    </div>
+    <div class="col-lg-6 order-2 order-lg-1 hero-img" data-aos="fade-left">
+        <img src="{{url('public/logo')}}/{{$beranda->foto}}" class="img-fluid" alt="">
+    </div>
+</div>
+
     </div>
 
   </section><!-- End Hero -->
@@ -148,7 +158,7 @@
               <h3 style="color: green;">{{$tentangkami->judul}}</h3>
               <p class="fst-italic">
               <h4 style="color: green; text-align:justify;font-family: 'Times New Roman', Times, serif; ">
-      
+
 
                 {{$tentangkami->isi}}
               </h4>
@@ -168,11 +178,11 @@
       <div class="container">
         <div class="section-title" data-aos="fade-up">
           <h2 style="color: green;">{{$visi->judul}}</h2>
-        <h2>
-        <p class="description" style="color: green; ">
-            {{$visi->isi}}
-          </p>
-        </h2>
+          <h3>
+            <p class="description" style="color: green; ">
+              {{$visi->isi}}
+            </p>
+          </h3>
           <br />
           <div class="section-title" data-aos="fade-up">
             <h2 style="color: green;">MISI</h2>
@@ -184,11 +194,11 @@
             <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
               <div class="icon-box icon-box-green">
                 <h3 class="title"><a href="" style="color: green; text-align:justify;">{{$v->judul}}</a></h3>
-                <h2>
-                <p class="description" style="color: green; text-align:justify;">
-                  {{$v->isi}}
-                </p>
-                </h2>
+                <h4>
+                  <p class="description" style="color: green; text-align:justify-center;">
+                    {{$v->isi}}
+                  </p>
+                </h4>
               </div>
             </div>
             @endforeach

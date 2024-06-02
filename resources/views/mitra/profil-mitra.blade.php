@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAFOAGRO</title>
-    <meta name="description" content="PT. Yafo Agro Indonesia adalah perusahaan agribisnis yang berkomitmen pada praktik ekonomi hijau Menyediakan produk dan jasa agrikultur yang berkualitas dan berkelanjutan, untuk menciptakan nilai tambah kepada seluruh pemangku kepentingan"
-     />
+    <meta name="description" content="PT. Yafo Agro Indonesia adalah perusahaan agribisnis yang berkomitmen pada praktik ekonomi hijau Menyediakan produk dan jasa agrikultur yang berkualitas dan berkelanjutan, untuk menciptakan nilai tambah kepada seluruh pemangku kepentingan" />
     <link href="{{url('public/logo')}}/LOGO YAFO aja.png" rel="icon">
-  <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
+    <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('public/arfa/toastr/toastr.min.css') }}">
@@ -117,7 +116,7 @@
             color: white;
         }
     </style>
-    
+
 </head>
 
 <body>
@@ -126,93 +125,151 @@
     </div>
     <div class="content">
         <div class="container mt-4">
+            <div class="card-body" style="background-color:#d9cb9a;">
+                <div class="row">
 
-                <form action="{{url('profil',$users->id)}}" method="post" enctype="multipart/form-data">
-                    @csrf
-
-                    <div class="card " style="background-color: green">
-
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-
-
-                                    <div class="form-group basic">
-                                        <div class="input-wrapper">
-                                            <label style="color: white;" class="label" for="name">Nama</label>
-                                            <input type="text" class="form-control @error('nama') is-invalid @enderror" value="{{auth()->user()->name}}" name="name" id="nama" placeholder="Nama">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group basic">
-                                        <div class="input-wrapper">
-                                            <label style="color: white;" class="label" for="name">Username</label>
-                                            <input type="text" class="form-control  @error('username') is-invalid @enderror" value="{{$users->username }}" name="username" id="tanggal_lahir" placeholder="Tanggal Lahir">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group basic">
-                                        <div class="input-wrapper">
-                                            <label style="color: white;" class="label" for="name">Password</label>
-                                            <input type="number" class="form-control @error('password') is-invalid @enderror" value="" name="password" placeholder="Password">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="form-label">Nama</label>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$data->name}}">
                         </div>
                     </div>
-                    <br />
-
-                    <div class="form-button-group transparent">
-                        <button type="submit" class="btn btn-success btn-block btn-lg">Simpan</button>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="form-label">Username</label>
+                            <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{$data->username}}">
+                        </div>
                     </div>
 
-                </form>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">NIK</label>
+                            <input type="number" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{$data->nik}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Alamat</label>
+                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{$data->alamat}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Tempat Lahir</label>
+                            <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value="{{$data->tempat_lahir}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Tanggal Lahir</label>
+                            <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir" value="{{$data->tgl_lahir}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Kode Pos</label>
+                            <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos" value="{{$data->kode_pos}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">No. HP</label>
+                            <input type="number" class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" value="{{$data->no_hp}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Ahli Waris</label>
+                            <input type="text" class="form-control @error('ahli_waris') is-invalid @enderror" name="ahli_waris" value="{{$data->ahli_waris}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Luas Lahan (ha)</label>
+                            <input type="number" class="form-control @error('luas_lahan') is-invalid @enderror" name="luas_lahan" value="{{$data->luas_lahan}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Nama Rekening</label>
+                            <input type="text" class="form-control @error('nama_rekening') is-invalid @enderror" name="nama_rekening" value="{{$data->nama_rekening}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Nomor Rekening</label>
+                            <input type="number" class="form-control @error('no_rekening') is-invalid @enderror" name="no_rekening" value="{{$data->no_rekening}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Bibit </label>
+                            <input type="number" class="form-control @error('bibit') is-invalid @enderror" name="bibit" value="{{$data->bibit}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Kemitraan </label>
+                            <input type="number" class="form-control @error('kemitraan') is-invalid @enderror" name="kemitraan" value="{{$data->kemitraan}}">
+                        </div>
+                    </div>
+                </div>
             </div>
             <br>
-            <center>
-            <a href="{{url('logout')}}"> <button style="width: 50%;" class="btn btn-danger btn-block btn-lg">Logout
-            </button></a>
-                
-            </center>
+                <center>
+                    <a href="{{url('logout')}}"> <button style="width: 50%;" class="btn btn-danger btn-block btn-lg">Logout
+                        </button></a>
+
+                </center>
+                <br>
+
         </div>
-        
-    </div>
-    
-    <div class="bottom-nav">
-        <a href="{{'dashboard'}}">
-            <i class="fas fa-home"></i><br>
-            Beranda
-        </a>
-        <a href="{{'info-mitra'}}">
-            <i class="fas fa-info"></i><br>
-            Menu
-        </a>
-        <a href="#" class="active" style="text-decoration:underline;">
-            <i class="fas fa-user"></i><br>
-            Profil
-        </a>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="bottom-nav">
+            <a href="{{'dashboard'}}">
+                <i class="fas fa-home"></i><br>
+                Beranda
+            </a>
+            <a href="{{'info-mitra'}}">
+                <i class="fas fa-info"></i><br>
+                Informasi
+            </a>
+            <a href="#" class="active" style="text-decoration:underline;">
+                <i class="fas fa-user"></i><br>
+                Data Mitra
+            </a>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{url('public/arfa/toastr/toastr.min.js')}}"></script>
-    <script>
-        toastr.options.timeOut = 1500;
-        toastr.options.showMethod = 'slideDown';
-        toastr.options.hideMethod = 'slideUp';
-        toastr.options.closeMethod = 'slideUp';
-        @if(session()->has('success'))
-            toastr.info('{{session()->get("success")}}')
-        @elseif(session()->has('error'))
-            toastr.error('{{session()->get("error")}}')
-        @endif
-    </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{url('public/arfa/toastr/toastr.min.js')}}"></script>
+       
 </body>
 
 </html>

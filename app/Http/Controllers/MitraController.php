@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kontak;
 use App\Models\MonitoringTanaman;
+use App\Models\ProfilMitra;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,11 @@ class MitraController extends Controller
 {
     //
     public function dashboard(){
+
+        return view('mitra.dashboard-mitra');
+    }
+
+    public function talas(){
         $data = MonitoringTanaman::
         join('users','monitoring_tanamen.user_id','users.id')
         ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
@@ -18,13 +24,20 @@ class MitraController extends Controller
         ->where('nama_tanaman','talas')->where('user_id',auth()->user()->id)
         ->orderBy('tanggal','desc')
         ->get();
-        return view('mitra.dashboard-mitra',compact('data'));
+        return view('mitra.talas',compact('data'));
     }
+    public function alpukat()
+    {
+        return view('mitra.alpukat');
+    }
+
 
     public function profilmitra()
     {
-        $users = User::where('id', auth()->user()->id)->first();
-        return view('mitra.profil-mitra', compact('users'));
+        $data = ProfilMitra::join('users','profil_mitras.user_id','users.id')
+        ->select('profil_mitras.*','users.*')
+        ->where('users.id', auth()->user()->id)->first();
+        return view('mitra.profil-mitra', compact('data'));
     }
 
     public function infomitra()

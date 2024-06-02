@@ -115,19 +115,6 @@
             font-weight: bold;
             color: white;
         }
-        .custom-card {
-            background-color: green; /* Warna hijau untuk card */
-            color: white; /* Warna kuning untuk teks */
-            border-radius: 15px; /* Membuat card menjadi rounded */
-            transition: transform 0.2s; /* Animasi untuk hover */
-        }
-        .custom-card:hover {
-            transform: scale(1.05); /* Efek zoom saat hover */
-        }
-        .custom-card a {
-            color: white; /* Warna kuning untuk link teks */
-            text-decoration: none; /* Menghilangkan underline pada link */
-        }
     </style>
 </head>
 
@@ -136,42 +123,28 @@
         <h2>KEBUNKU</h2>
     </div>
     <div class="content">
-    <div class="container mt-5">
-    <div class="row">
-        
-        <!-- Card for Alpukat -->
-        <div class="col-6 col-md-6 mb-3">
-            <div class="card custom-card text-center ">
-                <div class="card-body">
-                <a href="{{url('mitra/alpukat')}}">
-                    
-                        <h5 class="card-title">Alpukat</h5>
-                    </a>
-                </div>
-            </div>
+        <div class="container mt-4">
+            <ul class="list-group">
+              
+                <li class="list-group-item">
+                    <div class="item-title-card">
+                        <div class="item-title">COMING SOON</div>
+                    </div>
+                    <br>
+                   
+                </li>
+             
+            </ul>
         </div>
-        <!-- Card for Talas -->
-        <div class="col-6 col-md-6 mb-3">
-            <div class="card custom-card text-center">
-                <div class="card-body">
-                    <a href="{{url('mitra/talas')}}">
-                        <h5 class="card-title">Talas</h5>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    
     </div>
     <div class="bottom-nav">
         <a href="#" class="active" style="text-decoration:underline;">
             <i class="fas fa-home"></i><br>
-            Beranda
+            Kebunku
         </a>
         <a href="{{url('mitra/info-mitra')}}">
             <i class="fas fa-info"></i><br>
-            Info
+            Informasi
         </a>
         <a href="{{url('mitra/profil-mitra')}}">
             <i class="fas fa-user"></i><br>
