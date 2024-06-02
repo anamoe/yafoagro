@@ -19,6 +19,8 @@
             flex-direction: column;
             height: 100vh;
             margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f8f9fa;
         }
 
         .content {

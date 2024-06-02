@@ -10,7 +10,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   color: #444444;
 }
 
@@ -21,7 +21,7 @@ a {
 }
 
 a:hover {
-  color: #1eb4ff;
+  color: green;
   text-decoration: none;
 }
 
@@ -387,7 +387,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
@@ -401,7 +401,7 @@ h6 {
 }
 
 #hero .btn-get-started:hover {
-  background: #008bd1;
+  background: green;
 }
 
 #hero .hero-img {
@@ -504,163 +504,6 @@ section {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Features
---------------------------------------------------------------*/
-.features {
-  padding-bottom: 40px;
-}
-
-.features .nav-tabs {
-  border: 0;
-}
-
-.features .nav-link {
-  border: 0;
-  padding: 20px;
-  transition: 0.3s;
-  color: green;
-  transition: 0.3s ease-in-out;
-  border-radius: 0;
-  border-left: 4px solid #fafbfb;
-}
-
-.features .nav-link h4 {
-  font-size: 18px;
-  font-weight: 600;
-  transition: 0.3s ease-in-out;
-  color: green;
-}
-
-.features .nav-link p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.features .nav-link:hover {
-  background: #fafbfb;
-}
-
-.features .nav-link:hover h4 {
-  color: green;
-}
-
-.features .nav-link.active {
-  border-radius: 0;
-  border: 0;
-  border-left: 4px solid white;
-  background: #fafbfb;
-}
-
-.features .nav-link.active h4 {
-  color: white;
-}
-
-.features .tab-pane.active {
-  animation: slide-down 0.5s ease-out;
-}
-
-.features .tab-content {
-  text-align: right;
-}
-
-@keyframes slide-down {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-.responsive-iframe {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Ratio 16:9 */
-  overflow: hidden;
-}
-
-.responsive-iframe iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.services .icon-box {
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-  background: white;
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-  transition: all 0.3s ease-in-out;
-  border-radius: 4px;
-  text-align: center;
-  border-bottom: 3px solid #fff;
-}
-
-.services .icon-box:hover {
-  transform: translateY(-5px);
-}
-
-.services .icon i {
-  font-size: 48px;
-  line-height: 1;
-  margin-bottom: 15px;
-}
-
-.services .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.services .title a {
-  color: #111;
-}
-
-.services .description {
-  font-size: 15px;
-  line-height: 28px;
-  margin-bottom: 0;
-}
-
-.services .icon-box-pink .icon i {
-  color: #ff689b;
-}
-
-.services .icon-box-pink:hover {
-  border-color: #ff689b;
-}
-
-.services .icon-box-cyan .icon i {
-  color: #3fcdc7;
-}
-
-.services .icon-box-cyan:hover {
-  border-color: #3fcdc7;
-}
-
-.services .icon-box-green .icon i {
-  color: #41cf2e;
-}
-
-.services .icon-box-green:hover {
-  border-color: #41cf2e;
-}
-
-.services .icon-box-blue .icon i {
-  color: white;
-}
-
-.services .icon-box-blue:hover {
-  border-color: white;
-}
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1124,183 +967,6 @@ section {
   transition: all 0.4s ease-in-out;
 }
 
-/*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing .box {
-  padding: 20px;
-  background: #fff;
-  text-align: center;
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #e9ecee;
-}
-
-.pricing h3 {
-  font-weight: 400;
-  padding: 20px 15px;
-  font-size: 18px;
-  font-weight: 400;
-  color: #777777;
-}
-
-.pricing h4 {
-  font-size: 36px;
-  color: green;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 20px;
-}
-
-.pricing h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-
-.pricing h4 span {
-  color: #bababa;
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.pricing ul {
-  padding: 0;
-  list-style: none;
-  color: #444444;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-
-.pricing ul li {
-  padding-bottom: 16px;
-}
-
-.pricing ul i {
-  color: green;
-  font-size: 18px;
-  padding-right: 4px;
-}
-
-.pricing ul .na {
-  color: #ccc;
-  text-decoration: line-through;
-}
-
-.pricing .btn-wrap {
-  padding: 20px 15px;
-  text-align: center;
-}
-
-.pricing .btn-buy {
-  background: green;
-  display: inline-block;
-  padding: 8px 30px;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 13px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.pricing .featured {
-  background: green;
-  border-color: green;
-}
-
-.pricing .featured h3,
-.pricing .featured h4,
-.pricing .featured h4 span,
-.pricing .featured ul,
-.pricing .featured ul .na {
-  color: #fff;
-}
-
-.pricing .featured .btn-buy {
-  background: #fff;
-  color: green;
-}
-
-.pricing .advanced {
-  width: 200px;
-  position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
-  z-index: 1;
-  font-size: 14px;
-  padding: 1px 0 3px 0;
-  background: green;
-  color: #fff;
-}
-
-/*--------------------------------------------------------------
-# Frequently Asked Questions
---------------------------------------------------------------*/
-.faq {
-  padding: 60px 0;
-}
-
-.faq .faq-list {
-  padding: 0;
-  list-style: none;
-}
-
-.faq .faq-list li {
-  border-bottom: 1px solid #e3e7e9;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
-
-.faq .faq-list .question {
-  display: block;
-  position: relative;
-  font-family: green;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
-  padding-left: 25px;
-  cursor: pointer;
-  color: #007ab7;
-  transition: 0.3s;
-}
-
-.faq .faq-list i {
-  font-size: 16px;
-  position: absolute;
-  left: 0;
-  top: -2px;
-}
-
-.faq .faq-list p {
-  margin-bottom: 0;
-  padding: 10px 0 0 25px;
-}
-
-.faq .faq-list .icon-show {
-  display: none;
-}
-
-.faq .faq-list .collapsed {
-  color: black;
-}
-
-.faq .faq-list .collapsed:hover {
-  color: green;
-}
-
-.faq .faq-list .collapsed .icon-show {
-  display: inline-block;
-  transition: 0.6s;
-}
-
-.faq .faq-list .collapsed .icon-close {
-  display: none;
-  transition: 0.6s;
-}
 
 /*--------------------------------------------------------------
 # Contact
@@ -1451,7 +1117,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #1eb4ff;
+  background: green;
 }
 
 @keyframes animate-loading {
@@ -1635,7 +1301,7 @@ section {
 }
 
 #footer .footer-top .footer-newsletter form input[type=submit]:hover {
-  background: #007ab7;
+  background: green;
 }
 
 #footer .copyright {

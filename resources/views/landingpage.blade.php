@@ -27,54 +27,55 @@
   <!-- Template Main CSS File -->
   <link href="{{url('public/landingpage')}}/assets/css/style.css" rel="stylesheet">
 
-<style>
-  .news .news-item {
-  background: #fff;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  transition: all 0.3s;
-  text-align: center;
-}
+  <style>
+    .news .news-item {
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      transition: all 0.3s;
+      text-align: center;
+    }
 
-.news .news-item img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
+    .news .news-item img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
 
-.news .news-item .title {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-}
+    .news .news-item .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
 
-.news .news-item .title a {
-  color: #333;
-  text-decoration: none;
-}
+    .news .news-item .title a {
+      color: #333;
+      text-decoration: none;
+    }
 
-.news .news-item .title a:hover {
-  color: green;
-}
+    .news .news-item .title a:hover {
+      color: green;
+    }
 
-.swiper-pagination {
-  bottom: 10px !important;
-}
+    .swiper-pagination {
+      bottom: 10px !important;
+    }
 
-.news .btn {
-  background-color: green;
-  border: none;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-}
+    .news .btn {
+      background-color: green;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
 
-.news .btn:hover {
-  background-color: darkgreen;
-}
+    .news .btn:hover {
+      background-color: darkgreen;
+    }
+
 
   </style>
 </head>
@@ -86,13 +87,13 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="{{url('login')}}" style="color: white;">YAFO AGRO</a></h1>
+        <h1><a href="{{url('login')}}" style="color: white;font-family: 'Times New Roman', Times, serif;">YAFO AGRO</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
+        <ul s>
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto" href="#services">Visi Misi</a></li>
@@ -118,9 +119,10 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
           <div>
-            <h1 style="color: green;">{{$beranda->judul}}</h1>
-            <h2 style="color: green;">{{$beranda->judul}}</h2>
-            <a href="#about" class="btn-get-started scrollto">MULAI</a>
+            <h1 style="color: green; font-family: 'Times New Roman', Times, serif;">{{$beranda->judul}}</h1>
+            <h2 style="color: green;font-family: 'Times New Roman', Times, serif">{{$beranda->judul}}</h2>
+            <a href="#about" class="btn-get-started scrollto" 
+            style="font-family: 'Times New Roman', Times, serif;">MULAI</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
@@ -145,7 +147,9 @@
             <div class="content pt-4 pt-lg-0">
               <h3 style="color: green;">{{$tentangkami->judul}}</h3>
               <p class="fst-italic">
-              <h4 style="color: green; text-align:justify;">
+              <h4 style="color: green; text-align:justify;font-family: 'Times New Roman', Times, serif; ">
+      
+
                 {{$tentangkami->isi}}
               </h4>
               </h3>
@@ -164,9 +168,11 @@
       <div class="container">
         <div class="section-title" data-aos="fade-up">
           <h2 style="color: green;">{{$visi->judul}}</h2>
-          <p class="description" style="color: green; ">
+        <h2>
+        <p class="description" style="color: green; ">
             {{$visi->isi}}
           </p>
+        </h2>
           <br />
           <div class="section-title" data-aos="fade-up">
             <h2 style="color: green;">MISI</h2>
@@ -177,10 +183,12 @@
             @foreach($misi as $v)
             <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
               <div class="icon-box icon-box-green">
-                <h4 class="title"><a href="" style="color: green; text-align:justify;">{{$v->judul}}</a></h4>
+                <h3 class="title"><a href="" style="color: green; text-align:justify;">{{$v->judul}}</a></h3>
+                <h2>
                 <p class="description" style="color: green; text-align:justify;">
-                {{$v->isi}}
+                  {{$v->isi}}
                 </p>
+                </h2>
               </div>
             </div>
             @endforeach
@@ -195,36 +203,36 @@
 
     <main id="main">
 
-<!-- Other Sections (About, Services, Portfolio, Contact) -->
+      <!-- Other Sections (About, Services, Portfolio, Contact) -->
 
- <!-- ======= News Section ======= -->
- <section id="news" class="news">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2 style="color: green;">Berita Terbaru</h2>
-        </div>
-
-        <div class="row">
-          @foreach($berita as $article)
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="news-item">
-              <img src="{{url('public/berita')}}/{{$article->foto}}" class="img-fluid" alt="{{$article->judul}}">
-              <h4 class="title"><a href="{{$article->link}}" style="color: green;">{{$article->judul}}</a></h4>
-            </div>
+      <!-- ======= News Section ======= -->
+      <section id="news" class="news">
+        <div class="container">
+          <div class="section-title" data-aos="fade-up">
+            <h2 style="color: green;">Berita Terbaru</h2>
           </div>
-          @endforeach
-  
+
+          <div class="row">
+            @foreach($berita as $article)
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="news-item">
+                <img src="{{url('public/berita')}}/{{$article->foto}}" class="img-fluid" alt="{{$article->judul}}">
+                <h4 class="title"><a href="{{$article->link}}" style="color: green;">{{$article->judul}}</a></h4>
+              </div>
+            </div>
+            @endforeach
+
+          </div>
+
+
+          <div class="text-center mt-4">
+            <a href="{{url('detail-berita')}}" class="btn btn-primary">Semua Berita</a>
+          </div>
         </div>
-   
-
-        <div class="text-center mt-4">
-          <a href="{{url('detail-berita')}}" class="btn btn-primary">Semua Berita</a>
-        </div>
-      </div>
-    </section><!-- End News Section -->
+      </section><!-- End News Section -->
 
 
-</main><!-- End #main -->
+    </main><!-- End #main -->
 
 
 
@@ -292,12 +300,12 @@
                 <p> {{$telp->isi}}</p>
               </div>
 
-     
+
             </div>
 
           </div>
           <div class="col-lg-7 d-flex align-items-stretch" data-aos="fade-right">
-          {!! $maps->isi!!}
+            {!! $maps->isi!!}
           </div>
 
         </div>

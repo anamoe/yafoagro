@@ -48,6 +48,10 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{url('public/sneat')}}/assets/js/config.js"></script>
     <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f8f9fa;
+        }
            .responsive-img {
             max-width: 100%;
             height: auto;

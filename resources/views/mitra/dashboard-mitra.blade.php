@@ -11,12 +11,15 @@
   <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <style>
         body {
             display: flex;
             flex-direction: column;
             height: 100vh;
             margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f8f9fa;
         }
 
         .content {

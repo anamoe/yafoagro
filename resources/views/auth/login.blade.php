@@ -18,7 +18,9 @@
 
 </head>
 
-<body class="background_login" style="background-image: url('{{ asset('public/FOTO/hijau.jpg') }}');">
+<!-- <body class="background_login" style="background-image: url('{{ asset('public/FOTO/hijau.jpg') }}');"> -->
+<body class="background_login" style="background:green ;">
+
     <div class="header">
         <div class="container">
             <div class="header-body text-center mb-2 mt-5">
