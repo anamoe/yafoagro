@@ -160,6 +160,24 @@
                 </div>
             </div>
         </div>
+        
+    </div>
+
+    <div class="row">
+        
+     
+        <div class="col-12 col-md-12 mb-3">
+            <div class="card custom-card text-center ">
+                <div class="card-body">
+                <a href="{{url('mitra/simulasi-panen')}}">
+                    
+                        <h5 class="card-title">SIMULASI PANEN</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+        
     </div>
 </div>
     

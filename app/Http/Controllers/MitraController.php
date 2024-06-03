@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kontak;
 use App\Models\MonitoringTanaman;
 use App\Models\ProfilMitra;
+use App\Models\Tanaman;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -47,5 +48,13 @@ class MitraController extends Controller
         $tiktok = Kontak::where('type', 'tiktok')->first();
         $instagram = Kontak::where('type', 'instagram')->first();
         return view('mitra.info-mitra',compact('email','tiktok','instagram'));
+    }
+
+    public function simulasi_panen()
+    {  $email = Kontak::where('type', 'email')->first();
+        $tiktok = Kontak::where('type', 'tiktok')->first();
+        $instagram = Kontak::where('type', 'instagram')->first();
+        $jumlahbibit= Tanaman::where('user_id',auth()->user()->id)->first();
+        return view('mitra.simulasi-panen',compact('email','jumlahbibit','tiktok','instagram'));
     }
 }

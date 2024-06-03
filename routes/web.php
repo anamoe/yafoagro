@@ -24,8 +24,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/mitra', function () {
-//     return view('mitra.dashboard-mitra');
+// Route::get('/simulasi', function () {
+//     return view('mitra.simulasi-panen');
 // });
 Route::get('tanaman/{user_id}', [TalasController::class, 'getTanamans']);
 
@@ -83,6 +83,8 @@ Route::get('talas', [MitraController::class, 'talas']);
 Route::get('alpukat', [MitraController::class, 'alpukat']);
 Route::get('profil-mitra', [MitraController::class, 'profilmitra']);
 Route::get('info-mitra', [MitraController::class, 'infomitra']);
+
+Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
 
     });
 });
