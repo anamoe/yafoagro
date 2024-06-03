@@ -92,7 +92,7 @@
 
 <body>
     <div class="topbar">
-        <h2>Informasi</h2>
+        <h2>Simulasi Hasil Panen</h2>
     </div>
     <div class="content">
         <div class="container mt-4">
