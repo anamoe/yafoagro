@@ -23,7 +23,7 @@
   <link href="{{url('public/landingpage')}}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="{{url('public/landingpage')}}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="{{url('public/landingpage')}}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Template Main CSS File -->
   <link href="{{url('public/landingpage')}}/assets/css/style.css" rel="stylesheet">
 
@@ -75,6 +75,16 @@
     .news .btn:hover {
       background-color: darkgreen;
     }
+    .card {
+    border-radius: 15px; /* Membuat ujung card menjadi lebih bulat */
+    overflow: hidden; /* Menyembunyikan konten yang melebihi batas card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan lembut */
+}
+
+.card-img-top {
+    border-top-left-radius: 15px; /* Membuat ujung atas gambar card menjadi lebih bulat */
+    border-top-right-radius: 15px;
+}
   </style>
 </head>
 
@@ -95,7 +105,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
+          <li><a class="nav-link scrollto" href="{{url('tentangkami')}}">Tentang Kami</a></li>
           <li><a class="nav-link scrollto" href="#services">Visi Misi</a></li>
           <li><a class="nav-link scrollto" href="#news">Berita Artikel Terbaru</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Galeri</a></li>
@@ -121,23 +131,23 @@
   <section id="hero">
 
     <div class="container">
-    <div class="row">
-    <div class="col-lg-6 order-1 order-lg-2 pt-5 pt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up">
-        <div>
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2 pt-5 pt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up">
+          <div>
             <h1 style="color: #e3b11b; font-family: 'Times New Roman', Times, serif;">GREEN PROPERTI</h1>
             <h1 style="color: green; font-family: 'Times New Roman', Times, serif;">{{$beranda->judul}}</h1>
             <h2 style="color: green; font-family: 'Times New Roman', Times, serif">{{$beranda->judul}}</h2>
             <div class="header-social-links d-flex align-items-center">
-                <a href="{{$instagram->isi}}" class="instagram"><i class="bi bi-instagram" style="color: green;"></i></a>
-                <a href="{{$tiktok->isi}}" class="linkedin"><i class="bi bi-tiktok" style="color: green;"></i></i></a>
-                <a href="{{$email->isi}}" class="email"><i class="bi bi-envelope" style="color: green;"></i></i></a>
+              <a href="{{$instagram->isi}}" class="instagram"><i class="bi bi-instagram" style="color: green;"></i></a>
+              <a href="{{$tiktok->isi}}" class="linkedin"><i class="bi bi-tiktok" style="color: green;"></i></i></a>
+              <a href="{{$email->isi}}" class="email"><i class="bi bi-envelope" style="color: green;"></i></i></a>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="col-lg-6 order-2 order-lg-1 hero-img" data-aos="fade-left">
-        <img src="{{url('public/logo')}}/{{$beranda->foto}}" class="img-fluid" alt="">
-    </div>
-</div>
+        <div class="col-lg-6 order-2 order-lg-1 hero-img" data-aos="fade-left">
+          <img src="{{url('public/logo')}}/{{$beranda->foto}}" class="img-fluid" alt="">
+        </div>
+      </div>
 
     </div>
 
@@ -146,7 +156,7 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- <section id="about" class="about">
       <div class="container">
 
         <div class="row">
@@ -171,7 +181,8 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section> -->
+    <!-- End About Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
@@ -249,26 +260,34 @@
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
+      <div class="container mt-5">
+      <div class="section-title" data-aos="fade-up">
           <h2 style="color: green;">GALERI</h2>
         </div>
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          @foreach($portfolio as $v)
-          <div class="news-item col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{url('public/portfolio')}}/{{$v->foto}}" class="img-fluid" alt="">
 
-              <div class="portfolio-links">
-                <a href="{{url('public/portfolio')}}/{{$v->foto}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-link"></i></a>
-              </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
+          <ol class="carousel-indicators">
+            @foreach ($portfolio as $index => $image)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"></li>
+            @endforeach
+          </ol>
+          <div class="carousel-inner">
+            @foreach ($portfolio as $index => $image)
+            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+              <img style="height: 500px;
+            width: 500px;
+            object-fit: cover;" class="d-block w-100" src="{{ asset('public/portfolio/' . $image->foto) }}" alt="Slide {{ $index + 1 }}">
             </div>
+            @endforeach
           </div>
-          @endforeach
-        </div>
-        <div class="text-center mt-4">
-          <a href="{{url('detail-galeri')}}" class="btn btn-primary" style="background-color: green;">Semua Galeri</a>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </section><!-- End Portfolio Section -->
@@ -346,6 +365,9 @@
 
   <!-- Template Main JS File -->
   <script src="{{url('public/landingpage')}}/assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 

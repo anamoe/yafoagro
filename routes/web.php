@@ -27,11 +27,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/mitra', function () {
 //     return view('mitra.dashboard-mitra');
 // });
+Route::get('tanaman/{user_id}', [TalasController::class, 'getTanamans']);
 
 
 Route::get('/', [LandingPageController::class, 'index']);
 Route::get('/detail-berita', [LandingPageController::class, 'detailberita']);
 Route::get('/detail-galeri', [LandingPageController::class, 'detailgaleri']);
+Route::get('/tentangkami', [LandingPageController::class, 'tentangkami']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/profil', [AuthController::class, 'profil']);
 Route::post('/profil/{id}', [AuthController::class, 'profile_update']);
@@ -68,6 +70,8 @@ Route::middleware(['role:admin'])->group(function () {
 
         Route::get('tentangkami', [KontakController::class, 'index_tentangkami']);
         Route::patch('tentangkami/{id}', [KontakController::class, 'update_tentangkami']);
+
+
     });
 });
 

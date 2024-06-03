@@ -14,6 +14,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Nama Mitra</th>
                         <th>Nama Tanaman</th>
                         <th>Nomor Sertifikat</th>
                         <th>Nomor Registrasi</th>
@@ -24,6 +25,7 @@
                     @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$item->name}}</td>
                         <td>{{$item->nama_tanaman}}</td>
                         <td>{{$item->no_sertifikat}}</td>
                         <td>{{$item->no_registrasi}}</td>

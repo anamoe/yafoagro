@@ -15,20 +15,28 @@
                 @method('patch')
                 <div class="row">
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label for="" class="form-label">Nama</label>
+                            <label for="" class="form-label">Nama lengkap</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$data->name}}">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Username</label>
                             <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{$data->username}}">
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="form-label">Ahli Waris</label>
+                            <input type="text" class="form-control @error('ahli_waris') is-invalid @enderror" name="ahli_waris" value="{{$data->ahli_waris}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Password</label>
                             <input type="password" class="form-control" name="password">
@@ -66,16 +74,22 @@
                             <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir" value="{{$data->tgl_lahir}}">
                         </div>
                     </div>
+                  
                 </div>
                 <div class="row">
-
-                    <div class="col-md-6">
+                <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="form-label">email</label>
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data->email}}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="" class="form-label">Kode Pos</label>
                             <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos" value="{{$data->kode_pos}}">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="" class="form-label">No. HP</label>
                             <input type="number" class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" value="{{$data->no_hp}}">
@@ -83,21 +97,7 @@
                     </div>
                 </div>
 
-                <div class="row">
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Ahli Waris</label>
-                            <input type="text" class="form-control @error('ahli_waris') is-invalid @enderror" name="ahli_waris" value="{{$data->ahli_waris}}">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Luas Lahan (ha)</label>
-                            <input type="number" class="form-control @error('luas_lahan') is-invalid @enderror" name="luas_lahan" value="{{$data->luas_lahan}}">
-                        </div>
-                    </div>
-                </div>
 
                 <div class="row">
 
@@ -116,35 +116,19 @@
                 </div>
 
                 <div class="row">
+                <center>
+                        <img src="{{url('public/ktp/'.$data->foto_ktp)}}" alt="" style="width: 50%;">
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Bibit </label>
-                            <input type="number" class="form-control @error('bibit') is-invalid @enderror" name="bibit" value="{{$data->bibit}}">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Kemitraan </label>
-                            <input type="number" class="form-control @error('kemitraan') is-invalid @enderror" name="kemitraan" value="{{$data->kemitraan}}">
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="row">
-
-
+                    </center>
                     <div class="form-group">
-                        <label for="" class="form-label">Bukti Transfer</label>
-                        <input type="file" class="form-control @error('bukti_transfer') is-invalid @enderror" name="bukti_transfer" accept="image/*">
+                        <label for="" class="form-label">Foto KTP</label>
+                        <input type="file" class="form-control" name="foto_ktp" accept="image/*">
                     </div>
                 </div>
 
 
 
-                <button type="submit" class="btn btn-primary float-end mt-3">Tambah</button>
+                <button type="submit" class="btn btn-primary float-end mt-3">Update</button>
 
             </form>
         </div>

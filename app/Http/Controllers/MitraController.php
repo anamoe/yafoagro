@@ -21,7 +21,7 @@ class MitraController extends Controller
         join('users','monitoring_tanamen.user_id','users.id')
         ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
         ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
-        ->where('nama_tanaman','talas')->where('user_id',auth()->user()->id)
+        ->where('nama_tanaman','talas')->where('users.id',auth()->user()->id)
         ->orderBy('tanggal','desc')
         ->get();
         return view('mitra.talas',compact('data'));
@@ -37,6 +37,7 @@ class MitraController extends Controller
         $data = ProfilMitra::join('users','profil_mitras.user_id','users.id')
         ->select('profil_mitras.*','users.*')
         ->where('users.id', auth()->user()->id)->first();
+        // return $data;
         return view('mitra.profil-mitra', compact('data'));
     }
 

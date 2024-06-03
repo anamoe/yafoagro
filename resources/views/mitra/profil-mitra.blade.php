@@ -125,19 +125,25 @@
     </div>
     <div class="content">
         <div class="container mt-4">
-            <div class="card-body" style="background-color:#d9cb9a;">
+            <div class="card-body" style="background-color:#7ebf9d;">
                 <div class="row">
 
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="" class="form-label">Nama</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$data->name}}">
+                            <input type="text" disabled class="form-control @error('name') is-invalid @enderror" name="name" value="{{$data->name}}">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="" class="form-label">Username</label>
-                            <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{$data->username}}">
+                            <input type="text"disabled class="form-control @error('username') is-invalid @enderror" name="username" value="{{$data->username}}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="form-label">Ahli Waris</label>
+                            <input type="text"disabled class="form-control @error('ahli_waris') is-invalid @enderror" name="ahli_waris" value="{{$data->ahli_waris}}">
                         </div>
                     </div>
 
@@ -148,13 +154,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">NIK</label>
-                            <input type="number" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{$data->nik}}">
+                            <input type="number" disabled class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{$data->nik}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Alamat</label>
-                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{$data->alamat}}">
+                            <input type="text" disabled class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{$data->alamat}}">
                         </div>
                     </div>
                 </div>
@@ -164,13 +170,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Tempat Lahir</label>
-                            <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value="{{$data->tempat_lahir}}">
+                            <input type="text" disabled class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value="{{$data->tempat_lahir}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Tanggal Lahir</label>
-                            <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir" value="{{$data->tgl_lahir}}">
+                            <input type="date" disabled class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir" value="{{$data->tgl_lahir}}">
                         </div>
                     </div>
                 </div>
@@ -179,64 +185,36 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Kode Pos</label>
-                            <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos" value="{{$data->kode_pos}}">
+                            <input type="number" disabled class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos" value="{{$data->kode_pos}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">No. HP</label>
-                            <input type="number" class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" value="{{$data->no_hp}}">
+                            <input type="number" disabled class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" value="{{$data->no_hp}}">
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Ahli Waris</label>
-                            <input type="text" class="form-control @error('ahli_waris') is-invalid @enderror" name="ahli_waris" value="{{$data->ahli_waris}}">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Luas Lahan (ha)</label>
-                            <input type="number" class="form-control @error('luas_lahan') is-invalid @enderror" name="luas_lahan" value="{{$data->luas_lahan}}">
-                        </div>
-                    </div>
-                </div>
+    
 
                 <div class="row">
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Nama Rekening</label>
-                            <input type="text" class="form-control @error('nama_rekening') is-invalid @enderror" name="nama_rekening" value="{{$data->nama_rekening}}">
+                            <input type="text" disabled class="form-control @error('nama_rekening') is-invalid @enderror" name="nama_rekening" value="{{$data->nama_rekening}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Nomor Rekening</label>
-                            <input type="number" class="form-control @error('no_rekening') is-invalid @enderror" name="no_rekening" value="{{$data->no_rekening}}">
+                            <input type="number" disabled class="form-control @error('no_rekening') is-invalid @enderror" name="no_rekening" value="{{$data->no_rekening}}">
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Bibit </label>
-                            <input type="number" class="form-control @error('bibit') is-invalid @enderror" name="bibit" value="{{$data->bibit}}">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="form-label">Kemitraan </label>
-                            <input type="number" class="form-control @error('kemitraan') is-invalid @enderror" name="kemitraan" value="{{$data->kemitraan}}">
-                        </div>
-                    </div>
-                </div>
+           
             </div>
             <br>
                 <center>

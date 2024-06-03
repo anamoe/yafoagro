@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('role');
             $table->string('username')->unique();
+            $table->string('email')->unique();
             // $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('token_reset')->nullable();
@@ -26,14 +27,16 @@ return new class extends Migration
 
         User::create([
             'name'=>'Admin YAFOARGO',
+            'email'=>'admin@gmail.com',
             'username'=>'admin',
             'password'=>bcrypt(123),
             'role'=>'admin'
 
         ]);
         User::create([
-            'name'=>'Mitra anam',
-            'username'=>'anam',
+            'name'=>'Mitra',
+            'email'=>'mitra@gmail.com',
+            'username'=>'mitra',
             'password'=>bcrypt(123),
             'role'=>'mitra'
 

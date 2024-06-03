@@ -14,13 +14,21 @@
                 @csrf
                 <div class="form-group">
                     <label for="" class="form-label">Nama Mitra</label>
-                    <select name="user_id" class="form-control">
+                    <select name="user_id" id="user_id" class="form-control">
                         @foreach ($users as $user)
                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                         @endforeach
                     </select>
 
                 </div>
+
+                
+            <div class="form-group mt-4">
+                <label for="tanaman_ids" class="form-label">Daftar Tanaman</label>
+                <select name="tanaman_id" id="tanaman_ids" class="form-control" >
+                  
+                </select>
+            </div>
                 <div class="form-group">
                     <label for="" class="form-label">Judul</label>
                     <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul">
@@ -32,9 +40,9 @@
 
 
                 <div class="form-group">
-                <label for="" class="form-label">Foto</label>
-                <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" accept="image/*">
-            </div>
+                    <label for="" class="form-label">Foto</label>
+                    <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" accept="image/*">
+                </div>
 
                 <button type="submit" class="btn btn-primary float-end mt-3">Tambah</button>
 
@@ -45,3 +53,33 @@
 </div>
 
 @endsection
+
+@push('js')
+<script>
+        $(document).ready(function() {
+            $('#user_id').change(function() {
+                var user_id = $(this).val();
+                if (user_id) {
+                    $.ajax({
+                        url: '{{url('/tanaman/')}}'+'/' + user_id,
+                        type: 'GET',
+                        success: function(response) {
+                            var tanamanSelect = $('#tanaman_ids');
+                            tanamanSelect.empty();
+                            if (response.length > 0) {
+                                $.each(response, function(index, tanaman) {
+                                    tanamanSelect.append('<option value="' + tanaman.id + '">' + tanaman.nama_tanaman +tanaman.no_sertifikat+ '</option>');
+                                });
+                            } else {
+                                tanamanSelect.append('<option value="">Tidak ada tanaman yang ditemukan.</option>');
+                            }
+                        }
+                    });
+                } else {
+                    $('#tanaman_ids').empty();
+                }
+            });
+        });
+    </script>
+
+@endpush

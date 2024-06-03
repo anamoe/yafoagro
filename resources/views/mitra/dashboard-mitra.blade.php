@@ -171,7 +171,7 @@
         </a>
         <a href="{{url('mitra/info-mitra')}}">
             <i class="fas fa-info"></i><br>
-            Info
+            Informasi
         </a>
         <a href="{{url('mitra/profil-mitra')}}">
             <i class="fas fa-user"></i><br>

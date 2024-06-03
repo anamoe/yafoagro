@@ -15,11 +15,12 @@ class TalasController extends Controller
     public function index()
     {
         $data = MonitoringTanaman::
-        join('users','monitoring_tanamen.user_id','users.id')
-        ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
-        ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
+        leftjoin('users','monitoring_tanamen.user_id','users.id')
+        ->leftjoin('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
+        ->select('users.name','tanamen.*','monitoring_tanamen.*')
         ->where('nama_tanaman','talas')
         ->get();
+        // return $data;
         return view('admin.monitoringtalas',compact('data'));
     }
 
@@ -29,14 +30,17 @@ class TalasController extends Controller
     public function create()
     {
         //
+        $allTanamans = Tanaman::all(); // Get all tanamans
+        $mitraTanamans = Tanaman::pluck('id')->toArray(); // Get tanamans for this mitra
+
         $users =User::where('role','mitra')->get();
-        return view('admin.monitoringtalas-add',compact('users'));
+        return view('admin.monitoringtalas-add',compact('users','allTanamans'));
     }
 
     public function store(Request $request)
     {
         //
-        $tanaman =Tanaman::where('nama_tanaman','talas')->first();
+
         $data = $request->validate([
     
             'judul'=>'required',
@@ -44,7 +48,7 @@ class TalasController extends Controller
    
         ]);
             $data['user_id'] = $request->user_id;
-            $data['tanaman_id'] = $tanaman->id;
+            $data['tanaman_id'] = $request->tanaman_id;
           
 
         
@@ -126,5 +130,13 @@ class TalasController extends Controller
         }
         $p->delete();
         return redirect()->back()->with('success',' Berhasil DiHapus');
+    }
+
+    
+    public function getTanamans($user_id)
+    {
+       
+        $tanamans = Tanaman::where('user_id', $user_id)->get();
+        return response()->json($tanamans);
     }
 }

@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tanaman;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class TanamanController extends Controller
 {
     public function index()
     {
-        $data = Tanaman::all();
+        $data = Tanaman::
+        leftjoin('profil_mitras','tanamen.user_id','profil_mitras.user_id')
+        ->join('users','tanamen.user_id','users.id')
+        ->select('users.name','profil_mitras.*','tanamen.*')
+        ->get();
+        // return $data;
         return view('admin.tanaman',compact('data'));
     }
 
@@ -19,7 +27,8 @@ class TanamanController extends Controller
     public function create()
     {
         //
-        return view('admin.tanaman-add');
+        $users = User::where('role','mitra')->get();
+        return view('admin.tanaman-add',compact('users'));
     }
 
     public function store(Request $request)
@@ -30,19 +39,25 @@ class TanamanController extends Controller
             'nama_tanaman'=>'required',
             'no_sertifikat'=>'required',
             'no_registrasi'=>'required',
+            'no_approval'=>'required',
+            'no_id_pemilik'=>'required',
             'kode_area'=>'required',
             'jumlah_bibit'=>'required',
             'alamat_cluster'=>'required',
+            'kemitraan'=>'required',  
+            'bukti_transfer'=>'required',
+            'luas_lahan'=>'required',
    
         ]);
         
-        // if($request->hasFile('foto')){
-        //     $tujuan_upload = public_path('portfolio');
-        //     $file = $request->file('foto');
-        //     $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
-        //     $file->move($tujuan_upload, $namaFile);
-        //     $data['foto'] = $namaFile;
-        // }
+        if ($request->hasFile('bukti_transfer')) {
+            $tujuan_upload = public_path('bukti_transfer');
+            $file = $request->file('bukti_transfer');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $namaFile);
+            $data['bukti_transfer'] = $namaFile;
+        }
+        $data['user_id'] = $request->user_id;
 
         Tanaman::create($data);
         return redirect('admin/tanaman')
@@ -64,7 +79,10 @@ class TanamanController extends Controller
     public function edit(string $id)
     {
         //
-        $data = Tanaman::find($id);
+        $data = Tanaman::    leftjoin('profil_mitras','tanamen.user_id','profil_mitras.user_id')
+        ->join('users','tanamen.user_id','users.id')
+        ->select('users.name','profil_mitras.*','tanamen.*')
+        ->find($id);
         return view('admin.tanaman-edit',compact('data','id'));
     }
 
@@ -84,15 +102,14 @@ class TanamanController extends Controller
             'alamat_cluster'=>'required',
         ]);
         
-        // if($request->hasFile('foto')){
-        //     $tujuan_upload = public_path('portfolio');
-        //     $file = $request->file('foto');
-        //     $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
-        //     File::delete($tujuan_upload.'/'.Portfolio::find($id)->foto);
-        //     $file->move($tujuan_upload, $namaFile);
-        //     $data['foto'] = $namaFile;
-        // }
-
+        if ($request->hasFile('bukti_transfer')) {
+            $tujuan_upload = public_path('bukti_transfer');
+            $file = $request->file('bukti_transfer');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload . '/' . Tanaman::find($id)->foto);
+            $file->move($tujuan_upload, $namaFile);
+            $data['bukti_transfer'] = $namaFile;
+        }
         Tanaman::findOrFail($id)->update($data);
         return redirect('admin/tanaman')
         ->with('success',' Berhasil DiUpdate');

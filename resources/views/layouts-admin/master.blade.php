@@ -198,6 +198,8 @@
     @endif
 </script>
 
+ 
+@include('layouts-admin.js')
 </body>
 
 </html>

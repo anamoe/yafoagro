@@ -15,6 +15,7 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Tanaman</th>
+                        <th>No Sertifikat</th>
                         <th>Nama Mitra</th>
                         <th>Judul</th>
                         <th>Tanggal</th>
@@ -27,6 +28,7 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->nama_tanaman}}</td>
+                        <td>{{$item->no_sertifikat}}</td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->judul}}</td>
                         <td>{{$item->tanggal}}</td>

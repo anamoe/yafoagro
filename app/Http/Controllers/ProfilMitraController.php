@@ -12,10 +12,10 @@ class ProfilMitraController extends Controller
 {
     public function index()
     {
-        $data = ProfilMitra::join('users','profil_mitras.user_id','users.id')
-        ->select('users.*','profil_mitras.*')
-        ->orderBy('profil_mitras.id','desc')->get();
-        return view('admin.profilmitra',compact('data'));
+        $data = ProfilMitra::join('users', 'profil_mitras.user_id', 'users.id')
+            ->select('users.*', 'profil_mitras.*')
+            ->orderBy('profil_mitras.id', 'desc')->get();
+        return view('admin.profilmitra', compact('data'));
     }
 
     /**
@@ -25,51 +25,59 @@ class ProfilMitraController extends Controller
     {
         //
         $user = User::where('role', 'mitra')
-        ->whereDoesntHave('mitra')
-        ->get();
+            ->whereDoesntHave('mitra')
+            ->get();
         // return $user;
-        return view('admin.profilmitra-add',compact('user'));
+        return view('admin.profilmitra-add', compact('user'));
     }
 
     public function store(Request $request)
     {
         //
         // return $request;
-        $datauser = $request->validate([
-            'name'=>'required','username'=>'required','password'=>'required',
-   
-        ]);
+       
+    $datauser = $request->validate([
+        'name' => 'required',
+        'username' => 'required|unique:users,username',
+        'password' => 'required|min:4',
+        'email' => 'required|unique:users,email',
+    ], [
+        'username.unique' => 'Username sudah digunakan, silakan pilih yang lain.',
+        'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
+        'password.min' => 'Password minimal harus 4 karakter.',
+    ]);
+
         $data = $request->validate([
-    
-            'bukti_transfer'=>'required','nik'=>'required',
-            'tgl_lahir'=>'required','tempat_lahir'=>'required',
-            'luas_lahan'=>'required','nama_rekening'=>'required',
-            'no_rekening'=>'required','bibit'=>'required',
-            'ahli_waris'=>'required','kode_pos'=>'required',
-            'alamat'=>'required','no_hp'=>'required','kemitraan'=>'required',
-   
+
+            'nik' => 'required',
+            'tgl_lahir' => 'required', 'tempat_lahir' => 'required',
+            'nama_rekening' => 'required',
+            'no_rekening' => 'required',
+            'ahli_waris' => 'required', 'kode_pos' => 'required',
+            'alamat' => 'required', 'no_hp' => 'required','upload_ktp'
+
         ]);
         $datauser['role'] = 'mitra';
         $datauser['password'] = bcrypt($request->password);
         $u = User::create($datauser);
 
         $data['user_id'] = $u->id;
-       
 
-        
-        
-        if($request->hasFile('bukti_transfer')){
-            $tujuan_upload = public_path('bukti_transfer');
-            $file = $request->file('bukti_transfer');
+
+
+
+        if ($request->hasFile('foto_ktp')) {
+            $tujuan_upload = public_path('ktp');
+            $file = $request->file('foto_ktp');
             $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
             $file->move($tujuan_upload, $namaFile);
-            $data['bukti_transfer'] = $namaFile;
+            $data['foto_ktp'] = $namaFile;
         }
-      
+
 
         ProfilMitra::create($data);
         return redirect('admin/profilmitra')
-        ->with('success',' Berhasil Ditambahkan');
+            ->with('success', ' Berhasil Ditambahkan');
     }
 
     /**
@@ -78,7 +86,7 @@ class ProfilMitraController extends Controller
     public function show(string $id)
     {
         //
-       
+
     }
 
     /**
@@ -87,11 +95,11 @@ class ProfilMitraController extends Controller
     public function edit(string $id)
     {
         //
-        $data = ProfilMitra::join('users','profil_mitras.user_id','users.id')
-        ->select('users.*','profil_mitras.*')
-        ->where('profil_mitras.id',$id)
-        ->first();
-        return view('admin.profilmitra-edit',compact('data','id'));
+        $data = ProfilMitra::join('users', 'profil_mitras.user_id', 'users.id')
+            ->select('users.*', 'profil_mitras.*')
+            ->where('profil_mitras.id', $id)
+            ->first();
+        return view('admin.profilmitra-edit', compact('data', 'id'));
     }
 
     /**
@@ -99,40 +107,43 @@ class ProfilMitraController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
         //
-        $mitra = ProfilMitra::where('id',$id)->first();
+        $mitra = ProfilMitra::where('id', $id)->first();
         $datauser = $request->validate([
-            'name'=>'required','username'=>'required',
-   
+            'email' => 'required',
+            'name' => 'required', 'username' => 'required',
+
         ]);
+        
         $data = $request->validate([
-    
-            'nik'=>'required',
-            'tgl_lahir'=>'required','tempat_lahir'=>'required',
-            'luas_lahan'=>'required','nama_rekening'=>'required',
-            'no_rekening'=>'required','bibit'=>'required',
-            'ahli_waris'=>'required','kode_pos'=>'required',
-            'alamat'=>'required','no_hp'=>'required','kemitraan'=>'required',
-   
+
+            'nik' => 'required',
+            'tgl_lahir' => 'required', 'tempat_lahir' => 'required',
+            'nama_rekening' => 'required',
+            'no_rekening' => 'required','ahli_waris' => 
+            'required', 'kode_pos' => 'required',
+            'alamat' => 'required', 'no_hp' => 'required',
+
         ]);
-        if($request->password){
+        if ($request->password) {
             $datauser['password'] = bcrypt($request->password);
         }
-        User::where('id',$mitra->user_id)->update($datauser);
+        User::where('id', $mitra->user_id)->update($datauser);
 
-        
-        if($request->hasFile('bukti_transfer')){
-            $tujuan_upload = public_path('bukti_transfer');
-            $file = $request->file('bukti_transfer');
+
+        if ($request->hasFile('foto_ktp')) {
+            $tujuan_upload = public_path('ktp');
+            $file = $request->file('foto_ktp');
             $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
-            File::delete($tujuan_upload.'/'.ProfilMitra::find($id)->foto);
+            File::delete($tujuan_upload . '/' . ProfilMitra::find($id)->foto);
             $file->move($tujuan_upload, $namaFile);
-            $data['bukti_transfer'] = $namaFile;
+            $data['foto_ktp'] = $namaFile;
         }
 
         ProfilMitra::findOrFail($id)->update($data);
         return redirect('admin/profilmitra')
-        ->with('success',' Berhasil DiUpdate');
+            ->with('success', ' Berhasil DiUpdate');
     }
 
     /**
@@ -142,6 +153,6 @@ class ProfilMitraController extends Controller
     {
         //
         ProfilMitra::findOrFail($id)->delete();
-        return redirect()->back()->with('success',' Berhasil DiHapus');
+        return redirect()->back()->with('success', ' Berhasil DiHapus');
     }
 }

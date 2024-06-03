@@ -24,10 +24,7 @@ return new class extends Migration
             $table->string('no_hp',15);
             $table->string('no_rekening',20);
             $table->string('nama_rekening');
-            $table->integer('luas_lahan');
-            $table->integer('bibit');
-            $table->bigInteger('kemitraan');
-            $table->string('bukti_transfer')->nullable();
+            $table->string('foto_ktp');
             $table->timestamps();
         });
 
@@ -42,10 +39,10 @@ return new class extends Migration
             'no_hp'=>'081319083013',
             'nama_rekening'=>'anam',
             'no_rekening'=>'13131',
-            'luas_lahan'=>'80',
-            'bibit'=>'2000',
-            'kemitraan'=>'5000000',
-            'bukti_transfer'=>'transfer.jpg',
+            // 'luas_lahan'=>'80',
+            // 'bibit'=>'2000',
+            // 'kemitraan'=>'5000000',
+            'foto_ktp'=>'transfer.jpg',
 
 
 
