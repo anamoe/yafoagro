@@ -102,11 +102,13 @@
                     <input type="number" class="form-control" id="harga" placeholder="Masukkan harga">
                 </div>
                 <div class="form-group">
-                    <!-- <label for="jumlahBibit">Jumlah Bibit:</label> -->
+                    <label for="jumlahBibit">Jumlah Bibit:</label>
+                    <input type="number"  disabled class ="form-control" value="{{$jumlahbibit->jumlah_bibit}}">
                     <input type="hidden" class="form-control" id="jumlahBibit" value="{{$jumlahbibit->jumlah_bibit}}">
                 </div>
                 <div class="form-group">
-                    <!-- <label for="jumlahSatuanPanen">Jumlah Satuan Panen (per tahun/Kg):</label> -->
+                    <label for="jumlahSatuanPanen">Jumlah Satuan Panen (per tahun/Kg):</label>
+                    <input type="number" disabled class="form-control"value="2" placeholder="Masukkan jumlah satuan panen">
                     <input type="hidden" class="form-control" id="jumlahSatuanPanen" value="2" placeholder="Masukkan jumlah satuan panen">
                 </div>
                 <button type="button" class="btn btn-success" onclick="hitungTotal()">Simulasi Cek</button>

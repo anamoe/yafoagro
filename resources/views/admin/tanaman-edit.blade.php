@@ -26,13 +26,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Nomor Sertifikat</label>
-                            <input type="number" class="form-control @error('no_sertifikat') is-invalid @enderror" name="no_sertifikat" value="{{$data->no_sertifikat}}">
+                            <input type="text" class="form-control @error('no_sertifikat') is-invalid @enderror" name="no_sertifikat" value="{{$data->no_sertifikat}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Nomor Registrasi</label>
-                            <input type="number" class="form-control @error('no_registrasi') is-invalid @enderror" name="no_registrasi" value="{{$data->no_registrasi}}">
+                            <input type="text" class="form-control @error('no_registrasi') is-invalid @enderror" name="no_registrasi" value="{{$data->no_registrasi}}">
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Kode Area</label>
-                            <input type="number" class="form-control @error('kode_area') is-invalid @enderror" name="kode_area" value="{{$data->kode_area}}">
+                            <input type="text" class="form-control @error('kode_area') is-invalid @enderror" name="kode_area" value="{{$data->kode_area}}">
                         </div>
                     </div>
                     <div class="col-md-6">
