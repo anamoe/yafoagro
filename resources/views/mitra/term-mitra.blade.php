@@ -130,15 +130,14 @@
               <h5>
               <span style="color: black; font-weight: bold; text-align: center;">
                     KETENTUAN DAN SYARAT PEMBELIAN PAKET
-                    BIBIT TALAS PRATAMA DARI PT. YAFO AGRO INDONESIA (PT. YAI)
-                    NOMOR: SBM/048.002.24-YAI
+                    BIBIT TALAS PRATAMA DARI PT. YAFO AGRO INDONESIA
 
                 </span>
               </h5>
               </center>
                 <div class="text-justify" style="margin: 0 auto; max-width: 600px;">
                     <br>
-                    <span style="color: black; font-weight: bold; ">
+                    <span style="color: black;">
                         Ketentuan dan syarat-syarat harus ditaati dan dipatuhi oleh pembeli tanaman bibit talas pratama dan syarat-syarat lainnya yang
                         nanti lebih lanjut disepakati bersama-sama dengan PT. YAI. Kami yang memiliki 3/sertifkat kepemilikan bibit ini
                         secara sadar dan tanpa paksaan, bersedia dan melaksanakan semua ketentuan dan syarat pembelian bibit talas pratama atau
@@ -260,11 +259,11 @@
     </div>
 
     <div class="bottom-nav">
-        <a href="{{'dashboard'}}">
+        <a href="{{'dashboard'}}" class="active" style="text-decoration:underline;">
             <i class="fas fa-home"></i><br>
             Beranda
         </a>
-        <a href="#" class="active" style="text-decoration:underline;">
+        <a href="{{url('mitra/profil-mitra')}}" >
             <i class="fas fa-user"></i><br>
             Profil
         </a>
