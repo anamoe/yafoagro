@@ -111,7 +111,7 @@
                             </div>
 
                             <div class="mt-4 d-grid gap-2 ">
-                                <button type="submit" class="btn btn-success" style="background-color: green;">Login</button>
+                                <button type="submit" class="btn btn-success" style="font-weight:bold;background-color: green;color:#FDBB26">LOG IN</button>
                             </div>
                         </form>
                       

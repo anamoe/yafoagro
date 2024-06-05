@@ -49,7 +49,7 @@
     <script src="{{url('public/sneat')}}/assets/js/config.js"></script>
     <style>
         body{
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #f8f9fa;
         }
            .responsive-img {

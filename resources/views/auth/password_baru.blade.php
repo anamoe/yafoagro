@@ -83,7 +83,7 @@
                               </div>
                             
                               <div class="mt-4 d-grid gap-2 ">
-                                <button type="submit" class="btn btn-success " style="background-color: green;color:yellow">Simpan</button>
+                                <button type="submit" class="btn btn-success " style="background-color: green;color:#FDBB26;font-weight:bold">Simpan</button>
                             </div>
                             </form>
                       

@@ -10,7 +10,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Montserrat', sans-serif;
   color: #444444;
 }
 
@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -44,7 +44,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: green;
+  background: #21B364,;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -58,7 +58,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: green;
+  background: #21B364;
   color: #fff;
 }
 
@@ -98,7 +98,7 @@ h6 {
   line-height: 0;
   font-weight: 600;
   letter-spacing: 1px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #header .logo h1 a,
@@ -167,7 +167,7 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 15px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #7b909a;
   white-space: nowrap;
   transition: 0.3s;
@@ -184,7 +184,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: green;
+  color: #21B364;
 }
 
 .navbar .dropdown ul {
@@ -197,7 +197,7 @@ h6 {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background:green;
+  background:#21B364;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
 }
@@ -219,7 +219,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: green;
+  color: #21B364;
 }
 
 .navbar .dropdown:hover>ul {
@@ -387,7 +387,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
@@ -397,11 +397,11 @@ h6 {
   border-radius: 3px;
   transition: 0.5s;
   color: #fff;
-  background: green;
+  background: #21B364;
 }
 
 #hero .btn-get-started:hover {
-  background: green;
+  background: #21B364;
 }
 
 #hero .hero-img {
@@ -451,7 +451,7 @@ section {
   font-weight: 400;
   margin-bottom: 20px;
   padding-bottom: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #627680;
 }
 
@@ -482,7 +482,7 @@ section {
   font-weight: 400;
   font-size: 32px;
   color: #364146;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .about .content ul {
@@ -530,12 +530,12 @@ section {
   color: #444444;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: green;
+  color: #21B364;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -597,7 +597,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a {
-  color: green;
+  color: #21B364;
   margin: 0 2px;
   font-size: 24px;
   display: inline-block;
@@ -610,7 +610,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
   color: #fff;
-  background: green;
+  background: #21B364;
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -652,11 +652,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid green;
+  border: 1px solid #21B364;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: green;
+  background-color: #21B364;
 }
 
 .portfolio-details .portfolio-info {
@@ -716,7 +716,7 @@ section {
 }
 
 .cta .cta-btn {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 1px;
@@ -726,7 +726,7 @@ section {
   transition: 0.5s;
   margin: 10px;
   color: #fff;
-  background: green;
+  background: #21B364;
 }
 
 .cta .cta-btn:hover {
@@ -840,7 +840,7 @@ section {
 }
 
 .team .member .social a:hover {
-  color: green;
+  color: #21B364;
 }
 
 .team .member .social i {
@@ -902,7 +902,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: green;
+  color: #21B364;
   float: left;
   width: 44px;
   height: 44px;
@@ -1029,7 +1029,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: green;
+  background: #21B364;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1038,7 +1038,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: green;
+  background: #21B364;
 }
 
 @keyframes animate-loading {
@@ -1119,7 +1119,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #576971;
 }
 
@@ -1188,7 +1188,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: green;
+  color: #21B364;
 }
 
 
@@ -1205,10 +1205,10 @@ section {
   color: #364146;
 }
 .navbar .nav-link {
-  color: green; /* Warna teks default */
+  color: #21B364; /* Warna teks default */
 }
 
 .navbar .nav-link.active {
-  color: green; /* Warna teks ketika nav dipilih */
+  color: #21B364; /* Warna teks ketika nav dipilih */
     text-decoration: underline;
 }

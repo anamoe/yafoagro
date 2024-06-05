@@ -116,7 +116,7 @@
 
       <div class="header-social-links d-flex align-items-center">
         <a href="{{url('login')}}">
-          <button class="btn btn-success" style="background-color: #e3b11b;color:green">MASUK</button>
+          <button class="btn btn-success" style="background-color: #FDBB26;color:green">MASUK</button>
 
         </a>
       </div>
@@ -134,7 +134,7 @@
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2 pt-5 pt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up">
           <div>
-            <h1 style="color: #e3b11b; font-family: 'Times New Roman', Times, serif;">GREEN PROPERTI</h1>
+            <h1 style="color: #FDBB26; font-family: 'Times New Roman', Times, serif;">GREEN PROPERTI</h1>
             <h1 style="color: green; font-family: 'Times New Roman', Times, serif;">{{$beranda->judul}}</h1>
             <h2 style="color: green; font-family: 'Times New Roman', Times, serif">{{$beranda->judul}}</h2>
             <div class="header-social-links d-flex align-items-center">

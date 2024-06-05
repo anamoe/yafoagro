@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 d-grid gap-2 ">
-                                    <button type="submit" style="color: yellow;width: 100%;background-color:green" class="btn btn-success btn-block">Reset</button>
+                                    <button type="submit" style="color: #FDBB26;width: 100%;background-color:green; font-weight:bold;" class="btn btn-success btn-block">Reset</button>
                                 </div>
 
                                 <br>
