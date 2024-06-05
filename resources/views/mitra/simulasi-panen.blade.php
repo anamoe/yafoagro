@@ -33,7 +33,8 @@
         .content {
             flex: 1;
             overflow-y: auto;
-            padding-bottom: 60px; /* height of bottom navigation */
+            padding-bottom: 60px;
+            /* height of bottom navigation */
             background-color: #f8f9fa;
         }
 
@@ -92,7 +93,7 @@
 
 <body>
     <div class="topbar">
-        <h2>Simulasi Hasil Panen</h2>
+        <h3>Estimasi Nilai Hasil</h3>
     </div>
     <div class="content">
         <div class="container mt-4">
@@ -103,33 +104,48 @@
                 </div>
                 <div class="form-group">
                     <label for="jumlahBibit">Jumlah Bibit:</label>
-                    <input type="number"  disabled class ="form-control" value="{{$jumlahbibit->jumlah_bibit}}">
+                    <input type="number" disabled class="form-control" value="{{$jumlahbibit->jumlah_bibit}}">
                     <input type="hidden" class="form-control" id="jumlahBibit" value="{{$jumlahbibit->jumlah_bibit}}">
                 </div>
                 <div class="form-group">
                     <label for="jumlahSatuanPanen">Jumlah Satuan Panen (per tahun/Kg):</label>
-                    <input type="number" disabled class="form-control"value="2" placeholder="Masukkan jumlah satuan panen">
+                    <input type="number" disabled class="form-control" value="2" placeholder="Masukkan jumlah satuan panen">
                     <input type="hidden" class="form-control" id="jumlahSatuanPanen" value="2" placeholder="Masukkan jumlah satuan panen">
                 </div>
-                <button type="button" class="btn btn-success" onclick="hitungTotal()">Simulasi Cek</button>
+                <button type="button" class="btn btn-success" id="btnHarga">Simulasi Cek</button>
             </form>
             <div id="hasilPerhitungan" class="mt-4"></div>
         </div>
+        <div id="cardHarga" class="card bg-light mx-auto" style="background-color:aqua; max-width: 300px;margin:20px;border-radius:10px; display:none">
+            <div class="card-body">
+                <h5 class="card-title">Harga Talas/Kg</h5>
+                <p class="card-text" style="color: #28a745; font-weight: bold;">Rp. 6.000</p>
+                <div class="card bg-success rounded p-3 text-center" style="border-radius:15px;">
+                    <p class="mb-0" style="color: white; font-weight: bold;">Estimasi Nilai</p>
+                    <p class="mb-0" style="color: white; font-size: 24px;" id="hasil"></p>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
+
     <div class="bottom-nav">
-    
-        <a href="#" class="active" style="text-decoration:underline;">
-            <i class="fas fa-home"></i><br>
-            Beranda
-        </a>
-        <a href="{{url('mitra/info-mitra')}}">
-            <i class="fas fa-info"></i><br>
-            Informasi
-        </a>
-        <a href="{{url('mitra/profil-mitra')}}">
-            <i class="fas fa-user"></i><br>
-            Data Mitra
-        </a>
+
+    <a href="{{'dashboard'}}" class="active" style="text-decoration:underline;">
+                <i class="fas fa-home"></i><br>
+                Beranda
+            </a>
+            <a href="{{url('mitra/profil-mitra')}}" >
+                <i class="fas fa-user"></i><br>
+                Profil
+            </a>
+            <a href="{{url('logout')}}">
+                <i class="fas fa-arrow-right"></i><br>
+                Keluar
+            </a>
+           
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -137,22 +153,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        function hitungTotal() {
+         document.getElementById("btnHarga").addEventListener("click", function() {
             var harga = parseFloat(document.getElementById('harga').value);
             var jumlahBibit = parseInt(document.getElementById('jumlahBibit').value);
             var jumlahSatuanPanen = parseInt(document.getElementById('jumlahSatuanPanen').value);
             var total = harga * jumlahBibit * jumlahSatuanPanen;
-        
+
             if (!isNaN(harga) && !isNaN(jumlahBibit) && !isNaN(jumlahSatuanPanen)) {
                 var total = harga * jumlahBibit * jumlahSatuanPanen;
                 var formattedTotal = total.toLocaleString('id-ID', {
                     style: 'currency',
                     currency: 'IDR'
                 });
-                document.getElementById('hasilPerhitungan').innerHTML = '<h4>Total: ' + formattedTotal + '</h4>';
+          
+            cardHarga.style.display = "block";
+            // document.getElementById('hasilPerhitungan').innerHTML = '<h4>Total: ' + formattedTotal + '</h4>';
+            document.getElementById('hasil').innerHTML = '<h4>Total: ' + formattedTotal + '</h4>';
+        
+               
+                
             } else {
                 alert('Mohon isi semua input dengan angka.');
             }
+         });
+        function hitungTotal() {
+           
         }
     </script>
 </body>

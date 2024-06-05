@@ -10,9 +10,21 @@
     <link rel="stylesheet" href="{{asset('public/arfa/vendor/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('public/arfa/toastr/toastr.min.css') }}">
+    <style>
+        .input-border-green .form-control {
+            border-color: green;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px; /* Adjust the value as needed */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       
+        }
+    </style>
 </head>
 
-<body class="background_login" style="background-image: url('{{ asset('public/FOTO/hijau.jpg') }}');">
+<body class="background_login" style="background:green ;">
+
     <div class="header">
         <div class="container">
             <div class="header-body text-center mb-2 mt-5">
@@ -29,11 +41,12 @@
             <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-8">
                 <div class="card shadow-lg">
                     <div class="card-body p-4">
-                        <center>
-                            <img src="{{url('public/logo')}}/LOGO YAFO hijau.png" class="logo" alt="" height="120px" width="150px">
-                        </center>
-                        <h1 class="fs-4 text-center fw-bold mb-4" style="color: green;">PASSWORD BARU</h1>
+                    <center>
+                            <img src="{{url('public/logo')}}/LOGO YAFO aja.png" class="logo" alt="" height="100px" width="60px">
 
+                        </center>
+                        <h1 class="fs-4 text-center fw-bold mb-4" style="color: green;">YAFO AGRO</h1>
+                        <h4 class="fs-6 text-center fw-bold mt-1" style="color: green;">Pertanian Dalam Genggaman</h4>
                         @if(session()->has('error'))
                         <div class="alert alert-danger" role="alert" id="notif">
                             <span data-notify="icon" class="fa fa-bell"></span>
@@ -43,35 +56,41 @@
                         @endif
 
                         <div class="card-body login-card-body">
-                            <p class="login-box-msg">Silahkan reset Password anda.</p>
+                        <center>
+                                <h6>
+                                    <p style="color: green;" class="login-box-msg">Ubah Kata Sandi</p>
+                                </h6>
+                            </center>
                             <form action="{{url('password-baru/'.$token_reset)}}" method="post">
                                 @csrf
-                                <div class="input-group mb-3">
+                                <label for="username" style="color: green;">Ubah kata sandi baru</label>
+
+                               <div class="mb-3">
+                               <div class="input-group mb-3 input-border-green">
                                     <input type="text" class="form-control" name="password" value="{{ old('password')}}" id="password" placeholder="Password">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-key"></span>
+                                    <span class="input-group-text rounded-end password cursor-pointer input-border-green ">&nbsp<i class="fa fa-eye"></i>&nbsp</span>
+                                    
+                                </div>
+                               </div>
+                              <div class="mb-3">
+                              <label for="username" style="color: green;">Konfirmasi kata sandi abru</label>
+
+                                        <div class="input-group mb-3 input-border-green">
+                                            <input type="text" class="form-control" name="ulang_password" value="{{ old('ulang_password')}}" id="ulang_password" placeholder="Konfirmasi Password">
+                                            <span class="input-group-text rounded-end password cursor-pointer">&nbsp<i class="fa fa-eye"></i>&nbsp</span>
+                                        
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="ulang_password" value="{{ old('ulang_password')}}" id="ulang_password" placeholder="Konfirmasi Password">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-key"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" class="btn btn-success btn-block">Minta Password Baru</button>
-                                </div>
+                              </div>
+                            
+                              <div class="mt-4 d-grid gap-2 ">
+                                <button type="submit" class="btn btn-success " style="background-color: green;color:yellow">Simpan</button>
+                            </div>
                             </form>
-                            <br>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <p class="fs-4 mb-0 fw-bold">Sudah punya akun?</p>
-                                <a class="text-success fw-bold ms-2"></a>
+                      
+                            <div class="d-flex align-items-center">
+                                <a class="text-success  ms-0"></a>
                                 <a href="{{url('login')}}">
-                                    <button class="btn btn-success btn-block">LOGIN</button>
+                                    <p class="fs-8 mb-0">Sudah punya akun? Klik disini</p>
                                 </a>
                             </div>
                         </div>

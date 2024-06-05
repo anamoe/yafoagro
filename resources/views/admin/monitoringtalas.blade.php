@@ -20,6 +20,10 @@
                         <th>Judul</th>
                         <th>Tanggal</th>
                         <th>Foto</th>
+                        <th>Foto2</th>
+                        <th>Foto3</th>
+                        <th>Foto4</th>
+                        <th>Foto5</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -34,6 +38,18 @@
                         <td>{{$item->tanggal}}</td>
                         <td>
                             <img src="{{asset('public/monitoring-talas/'.$item->foto)}}" width="50" alt="">
+                        </td>
+                        <td>
+                            <img src="{{asset('public/monitoring-talas/'.$item->foto2)}}" width="50" alt="">
+                        </td>
+                        <td>
+                            <img src="{{asset('public/monitoring-talas/'.$item->foto3)}}" width="50" alt="">
+                        </td>
+                        <td>
+                            <img src="{{asset('public/monitoring-talas/'.$item->foto4)}}" width="50" alt="">
+                        </td>
+                        <td>
+                            <img src="{{asset('public/monitoring-talas/'.$item->foto5)}}" width="50" alt="">
                         </td>
                         <td>
                             <a href="{{url('admin/monitoring-talas/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>

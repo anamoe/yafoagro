@@ -59,6 +59,34 @@ class TalasController extends Controller
             $file->move($tujuan_upload, $namaFile);
             $data['foto'] = $namaFile;
         }
+        if($request->hasFile('foto2')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto2');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto2'] = $namaFile;
+        }
+        if($request->hasFile('foto3')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto3');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto3'] = $namaFile;
+        }
+        if($request->hasFile('foto4')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto4');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto4'] = $namaFile;
+        }
+        if($request->hasFile('foto5')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto5');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto5'] = $namaFile;
+        }
 
         MonitoringTanaman::create($data);
         return redirect('admin/monitoring-talas')
@@ -109,7 +137,35 @@ class TalasController extends Controller
             $file->move($tujuan_upload, $namaFile);
             $data['foto'] = $namaFile;
         }
-       
+        if($request->hasFile('foto2')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto2');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto2);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto2'] = $namaFile;
+        } if($request->hasFile('foto3')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto3');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto3);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto3'] = $namaFile;
+        } if($request->hasFile('foto4')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto4');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto4);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto4'] = $namaFile;
+        } if($request->hasFile('foto5')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto5');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto5);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto5'] = $namaFile;
+        }
 
         MonitoringTanaman::findOrFail($id)->update($data);
         return redirect('admin/monitoring-talas')
@@ -127,6 +183,10 @@ class TalasController extends Controller
         if($p){
            
             File::delete($tujuan_upload . '/' . MonitoringTanaman::find($id)->foto);
+            File::delete($tujuan_upload . '/' . MonitoringTanaman::find($id)->foto2);
+            File::delete($tujuan_upload . '/' . MonitoringTanaman::find($id)->foto3);
+            File::delete($tujuan_upload . '/' . MonitoringTanaman::find($id)->foto4);
+            File::delete($tujuan_upload . '/' . MonitoringTanaman::find($id)->foto5);
         }
         $p->delete();
         return redirect()->back()->with('success',' Berhasil DiHapus');

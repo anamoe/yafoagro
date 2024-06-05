@@ -15,10 +15,23 @@
     <link rel="stylesheet" href="{{asset('public/arfa/toastr/toastr.min.css') }}">
 
 
+    <style>
+        .input-border-green .form-control {
+            border-color: green;
+        }
 
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            /* Adjust the value as needed */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+    </style>
 </head>
 
-<body class="background_login" style="background-image: url('{{ asset('public/FOTO/hijau.jpg') }}');">
+<body class="background_login" style="background:green ;">
+
     <div class="header">
         <div class="container">
             <div class="header-body text-center mb-2 mt-5">
@@ -37,11 +50,11 @@
                 <div class="card shadow-lg">
                     <div class="card-body p-4">
                         <center>
-                            <img src="{{url('public/logo')}}/LOGO YAFO hijau.png" class="logo" alt="" height="120px" width="150px">
+                            <img src="{{url('public/logo')}}/LOGO YAFO aja.png" class="logo" alt="" height="100px" width="60px">
 
                         </center>
-                        <h1 class="fs-4 text-center fw-bold mb-4" style="color: green;">LUPA PASSWORD</h1>
-                       
+                        <h1 class="fs-4 text-center fw-bold mb-4" style="color: green;">YAFO AGRO</h1>
+                        <h4 class="fs-6 text-center fw-bold mt-1" style="color: green;">Pertanian Dalam Genggaman</h4>
                         @if(session()->has('error'))
                         <div class="alert alert-danger" role="alert" id="notif">
 
@@ -50,36 +63,37 @@
                             <span data-notify="message">{{session()->get('error')}}</span>
                         </div>
                         @endif
-                
+
 
                         <div class="card-body login-card-body">
 
-                            <p class="login-box-msg">Anda lupa password? disini anda dapat membuat password baru.</p>
+                            <center>
+                                <h6>
+                                    <p style="color: green;" class="login-box-msg">Ubah Kata Sandi</p>
+                                </h6>
+                            </center>
 
                             <form action="{{url('lupa-password')}}" method="post">
                                 @csrf
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="username" value="{{ old('ussername')}}" id="username" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-user"></span>
-                                        </div>
+
+                                <div class="mb-3">
+
+                                    <label for="username" style="color: green;">Masukkan nama pengguna</label>
+                                    <div class="input-group mb-3 input-border-green">
+                                        <input type="text" class="form-control" name="username" value="{{ old('username')}}" id="username">
                                     </div>
                                 </div>
-                                <div class="row">
-                                  
-                                        <button type="submit" class="btn btn-success btn-block">Minta Password Baru</button>
+                                <div class="mt-4 d-grid gap-2 ">
+                                    <button type="submit" style="color: yellow;width: 100%;background-color:green" class="btn btn-success btn-block">Reset</button>
                                 </div>
-                            </form>
-                            <br>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <p class="fs-4 mb-0 fw-bold">Sudah punya akun?</p>
-                                <a class="text-success fw-bold ms-2" ></a>
-                                <a href="{{url('login')}}">
-                                <button class="btn btn-success btn-block">LOGIN</button>
 
-                                </a>
-                            </div>
+                                <br>
+                                <div class="d-flex align-items-center">
+                                    <a class="text-success  ms-0"></a>
+                                    <a href="{{url('login')}}">
+                                        <p class="fs-8 mb-0">Sudah punya akun? Klik disini</p>
+                                    </a>
+                                </div>
                         </div>
 
 
@@ -90,17 +104,17 @@
     </section>
     <script src="{{url('public/arfa/toastr')}}/toastr.min.js"></script>
 
-<script>
-toastr.options.timeOut = 1500;
-toastr.options.showMethod = 'slideDown';
-toastr.options.hideMethod = 'slideUp';
-toastr.options.closeMethod = 'slideUp';
-@if(session()->has('success'))
-    toastr.success('{{session()->get("success")}}')
-@elseif(session()->has('error'))
-    toastr.error('{{session()->get("error")}}')
-@endif
-</script>
+    <script>
+        toastr.options.timeOut = 1500;
+        toastr.options.showMethod = 'slideDown';
+        toastr.options.hideMethod = 'slideUp';
+        toastr.options.closeMethod = 'slideUp';
+        @if(session()->has('success'))
+        toastr.success('{{session()->get("success")}}')
+        @elseif(session()->has('error'))
+        toastr.error('{{session()->get("error")}}')
+        @endif
+    </script>
 </body>
 
 </html>

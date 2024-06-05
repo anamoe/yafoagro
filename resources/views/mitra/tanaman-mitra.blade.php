@@ -121,24 +121,23 @@
 
 <body>
     <div class="topbar">
-        <h3>Profil Mitra </h3>
+        <h3>Data Tanaman </h3>
     </div>
     <div class="content">
     <div class="card custom-card rounded" style="background-color: #f0f0f0;margin:20px;border-radius:40px">
     <div class="card-body">
         <ul class="list-group list-group-flush">
           
-        <span style="color: black; ">Username</span> <span style="color: green;font-weight: bold;">{{$data->username}}</span><br>
-        <span style="color: black; ">Email</span> <span style="color: green;font-weight: bold;">{{$data->email}}</span><br>
-        <span style="color: black; ">NIK</span> <span style="color: green;font-weight: bold;">{{$data->nik}}</span><br>
-        <span style="color: black; ">Tempat Lahir</span> <span style="color: green;font-weight: bold;">{{$data->tempat_lahir}}</span><br>
-        <span style="color: black; ">Tanggal Lahir</span> <span style="color: green;font-weight: bold;">{{$data->tangal_lahir}}</span><br>
-        <span style="color: black; ">Alamat</span> <span style="color: green;font-weight: bold;">{{$data->alamat}}</span><br>
-        <span style="color: black; ">Kode Pos</span> <span style="color: green;font-weight: bold;">{{$data->kode_pos}}</span><br>
-        <span style="color: black; ">Ahli Waris</span> <span style="color: green;font-weight: bold;">{{$data->ahli_waris}}</span><br>
-        <span style="color: black; ">No. Handphone</span> <span style="color: green;font-weight: bold;">{{$data->no_hp}}</span><br>
-        <span style="color: black; ">Nama Rekening</span> <span style="color: green;font-weight: bold;">{{$data->nama_rekening}}</span><br>
-        <span style="color: black; ">No.Rekening</span> <span style="color: green;font-weight: bold;">{{$data->no_rekening}}</span><br>
+        <span style="color: black; ">No. Sertifikat</span> <span style="color: green;font-weight: bold;">{{$data->no_sertifikat}}</span><br>
+        <span style="color: black; ">No. ID Pemilik</span> <span style="color: green;font-weight: bold;">{{$data->no_id_pemilik}}</span><br>
+        <span style="color: black; ">No. Approval</span> <span style="color: green;font-weight: bold;">{{$data->no_approval}}</span><br>
+        <span style="color: black; ">No. Registrasi</span> <span style="color: green;font-weight: bold;">{{$data->no_registrasi}}</span><br>
+        <span style="color: black; ">Nama Tanaman</span> <span style="color: green;font-weight: bold;">{{$data->nama_tanaman}}</span><br>
+        <span style="color: black; ">Kode Area</span> <span style="color: green;font-weight: bold;">{{$data->kode_area}}</span><br>
+        <span style="color: black; ">Luas Lahan</span> <span style="color: green;font-weight: bold;">{{$data->luas_lahan}}</span><br>
+        <span style="color: black; ">Jumlah Bibit</span> <span style="color: green;font-weight: bold;">{{$data->jumlah_bibit}}</span><br>
+        <span style="color: black; ">Alamat Cluster</span> <span style="color: green;font-weight: bold;">{{$data->alamat_cluster}}</span><br>
+        <span style="color: black; ">Kemitraan</span> <span style="color: green;font-weight: bold;">{{$data->kemitraan}}</span><br>
        
         </ul>
     </div>
@@ -149,11 +148,11 @@
         </div>
 
         <div class="bottom-nav">
-            <a href="{{'dashboard'}}">
+            <a href="{{'dashboard'}}" class="active" style="text-decoration:underline;">
                 <i class="fas fa-home"></i><br>
                 Beranda
             </a>
-            <a href="#" class="active" style="text-decoration:underline;">
+            <a href="{{url('mitra/profil-mitra')}}" >
                 <i class="fas fa-user"></i><br>
                 Profil
             </a>

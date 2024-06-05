@@ -13,8 +13,9 @@ class MitraController extends Controller
 {
     //
     public function dashboard(){
+        $maps = Kontak::where('type', 'maps')->first();
 
-        return view('mitra.dashboard-mitra');
+        return view('mitra.dashboard-mitra',compact('maps'));
     }
 
     public function talas(){
@@ -56,5 +57,11 @@ class MitraController extends Controller
         $instagram = Kontak::where('type', 'instagram')->first();
         $jumlahbibit= Tanaman::where('user_id',auth()->user()->id)->first();
         return view('mitra.simulasi-panen',compact('email','jumlahbibit','tiktok','instagram'));
+    }
+
+    public function tanaman()
+    {  $data = Tanaman::where('user_id',auth()->user()->id)->first();
+
+        return view('mitra.tanaman-mitra',compact('data'));
     }
 }

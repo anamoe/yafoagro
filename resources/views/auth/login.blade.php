@@ -14,7 +14,17 @@
 
     <link rel="stylesheet" href="{{asset('public/arfa/toastr/toastr.min.css') }}">
    
-
+    <style>
+        .input-border-green .form-control {
+            border-color: green;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px; /* Adjust the value as needed */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       
+        }
+    </style>
 
 </head>
 
@@ -39,10 +49,11 @@
                 <div class="card shadow-lg">
                     <div class="card-body p-4">
                         <center>
-                        <img src="{{url('public/logo')}}/LOGO YAFO hijau.png" class="logo" alt="" height="120px" width="150px">
+                        <img src="{{url('public/logo')}}/LOGO YAFO aja.png" class="logo" alt="" height="100px" width="60px">
 
                         </center>
-                        <h1 class="fs-4 text-center fw-bold mb-4" style="color: green;">LOGIN</h1>
+                        <h1 class="fs-4 text-center fw-bold mb-4" style="color: green;">YAFO AGRO</h1>
+                        <h4 class="fs-6 text-center fw-bold mt-1" style="color: green;">Pertanian Dalam Genggaman</h4>
                         @if(session()->has('error'))
                         <div class="alert alert-danger" role="alert" id="notif">
 
@@ -68,8 +79,8 @@
                         <form action="{{url('login-post')}}" method="POST" aria-label="abdul" data-id="abdul" class="needs-validation" novalidate="" autocomplete="off">
                             @csrf
                             <div class="mb-3">
-                                <label class="mb-2 text-muted fw-bold " for="email">Username</label>
-                                <div class="input-group input-group-join mb-3">
+                                <label class="mb-2  fw-bold " style="color: green;" for="email">Nama Pengguna</label>
+                                <div class="input-group input-group-join mb-3 input-border-green">
                                     <input type="text" class="form-control" id="nama_pengguna" placeholder="Masukkan Username" name="username" id="validationCustom01" required autofocus>
                                     <span class="input-group-text rounded-end">&nbsp<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp</span>
                                     <div class="invalid-feedback">
@@ -82,9 +93,9 @@
 
                             <div class="mb-3">
                                 <div class="mb-2 w-100">
-                                    <label class="text-muted fw-bold" for="password">Password</label>
+                                    <label class=" fw-bold" style="color: green;" for="password">Password</label>
                                 </div>
-                                <div class="input-group input-group-join mb-3">
+                                <div class="input-group input-group-join mb-3 input-border-green">
 
                                     <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" required>
 
@@ -103,11 +114,11 @@
                                 <button type="submit" class="btn btn-success" style="background-color: green;">Login</button>
                             </div>
                         </form>
-                        <div class="d-flex align-items-center justify-content-center">
-                                <a class="text-success fw-bold ms-0" ></a>
+                      
+                        <div class="d-flex align-items-center">
+                                <a class="text-success  ms-0" ></a>
                                 <a href="{{url('lupa-password')}}">
-                                <p class="fs-5 mb-0">Lupa Password?</p>
-
+                                <p class="fs-8 mb-0">Lupa Password? Klik disini</p>
                                 </a>
                             </div>
 

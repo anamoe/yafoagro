@@ -43,6 +43,22 @@
                     <label for="" class="form-label">Foto</label>
                     <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" accept="image/*">
                 </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Foto 2</label>
+                    <input type="file" class="form-control @error('foto2') is-invalid @enderror" name="foto2" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Foto 3</label>
+                    <input type="file" class="form-control @error('foto3') is-invalid @enderror" name="foto3" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Foto 4</label>
+                    <input type="file" class="form-control @error('foto4') is-invalid @enderror" name="foto4" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Foto 5</label>
+                    <input type="file" class="form-control @error('foto5') is-invalid @enderror" name="foto5" accept="image/*">
+                </div>
 
                 <button type="submit" class="btn btn-primary float-end mt-3">Tambah</button>
 

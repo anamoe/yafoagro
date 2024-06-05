@@ -85,6 +85,8 @@ Route::get('profil-mitra', [MitraController::class, 'profilmitra']);
 Route::get('info-mitra', [MitraController::class, 'infomitra']);
 
 Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
+Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
+Route::get('tanaman', [MitraController::class, 'tanaman']);
 
     });
 });

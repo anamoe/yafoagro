@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAFOAGRO</title>
-    <meta name="description" content="PT. Yafo Agro Indonesia adalah perusahaan agribisnis yang berkomitmen pada praktik ekonomi hijau Menyediakan produk dan jasa agrikultur yang berkualitas dan berkelanjutan, untuk menciptakan nilai tambah kepada seluruh pemangku kepentingan"
-     />
+    <meta name="description" content="PT. Yafo Agro Indonesia adalah perusahaan agribisnis yang berkomitmen pada praktik ekonomi hijau Menyediakan produk dan jasa agrikultur yang berkualitas dan berkelanjutan, untuk menciptakan nilai tambah kepada seluruh pemangku kepentingan" />
     <link href="{{url('public/logo')}}/LOGO YAFO aja.png" rel="icon">
-  <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
+    <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+
     <style>
         body {
             display: flex;
@@ -122,6 +121,7 @@
     <div class="topbar">
         <h2>KEBUNKU</h2>
     </div>
+
     <div class="content">
         <div class="container mt-4">
             <ul class="list-group">
@@ -132,28 +132,63 @@
                         <div class="item-title">{{$item->judul}}</div>
                     </div>
                     <br>
-                    <div class="contact text-center">
-                        <a href="{{url('public/monitoring-talas')}}/{{$item->foto}}" target="_blank">
-                            <img src="{{url('public/monitoring-talas')}}/{{$item->foto}}" style="height: 100px; width:150px;" class="img-fluid">
-                        </a>
+                    <div class="d-flex flex-nowrap overflow-auto" style="max-width: 100%; overflow-x: auto;">
+                        <div class="contact text-center mr-3">
+                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto}}" target="_blank">
+                                <div class="card rounded" style="width: 150px;">
+                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto}}" style="height: 100px;" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="contact text-center mr-3">
+                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto2}}" target="_blank">
+                                <div class="card rounded" style="width: 150px;">
+                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto2}}" style="height: 100px;" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="contact text-center mr-3">
+                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto3}}" target="_blank">
+                                <div class="card rounded" style="width: 150px;">
+                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto3}}" style="height: 100px;" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="contact text-center mr-3">
+                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto4}}" target="_blank">
+                                <div class="card rounded" style="width: 150px;">
+                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto4}}" style="height: 100px;" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="contact text-center mr-3">
+                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto5}}" target="_blank">
+                                <div class="card rounded" style="width: 150px;">
+                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto5}}" style="height: 100px;" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Add more images here if needed -->
                     </div>
                 </li>
                 @endforeach
             </ul>
         </div>
     </div>
+
+
     <div class="bottom-nav">
-        <a href="#" class="active" style="text-decoration:underline;">
+        <a href="{{url('mitra/dashboard')}}" class="active" style="text-decoration:underline;">
             <i class="fas fa-home"></i><br>
             Kebunku
         </a>
-        <a href="{{url('mitra/info-mitra')}}">
-            <i class="fas fa-info"></i><br>
-            Informasi
-        </a>
-        <a href="{{url('mitra/profil-mitra')}}">
+        <a href="{{'profil-mitra'}}">
             <i class="fas fa-user"></i><br>
-            Data Mitra
+            Profil
+        </a>
+        <a href="{{url('logout')}}">
+            <i class="fas fa-arrow-right"></i><br>
+            Keluar
         </a>
     </div>
 

@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAFOAGRO</title>
-    <meta name="description" content="PT. Yafo Agro Indonesia adalah perusahaan agribisnis yang berkomitmen pada praktik ekonomi hijau Menyediakan produk dan jasa agrikultur yang berkualitas dan berkelanjutan, untuk menciptakan nilai tambah kepada seluruh pemangku kepentingan"
-     />
+    <meta name="description" content="PT. Yafo Agro Indonesia adalah perusahaan agribisnis yang berkomitmen pada praktik ekonomi hijau Menyediakan produk dan jasa agrikultur yang berkualitas dan berkelanjutan, untuk menciptakan nilai tambah kepada seluruh pemangku kepentingan" />
     <link href="{{url('public/logo')}}/LOGO YAFO aja.png" rel="icon">
-  <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
+    <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+
     <style>
         body {
             display: flex;
@@ -115,85 +114,135 @@
             font-weight: bold;
             color: white;
         }
+
         .custom-card {
-            background-color: green; /* Warna hijau untuk card */
-            color: white; /* Warna kuning untuk teks */
-            border-radius: 15px; /* Membuat card menjadi rounded */
-            transition: transform 0.2s; /* Animasi untuk hover */
+            background-color: white;
+            /* Warna putih untuk card */
+            color: green;
+            /* Warna hijau untuk teks */
+            border-radius: 15px;
+            /* Membuat card menjadi rounded */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            /* Animasi untuk hover */
+            padding: 20px;
+            text-align: center;
         }
+
         .custom-card:hover {
-            transform: scale(1.05); /* Efek zoom saat hover */
+            transform: scale(1.05);
+            /* Efek zoom saat hover */
         }
-        .custom-card a {
-            color: white; /* Warna kuning untuk link teks */
-            text-decoration: none; /* Menghilangkan underline pada link */
+
+        .custom-card .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .custom-card .btn {
+            margin-top: 15px;
+        }
+
+        .inner-card {
+            border: none;
+            background-color: transparent;
         }
     </style>
 </head>
 
 <body>
     <div class="topbar">
-        <h2>KEBUNKU</h2>
+        <h2></h2>
     </div>
     <div class="content">
-    <div class="container mt-5">
-    <div class="row">
-        
-        <!-- Card for Alpukat -->
-        <div class="col-6 col-md-6 mb-3">
-            <div class="card custom-card text-center ">
-                <div class="card-body">
-                <a href="{{url('mitra/alpukat')}}">
-                    
-                        <h5 class="card-title">Alpukat</h5>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- Card for Talas -->
-        <div class="col-6 col-md-6 mb-3">
-            <div class="card custom-card text-center">
-                <div class="card-body">
-                    <a href="{{url('mitra/talas')}}">
-                        <h5 class="card-title">Talas</h5>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-    </div>
+        <div class="container mt-2">
+            <h3 style="color: green;">Welcome</h3>
+            <h4 style="color: green;">{{auth()->user()->name}}</h4>
 
-    <div class="row">
-        
-     
-        <div class="col-12 col-md-12 mb-3">
-            <div class="card custom-card text-center ">
-                <div class="card-body">
-                <a href="{{url('mitra/simulasi-panen')}}">
-                    
-                        <h5 class="card-title">SIMULASI PANEN</h5>
-                    </a>
+            <div class="card custom-card">
+                <div class="row">
+
+                    <div class="col-6 col-md-3 mb-1">
+                        <div class="inner-card text-center">
+                            <div class="card-body">
+                                <a href="{{url('mitra/talas')}}">
+
+                                    <div class="card custom-card text-center" style="width: 100px; height: 100px; border-radius: 50%;background-color:green;">
+                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                            <img src="{{url('public/icon/monitoring.png')}}" style="" alt="" height="70px" width="70px">
+                                        </div>
+                                    </div>
+                                </a>
+                                <h5 class="card-title">Kebunku</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Icon 2 -->
+                    <div class="col-6 col-md-3 mb-1">
+                        <div class="inner-card text-center">
+                            <div class="card-body">
+                                <a href="{{url('mitra/simulasi-panen')}}">
+                                    <div class="card custom-card text-center" style="width: 100px; height: 100px; border-radius: 50%;background-color:green;">
+                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                            <img src="{{url('public/icon/simulasi.png')}}" alt="" height="70px" width="70px">
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <h5 class="card-title">Simulasi Panen</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Icon 3 -->
+                    <div class="col-6 col-md-3 mb-1">
+                        <div class="inner-card text-center">
+                            <div class="card-body">
+                                <a href="{{url('mitra/tanaman')}}">
+
+                                    <div class="card custom-card text-center" style="width: 100px; height: 100px; border-radius: 50%;background-color:green;">
+                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                            <img src="{{url('public/icon/tanaman.png')}}" style="" alt="" height="70px" width="70px">
+                                        </div>
+                                    </div>
+                                </a>
+
+
+                                <h5 class="card-title">Data Tanaman</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-1">
+                        <div class="inner-card text-center">
+                            <div class="card-body">
+                                <a href="https://www.google.com/maps?ll=-8.274845,114.148693&z=16&t=m&hl=id&gl=ID&mapclient=embed&cid=1496055298570704826">
+
+                                    <div class="card custom-card text-center" style="width: 100px; height: 100px; border-radius: 50%;background-color:green;">
+                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                            <img src="{{url('public/icon/maps.png')}}" style="" alt="" height="70px" width="70px">
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <h5 class="card-title">Lokasi</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-      
-        
-    </div>
-</div>
-    
     </div>
     <div class="bottom-nav">
         <a href="#" class="active" style="text-decoration:underline;">
             <i class="fas fa-home"></i><br>
             Beranda
         </a>
-        <a href="{{url('mitra/info-mitra')}}">
-            <i class="fas fa-info"></i><br>
-            Informasi
-        </a>
         <a href="{{url('mitra/profil-mitra')}}">
             <i class="fas fa-user"></i><br>
-            Data Mitra
+            Profil
+        </a>
+        <a href="{{url('logout')}}">
+            <i class="fas fa-arrow-right"></i><br>
+            Keluar
         </a>
     </div>
 
