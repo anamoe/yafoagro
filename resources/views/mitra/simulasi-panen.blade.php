@@ -118,8 +118,8 @@
         </div>
         <div id="cardHarga" class="card bg-light mx-auto" style="background-color:aqua; max-width: 300px;margin:20px;border-radius:10px; display:none">
             <div class="card-body">
-                <h5 class="card-title">Harga Talas/Kg</h5>
-                <p class="card-text" style="color: #28a745; font-weight: bold;">Rp. 6.000</p>
+                <!-- <h5 class="card-title">Harga Talas/Kg</h5>
+                <p class="card-text" style="color: #28a745; font-weight: bold;">Rp. 6.000</p> -->
                 <div class="card bg-success rounded p-3 text-center" style="border-radius:15px;">
                     <p class="mb-0" style="color: white; font-weight: bold;">Estimasi Nilai</p>
                     <p class="mb-0" style="color: white; font-size: 24px;" id="hasil"></p>
