@@ -132,7 +132,7 @@
         <span style="color: black; ">Email</span> <span style="color: green;font-weight: bold;">{{$data->email}}</span><br>
         <span style="color: black; ">NIK</span> <span style="color: green;font-weight: bold;">{{$data->nik}}</span><br>
         <span style="color: black; ">Tempat Lahir</span> <span style="color: green;font-weight: bold;">{{$data->tempat_lahir}}</span><br>
-        <span style="color: black; ">Tanggal Lahir</span> <span style="color: green;font-weight: bold;">{{$data->tangal_lahir}}</span><br>
+        <span style="color: black; ">Tanggal Lahir</span> <span style="color: green;font-weight: bold;">{{$data->tgl_lahir}}</span><br>
         <span style="color: black; ">Alamat</span> <span style="color: green;font-weight: bold;">{{$data->alamat}}</span><br>
         <span style="color: black; ">Kode Pos</span> <span style="color: green;font-weight: bold;">{{$data->kode_pos}}</span><br>
         <span style="color: black; ">Ahli Waris</span> <span style="color: green;font-weight: bold;">{{$data->ahli_waris}}</span><br>
