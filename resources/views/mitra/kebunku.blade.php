@@ -173,7 +173,7 @@
 
                                     <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
                                         <div class="card-body d-flex justify-content-center align-items-center">
-                                            <img src="{{url('public/icon/monitoring.png')}}" style="" alt="" height="50px" width="50px">
+                                            <img src="{{url('public/icon/talas.png')}}" style="" alt="" height="50px" width="50px">
                                         </div>
                                     </div>
                                 </a>
@@ -188,7 +188,7 @@
                                 <a href="{{url('mitra/alpukat')}}">
                                     <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
                                         <div class="card-body d-flex justify-content-center align-items-center">
-                                            <img src="{{url('public/icon/simulasi.png')}}" alt="" height="50px" width="50px">
+                                            <img src="{{url('public/icon/alpukat.png')}}" alt="" height="50px" width="50px">
                                         </div>
                                     </div>
                                 </a>

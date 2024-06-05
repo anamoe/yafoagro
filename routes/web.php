@@ -63,32 +63,31 @@ Route::middleware(['role:admin'])->group(function () {
 
         Route::resource('monitoring-alpukat', AlpukatController::class);
 
-        
+
         Route::resource('berita', BeritaController::class);
         Route::get('berita/{id}/delete', [BeritaController::class, 'destroy']);
 
 
         Route::get('tentangkami', [KontakController::class, 'index_tentangkami']);
         Route::patch('tentangkami/{id}', [KontakController::class, 'update_tentangkami']);
-
-
     });
 });
 
 Route::middleware(['role:mitra'])->group(function () {
     Route::prefix('mitra')->group(function () {
 
-Route::get('dashboard', [MitraController::class, 'dashboard']);
-Route::get('talas', [MitraController::class, 'talas']);
-Route::get('alpukat', [MitraController::class, 'alpukat']);
-Route::get('profil-mitra', [MitraController::class, 'profilmitra']);
-Route::get('info-mitra', [MitraController::class, 'infomitra']);
+        Route::get('dashboard', [MitraController::class, 'dashboard']);
+        Route::get('talas', [MitraController::class, 'talas']);
+        Route::get('alpukat', [MitraController::class, 'alpukat']);
+        Route::get('profil-mitra', [MitraController::class, 'profilmitra']);
+        Route::get('info-mitra', [MitraController::class, 'infomitra']);
 
-Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
-Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
-Route::get('tanaman', [MitraController::class, 'tanaman']);
-Route::get('kebunku', [MitraController::class, 'kebunku']);
-
+        Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
+        Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
+        Route::get('tanaman', [MitraController::class, 'tanaman']);
+        Route::get('kebunku', [MitraController::class, 'kebunku']);
+        Route::get('/term', function () {
+    return view('mitra.term-mitra');
+});
     });
-
 });
