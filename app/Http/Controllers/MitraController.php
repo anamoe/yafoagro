@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 class MitraController extends Controller
 {
     //
+
+    public function kebunku(){
+        return view('mitra.kebunku');
+    }
     public function dashboard(){
         $maps = Kontak::where('type', 'maps')->first();
 

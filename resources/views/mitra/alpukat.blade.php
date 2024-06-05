@@ -138,17 +138,17 @@
         </div>
     </div>
     <div class="bottom-nav">
-        <a href="#" class="active" style="text-decoration:underline;">
+    <a href="{{url('mitra/dashboard')}}" class="active" style="text-decoration:underline;">
             <i class="fas fa-home"></i><br>
             Kebunku
         </a>
-        <a href="{{url('mitra/info-mitra')}}">
-            <i class="fas fa-info"></i><br>
-            Informasi
-        </a>
-        <a href="{{url('mitra/profil-mitra')}}">
+        <a href="{{'profil-mitra'}}">
             <i class="fas fa-user"></i><br>
-            Data Mitra
+            Profil
+        </a>
+        <a href="{{url('logout')}}">
+            <i class="fas fa-arrow-right"></i><br>
+            Keluar
         </a>
     </div>
 

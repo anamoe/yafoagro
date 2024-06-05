@@ -149,7 +149,7 @@
         }
         @media (min-width: 768px) {
     .card-title {
-        margin-left: -100px; /* Adjust this value according to your needs */
+        margin-left: -380px; /* Adjust this value according to your needs */
     }
 }
     </style>
@@ -157,20 +157,19 @@
 
 <body>
     <div class="topbar">
-        <h2></h2>
+        <h2>KEBUNKU</h2>
     </div>
     <div class="content">
         <div class="container mt-2">
-            <h3 style="color: green;">Welcome</h3>
-            <h4 style="color: green;">{{auth()->user()->name}}</h4>
+          
 
             <div class="card custom-card">
                 <div class="row">
 
-                    <div class="col-6 col-md-3 mb-1">
+                    <div class="col-6 col-md-6 mb-1">
                         <div class="inner-card text-center">
                             <div class="card-body">
-                                <a href="{{url('mitra/kebunku')}}">
+                                <a href="{{url('mitra/talas')}}">
 
                                     <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
                                         <div class="card-body d-flex justify-content-center align-items-center">
@@ -178,15 +177,15 @@
                                         </div>
                                     </div>
                                 </a>
-                                <h5 class="card-title">Kebunku</h5>
+                                <h5 class="card-title">Talas</h5>
                             </div>
                         </div>
                     </div>
                     <!-- Icon 2 -->
-                    <div class="col-6 col-md-3 mb-1">
+                    <div class="col-6 col-md-6 mb-1">
                         <div class="inner-card text-center">
                             <div class="card-body">
-                                <a href="{{url('mitra/simulasi-panen')}}">
+                                <a href="{{url('mitra/alpukat')}}">
                                     <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
                                         <div class="card-body d-flex justify-content-center align-items-center">
                                             <img src="{{url('public/icon/simulasi.png')}}" alt="" height="50px" width="50px">
@@ -194,44 +193,12 @@
                                     </div>
                                 </a>
 
-                                <h5 class="card-title" style="">Simulasi Panen</h5>
+                                <h5 class="card-title" style="">Alpukat</h5>
                             </div>
                         </div>
                     </div>
-                    <!-- Icon 3 -->
-                    <div class="col-6 col-md-3 mb-1">
-                        <div class="inner-card text-center">
-                            <div class="card-body">
-                                <a href="{{url('mitra/tanaman')}}">
-
-                                    <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
-                                        <div class="card-body d-flex justify-content-center align-items-center">
-                                            <img src="{{url('public/icon/tanaman.png')}}" style="" alt="" height="50px" width="50px">
-                                        </div>
-                                    </div>
-                                </a>
-
-
-                                <h5 class="card-title">Data Tanaman</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-1">
-                        <div class="inner-card text-center">
-                            <div class="card-body">
-                                <a href="https://www.google.com/maps?ll=-8.274845,114.148693&z=16&t=m&hl=id&gl=ID&mapclient=embed&cid=1496055298570704826">
-
-                                    <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
-                                        <div class="card-body d-flex justify-content-center align-items-center">
-                                            <img src="{{url('public/icon/maps.png')}}" style="" alt="" height="50px" width="50px">
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <h5 class="card-title">Lokasi</h5>
-                            </div>
-                        </div>
-                    </div>
+                   
+            
                 </div>
             </div>
         </div>
