@@ -19,6 +19,7 @@
                         <th>Nomor Sertifikat</th>
                         <th>Nomor Registrasi</th>
                         <th>Aksi</th>
+                        <th>Monitoring</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,8 +31,16 @@
                         <td>{{$item->no_sertifikat}}</td>
                         <td>{{$item->no_registrasi}}</td>
                         <td>
-                            <a href="{{url('admin/tanaman/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{url('admin/tanaman/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary" style=" margin-bottom: 5px;">Edit</a>
                             <a href="{{url('admin/tanaman/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                        <td>
+                            <a href="{{url('admin/create-monitoring-tanaman/'.$item->id)}}" class="btn btn-sm btn-primary" style=" margin-bottom: 5px;">+</a>
+                            @if (in_array($item->id, $m))
+                            <a href="{{url('admin/monitoring-talas/'.$item->id)}}" class="btn btn-sm btn-primary">Monitoring</a>
+
+                            @endif
+
                         </td>
                     </tr>
                     @empty
@@ -43,7 +52,7 @@
             </table>
 
         </div>
-        
+
     </div>
 </div>
 

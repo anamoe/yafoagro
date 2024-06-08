@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAFOAGRO</title>
     <meta name="description" content="PT. Yafo Agro Indonesia adalah perusahaan agribisnis yang berkomitmen pada praktik ekonomi hijau Menyediakan produk dan jasa agrikultur yang berkualitas dan berkelanjutan, untuk menciptakan nilai tambah kepada seluruh pemangku kepentingan" />
-    <link href="{{url('public/logo')}}/LOGO YAFO aja.png" rel="icon">
-    <link href="{{url('public/landingpage')}}/LOGO YAFO aja.png" rel="apple-touch-icon">
+    <link href="{{ url('public/logo') }}/LOGO YAFO aja.png" rel="icon">
+    <link href="{{ url('public/landingpage') }}/LOGO YAFO aja.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <style>
         body {
             display: flex;
@@ -24,9 +23,10 @@
         .content {
             flex: 1;
             overflow-y: auto;
-            padding-bottom: 60px;
-            /* height of bottom navigation */
+            padding-bottom: 100px;
             background-color: #f8f9fa;
+            position: relative;
+            z-index: 1;
         }
 
         .topbar {
@@ -52,6 +52,7 @@
             color: gainsboro;
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
+            z-index: 10;
         }
 
         .bottom-nav a {
@@ -67,52 +68,91 @@
         .list-group-item {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            padding-left: 10px;
+            padding-left: 40px;
+            padding-top: 0;
             position: relative;
             margin-bottom: 10px;
-            /* Jarak antar item */
             border-radius: 10px;
-            /* Sudut melengkung untuk item */
             background-color: white;
-            /* Warna latar belakang item */
         }
 
-        .list-group-item::before {
-            content: "";
+        .progress-container {
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
-            width: 5px;
-            background-color: green;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1;
         }
 
-        .list-content {
-            margin-left: 15px;
-            flex-grow: 1;
+        .progress-line {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background-color: #ccc;
+            z-index: 1;
+        }
+
+        .progress-step {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 50%;
+            z-index: 2;
+            margin: 10px 0;
+        }
+
+        .progress-step.completed {
+            background-color: #28a745;
+        }
+
+        .progress-line.completed {
+            background-color: #28a745;
         }
 
         .item-date {
             font-size: 0.8em;
             color: #888;
             margin-bottom: 5px;
+            position: absolute;
+            top: -20px;
+            left: 40px;
         }
 
         .item-title-card {
-            background-color: green;
             padding: 10px;
             border-radius: 10px;
-            color: white;
-            width: 100%;
+            width: calc(100% - 60px);
+            margin-left: 20px;
         }
 
         .item-title {
             font-size: 1.1em;
             font-weight: bold;
-            color: white;
+            color: green;
+        }
+
+        .image-container {
+            display: flex;
+            overflow-x: auto;
+            padding-left: 60px;
+            margin-top: 10px;
+        }
+
+        .image-container .contact {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .image-container .contact img {
+            height: 100px;
+            width: 150px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -126,49 +166,29 @@
         <div class="container mt-4">
             <ul class="list-group">
                 @foreach($data as $item)
-                <li class="list-group-item">
-                    <div class="item-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y ') }}</div>
-                    <div class="item-title-card">
-                        <div class="item-title">{{$item->judul}}</div>
+                <li class="list-group-item" style="background-color:#dee0de">
+                    <div class="progress-container">
+                        <div class="progress-line {{ $item->status == 'selesai' ? 'completed' : '' }}"></div>
+                        <div class="progress-step {{ $item->status == 'selesai' ? 'completed' : '' }}"></div>
                     </div>
-                    <br>
-                    <div class="d-flex flex-nowrap overflow-auto" style="max-width: 100%; overflow-x: auto;">
+
+                    <div class="item-titles">{{$item->judul}}</div>
+
+                    <div class="image-container">
+                        @for($i = 1; $i <= 5; $i++)
+                        @php $foto = 'foto' . $i; @endphp
+                        @if(!is_null($item->$foto) && !empty($item->$foto))
                         <div class="contact text-center mr-3">
-                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto}}" target="_blank">
-                                <div class="card rounded" style="width: 150px;">
-                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto}}" style="height: 100px;" class="card-img-top" alt="...">
+                            <a href="{{ url('public/monitoring-talas/' . $item->$foto) }}" target="_blank">
+                                <div class="card rounded">
+                                    <img src="{{ url('public/monitoring-talas/' . $item->$foto) }}" class="card-img-top" alt="...">
                                 </div>
                             </a>
                         </div>
-                        <div class="contact text-center mr-3">
-                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto2}}" target="_blank">
-                                <div class="card rounded" style="width: 150px;">
-                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto2}}" style="height: 100px;" class="card-img-top" alt="...">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="contact text-center mr-3">
-                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto3}}" target="_blank">
-                                <div class="card rounded" style="width: 150px;">
-                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto3}}" style="height: 100px;" class="card-img-top" alt="...">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="contact text-center mr-3">
-                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto4}}" target="_blank">
-                                <div class="card rounded" style="width: 150px;">
-                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto4}}" style="height: 100px;" class="card-img-top" alt="...">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="contact text-center mr-3">
-                            <a href="{{url('public/monitoring-talas')}}/{{$item->foto5}}" target="_blank">
-                                <div class="card rounded" style="width: 150px;">
-                                    <img src="{{url('public/monitoring-talas')}}/{{$item->foto5}}" style="height: 100px;" class="card-img-top" alt="...">
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Add more images here if needed -->
+                        @else
+                        <!-- <p>{{ $foto }} kosong atau null</p> -->
+                        @endif
+                        @endfor
                     </div>
                 </li>
                 @endforeach
@@ -176,17 +196,16 @@
         </div>
     </div>
 
-
     <div class="bottom-nav">
-        <a href="{{url('mitra/dashboard')}}" class="active" style="text-decoration:underline;">
+        <a href="{{ url('mitra/dashboard') }}" class="active" style="text-decoration:underline;">
             <i class="fas fa-home"></i><br>
             Kebunku
         </a>
-        <a href="{{'profil-mitra'}}">
+        <a href="{{ 'profil-mitra' }}">
             <i class="fas fa-user"></i><br>
             Profil
         </a>
-        <a href="{{url('logout')}}">
+        <a href="{{ url('logout') }}">
             <i class="fas fa-arrow-right"></i><br>
             Keluar
         </a>

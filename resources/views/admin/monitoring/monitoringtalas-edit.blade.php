@@ -4,13 +4,13 @@
 <div class="card">
     <div class="card-header bg-primary">
         <h6 class="mb-0 text-white">Edit Monitoring Talas
-            <a href="{{url('admin/monitoring-talas')}}" class="btn btn-sm float-end btn-light">Kembali</a>
+            <a href="{{url('admin/monitoring-talas/'.$data->tanaman_id)}}" class="btn btn-sm float-end btn-light">Kembali</a>
         </h6>
     </div>
 
     <div class="card">
         <div class="card-body">
-            <form action="{{url('admin/monitoring-talas/'.$data->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('admin/monitoring-talas-pertanaman/'.$data->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
              

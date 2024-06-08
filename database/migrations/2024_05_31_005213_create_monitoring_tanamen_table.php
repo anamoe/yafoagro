@@ -16,9 +16,13 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('tanaman_id')->constrained();
             $table->string('judul');
-            $table->date('tanggal');
-            $table->string('foto');
-            $table->string('video')->nullable();
+            // $table->date('tanggal');
+            $table->string('foto1')->nullable();
+            $table->string('foto2')->nullable();
+            $table->string('foto3')->nullable();
+            $table->string('foto4')->nullable();
+            $table->string('foto5')->nullable();
+            $table->string('status')->default('belum');
 
             $table->timestamps();
         });

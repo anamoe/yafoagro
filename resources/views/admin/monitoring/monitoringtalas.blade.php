@@ -3,7 +3,10 @@
 
 <div class="card">
     <div class="card-header bg-primary">
-        <h6 class="mb-0 text-white">Monitoring Talas
+        <h6 class="mb-0 text-white">Monitoring Talas -{{$tanaman->no_sertifikat}}
+            <a href="{{url('admin/tanaman')}}" class="btn btn-sm float-end btn-light">Kembali</a>
+        </h6>
+        <h6 class="mb-0 text-white">Nama Mitra :{{$data[0]->name}}
             <!-- <a href="{{url('admin/monitoring-talas/create')}}" class="btn btn-sm float-end btn-light">Add</a> -->
         </h6>
     </div>
@@ -14,9 +17,6 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Tanaman</th>
-                        <th>No Sertifikat</th>
-                        <th>Nama Mitra</th>
                         <th>Judul</th>
                         <th>Status</th>
                         <th>Foto1</th>
@@ -31,12 +31,8 @@
                     @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$item->nama_tanaman}}</td>
-                        <td>{{$item->no_sertifikat}}</td>
-                        <td>{{$item->name}}</td>
                         <td>{{$item->judul}}</td>
                         <td>{{$item->status}}</td>
-
                         <td>
                             <img src="{{asset('public/monitoring-talas/'.$item->foto1)}}" width="50" alt="">
                         </td>
@@ -53,7 +49,7 @@
                             <img src="{{asset('public/monitoring-talas/'.$item->foto5)}}" width="50" alt="">
                         </td>
                         <td>
-                            <a href="{{url('admin/monitoring-talas/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{url('admin/monitoring-talas-pertanaman/'.$item->id)}}" class="btn btn-sm btn-primary">Edit</a>
                             <a href="{{url('admin/monitoring-talas/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>

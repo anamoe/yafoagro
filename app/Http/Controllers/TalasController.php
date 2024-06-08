@@ -24,6 +24,20 @@ class TalasController extends Controller
         return view('admin.monitoringtalas',compact('data'));
     }
 
+    public function index_pertanaman($id_tanaman)
+    {
+        $tanaman = Tanaman::where('id',$id_tanaman)->first();
+        $data = MonitoringTanaman::
+        leftjoin('users','monitoring_tanamen.user_id','users.id')
+        ->leftjoin('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
+        ->select('users.name','tanamen.*','monitoring_tanamen.*')
+        ->where('nama_tanaman','talas')->where('tanaman_id',$id_tanaman)
+        ->get();
+        // return $data;
+       
+        return view('admin.monitoring.monitoringtalas',compact('data','tanaman'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -57,7 +71,7 @@ class TalasController extends Controller
             $file = $request->file('foto');
             $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
             $file->move($tujuan_upload, $namaFile);
-            $data['foto'] = $namaFile;
+            $data['foto1'] = $namaFile;
         }
         if($request->hasFile('foto2')){
             $tujuan_upload = public_path('monitoring-talas');
@@ -117,6 +131,18 @@ class TalasController extends Controller
         return view('admin.monitoringtalas-edit',compact('data','id'));
     }
 
+    public function edit_pertanaman(string $id)
+    {
+        //
+        $data = MonitoringTanaman::
+        join('users','monitoring_tanamen.user_id','users.id')
+        ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
+        ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
+        ->where('nama_tanaman','talas')->where('monitoring_tanamen.id',$id)
+        ->first();
+        return view('admin.monitoring.monitoringtalas-edit',compact('data','id'));
+    }
+
     /**
      * Update the specified resource in storage.
      */
@@ -126,16 +152,16 @@ class TalasController extends Controller
         $data = $request->validate([
     
             'judul'=>'required',
-            'tanggal'=>'required',
+            // 'tanggal'=>'required',
    
         ]);
         if($request->hasFile('foto')){
             $tujuan_upload = public_path('monitoring-talas');
             $file = $request->file('foto');
             $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
-            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto);
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto1);
             $file->move($tujuan_upload, $namaFile);
-            $data['foto'] = $namaFile;
+            $data['foto1'] = $namaFile;
         }
         if($request->hasFile('foto2')){
             $tujuan_upload = public_path('monitoring-talas');
@@ -166,9 +192,63 @@ class TalasController extends Controller
             $file->move($tujuan_upload, $namaFile);
             $data['foto5'] = $namaFile;
         }
-
+        $data['status'] = $request->status;
         MonitoringTanaman::findOrFail($id)->update($data);
         return redirect('admin/monitoring-talas')
+        ->with('success',' Berhasil DiUpdate');
+    }
+
+    public function update_pertanaman(Request $request, string $id)
+    {
+        //
+        $t= MonitoringTanaman::find($id);
+        $data = $request->validate([
+    
+            'judul'=>'required',
+            // 'tanggal'=>'required',
+   
+        ]);
+        if($request->hasFile('foto')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto1);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto1'] = $namaFile;
+        }
+        if($request->hasFile('foto2')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto2');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto2);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto2'] = $namaFile;
+        } if($request->hasFile('foto3')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto3');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto3);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto3'] = $namaFile;
+        } if($request->hasFile('foto4')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto4');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto4);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto4'] = $namaFile;
+        } if($request->hasFile('foto5')){
+            $tujuan_upload = public_path('monitoring-talas');
+            $file = $request->file('foto5');
+            $namaFile = Carbon::now()->format('Ymd') . $file->getClientOriginalName();
+            File::delete($tujuan_upload.'/'.MonitoringTanaman::find($id)->foto5);
+            $file->move($tujuan_upload, $namaFile);
+            $data['foto5'] = $namaFile;
+        }
+        $data['status'] = $request->status;
+
+        MonitoringTanaman::findOrFail($id)->update($data);
+        return redirect('admin/monitoring-talas/'.$t->tanaman_id)
         ->with('success',' Berhasil DiUpdate');
     }
 

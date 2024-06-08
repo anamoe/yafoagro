@@ -28,8 +28,9 @@ class MitraController extends Controller
         ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
         ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
         ->where('nama_tanaman','talas')->where('users.id',auth()->user()->id)
-        ->orderBy('tanggal','desc')
+        // ->orderBy('tanggal','asc')
         ->get();
+        // return $data;
         return view('mitra.talas',compact('data'));
     }
     public function alpukat()

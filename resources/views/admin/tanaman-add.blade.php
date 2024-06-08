@@ -24,8 +24,16 @@
                 </div>
                 <div class="form-group">
                     <label for="" class="form-label">Nama Tanaman</label>
-                    <input type="text" class="form-control @error('nama_tanaman') is-invalid @enderror" name="nama_tanaman">
+                    <select name="nama_tanaman" class="form-control">
+                        <option value="Talas">Talas</option>
+                        <!-- <option value="Alpukat">Alpukat</option> -->
+                    </select>
+
                 </div>
+                <!-- <div class="form-group">
+                    <label for="" class="form-label">Nama Tanaman</label>
+                    <input type="text" class="form-control @error('nama_tanaman') is-invalid @enderror" name="nama_tanaman">
+                </div> -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

@@ -57,8 +57,16 @@ Route::middleware(['role:admin'])->group(function () {
 
         Route::resource('tanaman', TanamanController::class);
         Route::get('tanaman/{id}/delete', [TanamanController::class, 'destroy']);
+        Route::get('create-monitoring-tanaman/{id}', [TanamanController::class, 'create_monitoring_tanaman']);
+        
+        Route::get('monitoring-talas/{id_tanaman}', [TalasController::class, 'index_pertanaman']);
 
         Route::resource('monitoring-talas', TalasController::class);
+       
+        
+        Route::get('monitoring-talas-pertanaman/{id}', [TalasController::class, 'edit_pertanaman']);
+        Route::patch('monitoring-talas-pertanaman/{id}', [TalasController::class, 'update_pertanaman']);
+
         Route::get('monitoring-talas/{id}/delete', [TalasController::class, 'destroy']);
 
         Route::resource('monitoring-alpukat', AlpukatController::class);
@@ -87,7 +95,12 @@ Route::middleware(['role:mitra'])->group(function () {
         Route::get('tanaman', [MitraController::class, 'tanaman']);
         Route::get('kebunku', [MitraController::class, 'kebunku']);
         Route::get('/term', function () {
-    return view('mitra.term-mitra');
-});
+            return view('mitra.term-mitra');
+        });
     });
+  
+
+});
+Route::get('/progres', function () {
+    return view('mitra.progres');
 });
