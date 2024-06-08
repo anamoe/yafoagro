@@ -131,6 +131,12 @@ class TanamanController extends Controller
 
     public function create_monitoring_tanaman($id){
         $t=Tanaman::where('id',$id)->first();
+        MonitoringTanaman::create([
+            'judul'=>'START OLAHAN, PEMUPUKAN DASAR DAN TANAM BIBIT',
+            'tanaman_id'=>$id,
+            'user_id'=>$t->user_id,
+
+        ]);
 
         MonitoringTanaman::create([
             'judul'=>'15 HARI SETELAH TANAM (HST) PEMUPUKAN STARTER',
