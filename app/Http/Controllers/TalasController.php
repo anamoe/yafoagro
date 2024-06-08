@@ -27,6 +27,7 @@ class TalasController extends Controller
     public function index_pertanaman($id_tanaman)
     {
         $tanaman = Tanaman::where('id',$id_tanaman)->first();
+        $u = User::where('id',$tanaman->user_id)->first();
         $data = MonitoringTanaman::
         leftjoin('users','monitoring_tanamen.user_id','users.id')
         ->leftjoin('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
@@ -35,7 +36,7 @@ class TalasController extends Controller
         ->get();
         // return $data;
        
-        return view('admin.monitoring.monitoringtalas',compact('data','tanaman'));
+        return view('admin.monitoring.monitoringtalas',compact('data','tanaman','u'));
     }
 
     /**

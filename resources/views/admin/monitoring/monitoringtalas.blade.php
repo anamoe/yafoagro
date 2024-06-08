@@ -6,7 +6,7 @@
         <h6 class="mb-0 text-white">Monitoring Talas -{{$tanaman->no_sertifikat}}
             <a href="{{url('admin/tanaman')}}" class="btn btn-sm float-end btn-light">Kembali</a>
         </h6>
-        <h6 class="mb-0 text-white">Nama Mitra :{{$data[0]->name}}
+        <h6 class="mb-0 text-white">Nama Mitra :{{$u->name}}
             <!-- <a href="{{url('admin/monitoring-talas/create')}}" class="btn btn-sm float-end btn-light">Add</a> -->
         </h6>
     </div>
