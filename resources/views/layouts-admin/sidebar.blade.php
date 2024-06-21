@@ -61,7 +61,7 @@
             </a>
         </li>
 
-        <li class="menu-item dropdown">
+        <!-- <li class="menu-item dropdown">
             <div class="menu-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Kebunku</div>
@@ -80,7 +80,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li> -->
 
     </ul>
 </aside>
