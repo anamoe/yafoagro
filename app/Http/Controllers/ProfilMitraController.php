@@ -56,7 +56,7 @@ class ProfilMitraController extends Controller
             'nama_rekening' => 'required',
             'no_rekening' => 'required',
             'ahli_waris' => 'required', 'kode_pos' => 'required',
-            'alamat' => 'required', 'no_hp' => 'required','upload_ktp'
+            'alamat' => 'required', 'no_hp' => 'required'
 
         ]);
         $datauser['role'] = 'mitra';
