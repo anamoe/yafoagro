@@ -53,6 +53,8 @@ Route::middleware(['role:admin'])->group(function () {
 
         Route::resource('kontak', KontakController::class);
         Route::resource('profilmitra', ProfilMitraController::class);
+        Route::get('profilmitra/{id}/delete', [ProfilMitraController::class, 'destroy']);
+
         Route::resource('akunmitra', AkunController::class);
 
         Route::resource('tanaman', TanamanController::class);

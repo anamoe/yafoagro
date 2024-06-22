@@ -46,9 +46,7 @@
                         <div class="form-group">
                             <label for="" class="form-label">Email</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror" name="email">
-                            @error('email')
-                            <div style="color: red;">{{ $message }}</div>
-                            @enderror
+                           
                         </div>
                     </div>
 
@@ -127,8 +125,8 @@
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="" class="form-label">FOTO KTP </label>
-                            <input type="file" class="form-control @error('foto_ktp') is-invalid @enderror" name="foto_ktp" accept="*\image">
+                            <label for="" class="form-label">FOTO KTP (Opsional)</label>
+                            <input type="file" class="form-control" name="foto_ktp" accept="*\image">
                         </div>
                     </div>
                 </div>

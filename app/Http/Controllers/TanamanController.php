@@ -49,7 +49,7 @@ class TanamanController extends Controller
             'jumlah_bibit'=>'required',
             'alamat_cluster'=>'required',
             'kemitraan'=>'required',  
-            'bukti_transfer'=>'required',
+            // 'bukti_transfer'=>'required',
             'luas_lahan'=>'required',
    
         ]);
@@ -125,7 +125,10 @@ class TanamanController extends Controller
     public function destroy(string $id)
     {
         //
-        Tanaman::findOrFail($id)->delete();
+        $t = Tanaman::findOrFail($id);
+        MonitoringTanaman::whereIn('tanaman_id',[$t->id])->delete();
+        $t->delete();
+
         return redirect()->back()->with('success',' Berhasil DiHapus');
     }
 
@@ -139,97 +142,97 @@ class TanamanController extends Controller
         ]);
 
         MonitoringTanaman::create([
-            'judul'=>'15 HARI SETELAH TANAM (HST) PEMUPUKAN STARTER',
+            'judul'=>'PEMUPUKAN STARTER',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'30 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'45 HARI SETELAH TANAM (HST) PEMUPUKAN STARTER',
+            'judul'=>'PEMUPUKAN STARTER',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'60 HARI SETELAH TANAM (HST) PENGGULUTAN DAN PEMUPUKAN',
+            'judul'=>'PENGGULUTAN DAN PEMUPUKAN',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'75 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'90 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'105 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'120 HARI SETELAH TANAM (HST) PEMUPUKAN DAN PENGGULUTAN TANAM',
+            'judul'=>'PEMUPUKAN DAN PENGGULUTAN TANAM',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'135 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'150 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'165 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'180 HARI SETELAH TANAM (HST) PENGGULUTAN DAN PEMUPUKAN',
+            'judul'=>'PENGGULUTAN DAN PEMUPUKAN',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'195 HARI SETELAH TANAM (HST) PEMUPUKAN ORGANIK',
+            'judul'=>'PEMUPUKAN ORGANIK',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'210 HARI SETELAH TANAM (HST) UJI SAMPING DAN PEMUPUKAN',
+            'judul'=>'UJI SAMPING DAN PEMUPUKAN',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'225 HARI SETELAH TANAM (HST) PEMUPUKAN',
+            'judul'=>'PEMUPUKAN',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'240 HARI SETELAH TANAM (HST) PANEN RAYA',
+            'judul'=>'PANEN RAYA',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MonitoringTanaman;
 use App\Models\ProfilMitra;
+use App\Models\Tanaman;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -43,7 +45,7 @@ class ProfilMitraController extends Controller
         'email' => 'required|unique:users,email',
     ], [
         'username.unique' => 'Username sudah digunakan, silakan pilih yang lain.',
-        'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
+        // 'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
         'password.min' => 'Password minimal harus 4 karakter.',
     ]);
 
@@ -152,7 +154,19 @@ class ProfilMitraController extends Controller
     public function destroy(string $id)
     {
         //
-        ProfilMitra::findOrFail($id)->delete();
+        $p = ProfilMitra::findOrFail($id);
+        $t = Tanaman::where('user_id',$p->user_id)->first();
+        if($t){
+        $m=MonitoringTanaman::where('tanaman_id',$t->id)->first();
+        if($m){
+            MonitoringTanaman::whereIn('tanaman_id',[$t->id])->delete();
+            Tanaman::whereIn('user_id',[$p->user_id])->delete();
+
+        }
+    }
+        $p->delete();
+        User::where('id',$p->user_id)->delete();
+
         return redirect()->back()->with('success', ' Berhasil DiHapus');
     }
 }

@@ -105,7 +105,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Bukti Transfer </label>
-                            <input type="file" class="form-control @error('bukti_transfer') is-invalid @enderror" name="bukti_transfer" accept="*\image">
+                            <input type="file" class="form-control" name="bukti_transfer" accept="*\image">
                         </div>
                     </div>
                 </div>
