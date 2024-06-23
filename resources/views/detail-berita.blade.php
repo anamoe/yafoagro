@@ -103,13 +103,13 @@
       transition: all 0.3s;
       text-align: center;
     }
-
+/* 
     .news .news-item img {
       max-width: 100%;
       max-height: 100%;
       border-radius: 10px;
       margin-bottom: 15px;
-    }
+    } */
 
     .news .news-item .title {
       font-size: 18px;

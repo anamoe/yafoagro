@@ -205,13 +205,13 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img style="height: 500px;width:auto; object-fit: cover;" class="d-block w-100" src="{{ asset('public/icon/1.jpeg') }}" alt="Slide 1">
+              <img style="height: 500px;width:auto; object-fit: cover;border-radius:10px" class="d-block w-100" src="{{ asset('public/icon/1.jpeg') }}" alt="Slide 1">
             </div>
             <div class="carousel-item">
-              <img style="height: 500px;width:auto; object-fit: cover;" class="d-block w-100" src="{{ asset('public/icon/4.jpg') }}" alt="Slide 2">
+              <img style="height: 500px;width:auto; object-fit: cover;border-radius:10px" class="d-block w-100" src="{{ asset('public/icon/4.jpg') }}" alt="Slide 2">
             </div>
             <div class="carousel-item">
-              <img style="height: 500px;width:auto; object-fit: cover;" class="d-block w-100" src="{{ asset('public/icon/3.jpg') }}" alt="Slide 2">
+              <img style="height: 500px;width:auto; object-fit: cover;border-radius:10px" class="d-block w-100" src="{{ asset('public/icon/3.jpg') }}" alt="Slide 2">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -254,7 +254,7 @@
 
       <div class="row">
         <div class="col-lg-6 rounded" >
-          <img src="{{url('public/tentangkami')}}/{{$tentangkami->foto}}" class="img-fluid" alt="">
+          <img src="{{url('public/tentangkami')}}/{{$tentangkami->foto}}" style="border-radius: 10px;" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 d-flex flex-column justify-contents-center" >
           <div class="content pt-4 pt-lg-0">
