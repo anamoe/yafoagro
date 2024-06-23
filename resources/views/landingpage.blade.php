@@ -37,12 +37,7 @@
       overflow-x: hidden;
     }
 
-    .container {
-      margin: 0;
-      /* padding: 0 15px; */
-      width: 100%;
-      max-width: 100%;
-    }
+    
 
     .news .news-item {
       background: #fff;
@@ -158,6 +153,7 @@
       margin: 0;
       /* Hapus margin default agar tidak ada spasi di sekitar teks */
     }
+    
   </style>
 </head>
 
@@ -167,9 +163,11 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <div class="logo me-auto">
+    <div class="containers d-flex align-items-center">
+
+    <div class="logo me-auto">
         <img src="{{url('public/logo')}}/LOGO YAFO aja.png" alt="">
-        <a href="#" style="color: green;font-family: 'Times New Roman', Times, serif;">
+        <a href="#" style="color: green;">
           YAFO AGRO INDONESIA</a>
 
       </div>
@@ -182,13 +180,15 @@
 
         </ul>
 
-      </nav><!-- .navbar -->
+      </nav>
 
       <div class="header-social-links d-flex align-items-center">
         <a href="{{url('login')}}">
           <button class="btn btn-success" style="background-color: #FDBB26;color:green">MASUK</button>
         </a>
       </div>
+    </div>
+    
       <i class="bi bi-list mobile-nav-toggle"></i>
 
     </div>

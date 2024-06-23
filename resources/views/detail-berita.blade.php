@@ -95,7 +95,36 @@
       /* Menyesuaikan tinggi peta */
       border: none;
     }
+    .news .news-item {
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      transition: all 0.3s;
+      text-align: center;
+    }
 
+    .news .news-item img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .news .news-item .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .news .news-item .title a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .news .news-item .title a:hover {
+      color: green;
+    }
   </style>
 </head>
 
@@ -104,6 +133,7 @@
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
+    <div class="containers d-flex align-items-center">
       <div class="logo me-auto">
         <img src="{{url('public/logo')}}/LOGO YAFO aja.png" alt="">
         <a href="#" style="color: green;font-family: 'Times New Roman', Times, serif;">
@@ -126,13 +156,15 @@
           <button class="btn btn-success" style="background-color: #FDBB26;color:green">MASUK</button>
         </a>
       </div>
+    </div>
       <i class="bi bi-list mobile-nav-toggle"></i>
 
     </div>
   </header>
 
  <!-- ======= News Section ======= -->
- <section id="about" class="about">
+  <br><br>
+ <section id="news" class="news">
       <div class="container">
         <div class="section-title mt-5" >
         <h2 style="color: green;font-weight:bold">Berita Artikel</h2>
@@ -147,7 +179,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="news-item">
               <img style="border-radius: 10px;" src="{{url('public/berita')}}/{{$article->foto}}" class="img-fluid" alt="{{$article->judul}}">
-              <h4 class="title"><a href="{{$article->link}}" style="color: green;">{{$article->judul}}</a></h4>
+              <p ><a href="{{$article->link}}" style="color: green;">{{$article->judul}}</a></p>
             </div>
           </div>
           @endforeach

@@ -13,11 +13,38 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #444444;
 }
+.container {
+  margin: 0;
+  /* padding: 0 15px; */
+  width: 100%;
+  max-width: 100%;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+}
 
+.containers {
+  margin: 0;
+  /* padding: 0 15px; */
+  width: 100%;
+  max-width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .containers {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+}
 
 a {
   color: white;
   text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 a:hover {
@@ -79,17 +106,29 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+/* #header {
   height: 72px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
   background: white;
-  border-bottom: 2px solid;
-}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+} */
 
+#header {
+  height: 72px;
+  transition: all 0.5s;
+  z-index: 997;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #header.header-scrolled {
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #header .logo h1 {

@@ -133,6 +133,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
+    <div class="containers d-flex align-items-center">
       <div class="logo me-auto">
         <img src="{{url('public/logo')}}/LOGO YAFO aja.png" alt="">
         <a href="#" style="color: green;font-family: 'Times New Roman', Times, serif;">
@@ -155,6 +156,7 @@
           <button class="btn btn-success" style="background-color: #FDBB26;color:green">MASUK</button>
         </a>
       </div>
+    </div>
       <i class="bi bi-list mobile-nav-toggle"></i>
 
     </div>
@@ -231,7 +233,7 @@
       <br />
 
 
-      <div class="">
+      <div class="container">
         <h4 style="color: green;">VISI</h4>
 
         <div class="underline" style="  width: 100%;
