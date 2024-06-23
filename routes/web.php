@@ -31,6 +31,7 @@ Route::get('tanaman/{user_id}', [TalasController::class, 'getTanamans']);
 
 
 Route::get('/', [LandingPageController::class, 'index']);
+Route::get('/landingpage-profil', [LandingPageController::class, 'index_profil']);
 Route::get('/detail-berita', [LandingPageController::class, 'detailberita']);
 Route::get('/detail-galeri', [LandingPageController::class, 'detailgaleri']);
 Route::get('/tentangkami', [LandingPageController::class, 'tentangkami']);

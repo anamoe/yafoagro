@@ -85,7 +85,7 @@ h6 {
   z-index: 997;
   transition: all 0.5s;
   background: white;
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
 }
 
 #header.header-scrolled {
@@ -433,7 +433,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 0px 0;
   overflow: hidden;
 }
 
@@ -443,7 +443,7 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .section-title h2 {
@@ -464,13 +464,14 @@ section {
 --------------------------------------------------------------*/
 .about {
   padding: 0;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .about .container {
   background-color: #f7f8f9;
   padding: 60px 50px;
 }
+
 
 @media (max-width: 992px) {
   .about .container {
