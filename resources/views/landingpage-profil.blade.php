@@ -133,30 +133,30 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-    <div class="containers d-flex align-items-center">
-      <div class="logo me-auto">
-        <img src="{{url('public/logo')}}/LOGO YAFO aja.png" alt="">
-        <a href="#" style="color: green;font-family: 'Times New Roman', Times, serif;">
-          YAFO AGRO INDONESIA</a>
+      <div class="containers d-flex align-items-center">
+        <div class="logo me-auto">
+          <img src="{{url('public/logo')}}/LOGO YAFO aja.png" alt="">
+          <a href="#" style="color: green;font-family: 'Times New Roman', Times, serif;">
+            YAFO AGRO INDONESIA</a>
 
+        </div>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto " href="{{url('/')}}">Beranda</a></li>
+            <li><a class="nav-link scrollto active" href="#">Profil</a></li>
+            <li><a class="nav-link scrollto" href="{{url('detail-berita')}}">Berita dan Artikel</a></li>
+
+          </ul>
+
+        </nav><!-- .navbar -->
+
+        <div class="header-social-links d-flex align-items-center">
+          <a href="{{url('login')}}">
+            <button class="btn btn-success" style="background-color: #FDBB26;color:green">MASUK</button>
+          </a>
+        </div>
       </div>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto " href="{{url('/')}}">Beranda</a></li>
-          <li><a class="nav-link scrollto active" href="#">Profil</a></li>
-          <li><a class="nav-link scrollto" href="{{url('detail-berita')}}">Berita dan Artikel</a></li>
-
-        </ul>
-
-      </nav><!-- .navbar -->
-
-      <div class="header-social-links d-flex align-items-center">
-        <a href="{{url('login')}}">
-          <button class="btn btn-success" style="background-color: #FDBB26;color:green">MASUK</button>
-        </a>
-      </div>
-    </div>
       <i class="bi bi-list mobile-nav-toggle"></i>
 
     </div>
@@ -170,6 +170,8 @@
   <section id="about" class="about">
     <div class="container">
       <center>
+        <br>
+        <br>
         <h2 style="color: green;font-weight:bold">PROPERTY</h2>
         <h5 style="color: green;font-weight:bold">PT. YAFO AGRO INDONESIA</h5>
         <br>
@@ -220,7 +222,7 @@
   <!-- End About Section -->
 
 
-  <section id="services" class="services section-bg">
+  <section id="services" class="services">
     <div class="container">
       <center>
         <h3 style="color: green;font-weight:bold">VISI & MISI</h3>
@@ -228,38 +230,41 @@
             height: 2px;
             background-color:#FDBB26;
             margin-top: 10px; "></div>
-
       </center>
       <br />
 
 
       <div class="container">
-        <h4 style="color: green;">VISI</h4>
+        <div class="content pt-4 pt-lg-0 ml-1 mr-2">
+          <h5 style="color: green;">VISI</h5>
 
-        <div class="underline" style="  width: 100%;
-            height: 2px;
-            background-color:gray;
-            margin-top: 10px; "></div>
-        <div class="icon-box icon-box-green">
-          <ol>
-            <h5>
-              <p class="description" style="color: green; text-align:justify-center;">
-                {{$visi->isi}}
-              </p>
-            </h5>
-          </ol>
-        </div>
-        <br />
-        <div class="">
-          <h4 style="color: green;">MISI</h4>
           <div class="underline" style="  width: 100%;
             height: 2px;
             background-color:gray;
-            margin-top: 10px; "></div>
-          <h5>
+            margin-top: 0px; "></div>
+            <div class="row">
+          <div class="icon-box icon-box-green">
+            <ol>
+              <h5>
+                <p class="description" style="color: green; text-align:justify-center;">
+                  {{$visi->isi}}
+                </p>
+              </h5>
+            </ol>
+          </div>
+          </div>
         </div>
+        <div class="content pt-4 pt-lg-0 ml-1 mr-2">
 
-        <div class="row">
+          <div class="container">
+            <h5 style="color: green;">MISI</h5>
+            <div class="underline" style="  width: 100%;
+            height: 2px;
+            background-color:gray;
+            margin-top: 0px; "></div>
+            <h5>
+          </div>
+           <div class="row">
           @foreach($misi as $v)
           <div class="icon-box icon-box-green">
             <ol>
@@ -277,26 +282,27 @@
   </section><!-- End Services Section -->
 
   <section id="news" class="news">
-        <div class="container">
-          <div class="section-title" >
-            <h2 style="color: green;font-weight:bold">GALERI</h2>
-            <div class="underline" style="  width: 100%;
+    <div class="container">
+      <div class="section-title">
+        <br>
+        <h2 style="color: green;font-weight:bold">GALERI</h2>
+        <div class="underline" style="  width: 100%;
             height: 2px;
             background-color:#FDBB26;
-            margin-top: 10px; "></div>
-          </div>
-          <div class="row">
-            @foreach($portfolio as $article)
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="news-item">
-                <img src="{{url('public/portfolio')}}/{{$article->foto}}" class="img-fluid" alt="">
-              </div>
-            </div>
-            @endforeach
-
+            margin-top: -15px; "></div>
+      </div>
+      <div class="row">
+        @foreach($portfolio as $article)
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="news-item">
+            <img src="{{url('public/portfolio')}}/{{$article->foto}}" class="img-fluid" alt="">
           </div>
         </div>
-      </section><!-- End News Section -->
+        @endforeach
+
+      </div>
+    </div>
+  </section><!-- End News Section -->
 
   <!-- ======= Footer ======= -->
   <footer class="footer">
@@ -304,23 +310,32 @@
       <div class="row">
         <div class="col-md-6">
           <div class="contact-info">
-            <p><i class="bi bi-envelope"></i> info@example.com</p>
-            <p><i class="bi bi-phone"></i> (021) 12345678</p>
-            <p><i class="bi bi-map"></i> Jl. Contoh No. 123, Jakarta, Indonesia</p>
+            <p><i class="bi bi-envelope"></i> {{$email->isi}}</p>
+            <!-- <p><i class="bi bi-phone"></i>  {{$telp->isi}}</p> -->
+            <p><i class="bi bi-map"></i> {{$lokasi->isi}}</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="contact-info">
             <p>IKUTI KAMI</p>
-            <p><i class="bi bi-tiktok"></i> @yafoagro_indonesia</p>
-            <p> <i class="bi bi-instagram"></i> @yafoagroindonesia</p>
-            <p> <i class="bi bi-globe"></i> yafoagro.com</p>
+            <p>
+              <a href="https://www.tiktok.com/@yafoagro_indonesia" style="color: blue;">
+                <i class="bi bi-tiktok"></i> @yafoagro_indonesia</a>
+            </p>
+            <p>
+            <a href="https://www.instagram.com/yafoagroindonesia" style="color: blue;">
+            <i class="bi bi-instagram"></i> @yafoagroindonesia</a>
+            </p>
+            <p>
+            <a href="https://yafoagro.com/" style="color: blue;">
+            <i class="bi bi-globe"></i> yafoagro.com</a>
+            </p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="map">
-          <h5 style="font-weight: bold;">
-            Lokasi
+            <h5 style="font-weight: bold;">
+              Lokasi
 
             </h5>
             {!! $maps->isi!!}

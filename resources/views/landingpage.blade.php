@@ -573,7 +573,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="news-item">
-            <img src="{{url('public/icon')}}/312.png" class="img-fluid" alt="">
+            <img src="{{url('public/icon')}}/30.png" class="img-fluid" alt="">
             <h4 class="title" style="color: green;">MAKANAN OLAHAN</h4>
             <p class="" style="color: green;">Talas Pratama dapat diolah
               menjadi berbagai produk
@@ -590,7 +590,7 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="news-item">
-            <img src="{{url('public/icon')}}/30.png" class="img-fluid" alt="">
+            <img src="{{url('public/icon')}}/332.png" class="img-fluid" alt="">
             <h4 class="title" style="color: green;"> TALAS FROZEN</h4>
             <p class="" style="color: green;">Talas Pratama ini bisa juga
               diolah menjadi makanan yang
@@ -644,17 +644,26 @@
       <div class="row">
         <div class="col-md-6">
           <div class="contact-info">
-            <p><i class="bi bi-envelope"></i> info@example.com</p>
-            <p><i class="bi bi-phone"></i> (021) 12345678</p>
-            <p><i class="bi bi-map"></i> Jl. Contoh No. 123, Jakarta, Indonesia</p>
+          <p><i class="bi bi-envelope"></i> {{$email->isi}}</p>
+            <!-- <p><i class="bi bi-phone"></i>  {{$telp->isi}}</p> -->
+            <p><i class="bi bi-map"></i> {{$lokasi->isi}}</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="contact-info">
             <p>IKUTI KAMI</p>
-            <p><i class="bi bi-tiktok"></i> @yafoagro_indonesia</p>
-            <p> <i class="bi bi-instagram"></i> @yafoagroindonesia</p>
-            <p> <i class="bi bi-globe"></i> yafoagro.com</p>
+            <p>
+              <a href="https://www.tiktok.com/@yafoagro_indonesia" style="color: blue;">
+                <i class="bi bi-tiktok"></i> @yafoagro_indonesia</a>
+            </p>
+            <p>
+            <a href="https://www.instagram.com/yafoagroindonesia" style="color: blue;">
+            <i class="bi bi-instagram"></i> @yafoagroindonesia</a>
+            </p>
+            <p>
+            <a href="https://yafoagro.com/" style="color: blue;">
+            <i class="bi bi-globe"></i> yafoagro.com</a>
+            </p>
           </div>
         </div>
         <div class="col-md-3">
