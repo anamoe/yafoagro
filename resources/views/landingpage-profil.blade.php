@@ -249,7 +249,7 @@
             <div class="icon-box icon-box-green">
               <ol>
                 <h5>
-                  <p class="description" style="color: green; text-align:justify-center;">
+                  <p class="description" style="color: green; text-align:justify-center;margin-left:-10px">
                     {{$visi->isi}}
                   </p>
                 </h5>
@@ -271,7 +271,7 @@
               <div class="icon-box icon-box-green">
                 <ol>
                   <h5>
-                    <p class="description" style="color: green; text-align:justify-center;">
+                    <p class="description" style="color: green; text-align:justify-center;margin-left: -10px;">
                       {{$v->isi}}
                     </p>
                   </h5>
