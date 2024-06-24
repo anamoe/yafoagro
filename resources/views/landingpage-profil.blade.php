@@ -235,50 +235,52 @@
 
 
       <div class="container">
-        <div class="content pt-4 pt-lg-0 ml-1 mr-2">
-          <h5 style="color: green;">VISI</h5>
-
-          <div class="underline" style="  width: 100%;
-            height: 2px;
-            background-color:gray;
-            margin-top: 0px; "></div>
-            <div class="row">
-          <div class="icon-box icon-box-green">
-            <ol>
-              <h5>
-                <p class="description" style="color: green; text-align:justify-center;">
-                  {{$visi->isi}}
-                </p>
-              </h5>
-            </ol>
-          </div>
-          </div>
-        </div>
-        <div class="content pt-4 pt-lg-0 ml-1 mr-2">
+        <div class="content pt-4 pt-lg-0 mr-2">
 
           <div class="container">
-            <h5 style="color: green;">MISI</h5>
+            <h5 style="color: green;">VISI</h5>
             <div class="underline" style="  width: 100%;
+                height: 2px;
+                background-color:gray;
+                margin-top: 0px; "></div>
+            <h5>
+          </div>
+          <div class="row">
+            <div class="icon-box icon-box-green">
+              <ol>
+                <h5>
+                  <p class="description" style="color: green; text-align:justify-center;">
+                    {{$visi->isi}}
+                  </p>
+                </h5>
+              </ol>
+            </div>
+          </div>
+          <div class="content pt-4 pt-lg-0 mr-2">
+
+            <div class="container">
+              <h5 style="color: green;">MISI</h5>
+              <div class="underline" style="  width: 100%;
             height: 2px;
             background-color:gray;
             margin-top: 0px; "></div>
-            <h5>
-          </div>
-           <div class="row">
-          @foreach($misi as $v)
-          <div class="icon-box icon-box-green">
-            <ol>
               <h5>
-                <p class="description" style="color: green; text-align:justify-center;">
-                  {{$v->isi}}
-                </p>
-              </h5>
-            </ol>
-          </div>
-          @endforeach
-        </div>
+            </div>
+            <div class="row">
+              @foreach($misi as $v)
+              <div class="icon-box icon-box-green">
+                <ol>
+                  <h5>
+                    <p class="description" style="color: green; text-align:justify-center;">
+                      {{$v->isi}}
+                    </p>
+                  </h5>
+                </ol>
+              </div>
+              @endforeach
+            </div>
 
-      </div>
+          </div>
   </section><!-- End Services Section -->
 
   <section id="news" class="news">
@@ -323,12 +325,12 @@
                 <i class="bi bi-tiktok"></i> @yafoagro_indonesia</a>
             </p>
             <p>
-            <a href="https://www.instagram.com/yafoagroindonesia" style="color: blue;">
-            <i class="bi bi-instagram"></i> @yafoagroindonesia</a>
+              <a href="https://www.instagram.com/yafoagroindonesia" style="color: blue;">
+                <i class="bi bi-instagram"></i> @yafoagroindonesia</a>
             </p>
             <p>
-            <a href="https://yafoagro.com/" style="color: blue;">
-            <i class="bi bi-globe"></i> yafoagro.com</a>
+              <a href="https://yafoagro.com/" style="color: blue;">
+                <i class="bi bi-globe"></i> yafoagro.com</a>
             </p>
           </div>
         </div>
