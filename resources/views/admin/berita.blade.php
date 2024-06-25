@@ -10,7 +10,7 @@
     <div class="card-body">
 
         <div class="table-responsive mt-3">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -25,7 +25,7 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->judul}}</td>
                         <td>
-                        <img src="{{asset('public/berita/'.$item->foto)}}" width="50" alt="">
+                            <img src="{{asset('public/berita/'.$item->foto)}}" width="50" alt="">
 
                         </td>
                         <td>
@@ -35,14 +35,18 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="6" class="text-center">Tidak ada data</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center">KOSONG</td>
+                        <td class="text-center"></td>
+
                     </tr>
                     @endforelse
                 </tbody>
             </table>
 
         </div>
-        
+
     </div>
 </div>
 

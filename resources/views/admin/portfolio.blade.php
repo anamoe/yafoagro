@@ -10,7 +10,7 @@
     <div class="card-body">
 
         <div class="table-responsive mt-3">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -33,7 +33,9 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="6" class="text-center">Tidak ada data</td>
+                        <td class="text-center"></td>
+                        <td class="text-center">KOSONG</td>
+                        <td class="text-center"></td>
                     </tr>
                     @endforelse
                 </tbody>

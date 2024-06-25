@@ -42,7 +42,7 @@
     <!-- Helpers -->
     <script src="{{url('public/sneat')}}/assets/vendor/js/helpers.js"></script>
     <link rel="stylesheet" href="{{asset('public/arfa/toastr/toastr.min.css') }}">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
@@ -185,7 +185,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- <script src="{{asset('arfa/toastr/toastr.min.js') }}"></script> -->
     <script src="{{url('public/arfa/toastr')}}/toastr.min.js"></script>
-
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
     <script>
     toastr.options.timeOut = 1500;
     toastr.options.showMethod = 'slideDown';
@@ -196,6 +196,9 @@
     @elseif(session()->has('error'))
         toastr.error('{{session()->get("error")}}')
     @endif
+</script>
+<script>
+     new DataTable('#myTable');
 </script>
 
  
