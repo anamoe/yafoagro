@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('no_hp',15);
             $table->string('no_rekening',20);
             $table->string('nama_rekening');
-            $table->string('foto_ktp');
+            $table->string('foto_ktp')->nullable();
             $table->timestamps();
         });
 
