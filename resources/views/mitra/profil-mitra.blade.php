@@ -126,6 +126,9 @@
     <div class="content">
     <div class="card custom-card rounded" style="background-color: #f0f0f0;margin:20px;border-radius:40px">
     <div class="card-body">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editModal">
+                Edit Profil
+            </button>
         <ul class="list-group list-group-flush">
           
         <span style="color: black; ">Username</span> <span style="color: green;font-weight: bold;">{{$data->username}}</span><br>
@@ -142,12 +145,38 @@
         <span style="color: black; ">No.Rekening</span> <span style="color: green;font-weight: bold;">{{$data->no_rekening}}</span><br>
        
         </ul>
+        
+    </div>
+</div>                 
+        </div>
+        <!-- Modal untuk update data username dan password -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Profil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ url('profil', $data->id) }}">
+                    @csrf
+                    @method('post')
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" value="{{$data->username}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Update Profil</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-
-
-                 
-        </div>
 
         <div class="bottom-nav">
             <a href="{{'dashboard'}}">
@@ -171,6 +200,17 @@
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{{url('public/arfa/toastr/toastr.min.js')}}"></script>
+        <script>
+    toastr.options.timeOut = 1500;
+    toastr.options.showMethod = 'slideDown';
+    toastr.options.hideMethod = 'slideUp';
+    toastr.options.closeMethod = 'slideUp';
+    @if(session()->has('success'))
+        toastr.success('{{session()->get("success")}}')
+    @elseif(session()->has('error'))
+        toastr.error('{{session()->get("error")}}')
+    @endif
+</script>
        
 </body>
 

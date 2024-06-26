@@ -37,17 +37,24 @@ class ProfilMitraController extends Controller
     {
         //
         // return $request;
-       
-    $datauser = $request->validate([
-        'name' => 'required',
-        'username' => 'required|unique:users,username',
-        'password' => 'required|min:4',
-        'email' => 'required|unique:users,email',
-    ], [
-        'username.unique' => 'Username sudah digunakan, silakan pilih yang lain.',
-        // 'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
-        'password.min' => 'Password minimal harus 4 karakter.',
-    ]);
+
+        $datauser = $request->validate([
+            'name' => 'required',
+            'username' => 'required',
+            'password' => 'required|min:4',
+            'email' => 'required',
+        ], [
+            // 'username.unique' => 'Username sudah digunakan, silakan pilih yang lain.',
+            // 'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
+            'password.min' => 'Password minimal harus 4 karakter.',
+        ]);
+        $user = User::where('username',$request->username)->first();
+
+        if($user){
+            return redirect()->back()
+            ->with('error', ' username sudah ada');
+
+        }
 
         $data = $request->validate([
 
@@ -117,13 +124,13 @@ class ProfilMitraController extends Controller
             'name' => 'required', 'username' => 'required',
 
         ]);
-        
+
         $data = $request->validate([
 
             'nik' => 'required',
             'tgl_lahir' => 'required', 'tempat_lahir' => 'required',
             'nama_rekening' => 'required',
-            'no_rekening' => 'required','ahli_waris' => 
+            'no_rekening' => 'required', 'ahli_waris' =>
             'required', 'kode_pos' => 'required',
             'alamat' => 'required', 'no_hp' => 'required',
 
@@ -154,18 +161,35 @@ class ProfilMitraController extends Controller
     public function destroy(string $id)
     {
         //
-        $p = ProfilMitra::findOrFail($id);
-        $t = Tanaman::where('user_id',$p->user_id)->first();
-        if($t){
-        $m=MonitoringTanaman::where('tanaman_id',$t->id)->first();
-        if($m){
-            MonitoringTanaman::whereIn('tanaman_id',[$t->id])->delete();
-            Tanaman::whereIn('user_id',[$p->user_id])->delete();
+        //     $p = ProfilMitra::findOrFail($id);
+        //     $t = Tanaman::where('user_id',$p->user_id)->first();
+        //     if($t){
+        //     $m=MonitoringTanaman::where('tanaman_id',$t->id)->first();
+        //     if($m){
+        //         MonitoringTanaman::whereIn('tanaman_id',[$t->id])->delete();
+        //         Tanaman::whereIn('user_id',[$p->user_id])->delete();
 
+        //     }
+        // }
+        //     $p->delete();
+        //     User::where('id',$p->user_id)->delete();
+        $p = ProfilMitra::findOrFail($id);
+
+        // Step 1: Retrieve all related plants
+        $tanamans = Tanaman::where('user_id', $p->user_id)->get();
+
+        foreach ($tanamans as $tanaman) {
+            // Step 2: Delete all related monitoring records for each plant
+            MonitoringTanaman::where('tanaman_id', $tanaman->id)->delete();
         }
-    }
+
+        // Step 3: Delete all related plants
+        Tanaman::where('user_id', $p->user_id)->delete();
+
+        // Step 4: Delete the profile
         $p->delete();
-        User::where('id',$p->user_id)->delete();
+            User::where('id',$p->user_id)->delete();
+
 
         return redirect()->back()->with('success', ' Berhasil DiHapus');
     }

@@ -87,7 +87,7 @@ class AuthController extends Controller
         if($request->password){
             auth()->user()->update([
                 'password'=> bcrypt($request->password),
-                'name'=>$request->name,
+                // 'name'=>$request->name,
                 'username'=>$request->username,
             ]);
 
@@ -104,7 +104,7 @@ class AuthController extends Controller
             // }
             // // return $req;
             auth()->user()->update([
-                'name'=>$request->name,
+                // 'name'=>$request->name,
                 'username'=>$request->username,
             ]);
         }
