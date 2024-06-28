@@ -33,6 +33,15 @@ class MitraController extends Controller
         // return $data;
         return view('mitra.talas',compact('data'));
     }
+
+    public function list_talas(){
+        $datas =Tanaman::
+        where('nama_tanaman','talas')->where('users.id',auth()->user()->id)
+        ->orderBy('id','desc')
+        ->get();
+        // return $data;
+        return view('mitra.list-talas',compact('datas'));
+    }
     public function alpukat()
     {
         return view('mitra.alpukat');
