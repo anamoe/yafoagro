@@ -188,7 +188,7 @@
             <i class="fas fa-home"></i><br>
             Kebunku
         </a>
-        <a href="{{ 'profil-mitra' }}">
+        <a href="{{url('mitra/profil-mitra' )}}">
             <i class="fas fa-user"></i><br>
             Profil
         </a>
