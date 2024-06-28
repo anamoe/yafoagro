@@ -131,6 +131,7 @@
             </button>
         <ul class="list-group list-group-flush">
           
+        <span style="color: black; ">Nama Lengkap</span> <span style="color: green;font-weight: bold;">{{$data->name}}</span><br>
         <span style="color: black; ">Username</span> <span style="color: green;font-weight: bold;">{{$data->username}}</span><br>
         <span style="color: black; ">Email</span> <span style="color: green;font-weight: bold;">{{$data->email}}</span><br>
         <span style="color: black; ">NIK</span> <span style="color: green;font-weight: bold;">{{$data->nik}}</span><br>

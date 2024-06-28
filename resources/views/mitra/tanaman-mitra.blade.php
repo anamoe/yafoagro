@@ -125,6 +125,7 @@
     </div>
     <div class="content">
     <div class="card custom-card rounded" style="background-color: #f0f0f0;margin:20px;border-radius:40px">
+        @foreach($datas as $data)
     <div class="card-body">
         <ul class="list-group list-group-flush">
           
@@ -141,6 +142,8 @@
        
         </ul>
     </div>
+    @endforeach
+
 </div>
 
 

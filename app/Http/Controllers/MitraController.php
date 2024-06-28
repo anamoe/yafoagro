@@ -65,8 +65,8 @@ class MitraController extends Controller
     }
 
     public function tanaman()
-    {  $data = Tanaman::where('user_id',auth()->user()->id)->first();
+    {  $datas = Tanaman::where('user_id',auth()->user()->id)->orderBy('id','desc')->get();
 
-        return view('mitra.tanaman-mitra',compact('data'));
+        return view('mitra.tanaman-mitra',compact('datas'));
     }
 }
