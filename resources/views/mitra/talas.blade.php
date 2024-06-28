@@ -160,9 +160,11 @@
 <body>
     <div class="topbar">
         <h2>KEBUNKU</h2>
+        <h5>{{$datas->nama_tanaman}} - {{$datas->no_sertifikat}}</h5>
     </div>
 
     <div class="content">
+        
         <div class="container mt-4">
             <ul class="list-group">
                 @foreach($data as $item)

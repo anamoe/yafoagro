@@ -166,6 +166,8 @@
     <div class="content">
     @foreach($datas as $data)
 
+    <a href="{{url('mitra/list-talas/'.$data->id)}}">
+
         <div class="card custom-card rounded" style="background-color: #f0f0f0;margin:20px;border-radius:40px">
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -176,6 +178,7 @@
             </div>
 
         </div>
+        </a>
         @endforeach
 
     </div>

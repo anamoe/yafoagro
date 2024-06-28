@@ -88,7 +88,7 @@ Route::middleware(['role:mitra'])->group(function () {
     Route::prefix('mitra')->group(function () {
 
         Route::get('dashboard', [MitraController::class, 'dashboard']);
-        Route::get('talas', [MitraController::class, 'talas']);
+        Route::get('list-talas/{id_tanaman}', [MitraController::class, 'talas']);
         Route::get('list-talas', [MitraController::class, 'list_talas']);
         Route::get('alpukat', [MitraController::class, 'alpukat']);
         Route::get('profil-mitra', [MitraController::class, 'profilmitra']);

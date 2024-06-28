@@ -169,7 +169,7 @@
                     <div class="col-6 col-md-6 mb-1">
                         <div class="inner-card text-center">
                             <div class="card-body">
-                                <a href="{{url('mitra/talas')}}">
+                                <a href="{{url('mitra/list-talas')}}">
 
                                     <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
                                         <div class="card-body d-flex justify-content-center align-items-center">

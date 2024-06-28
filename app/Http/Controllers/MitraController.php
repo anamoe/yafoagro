@@ -22,21 +22,25 @@ class MitraController extends Controller
         return view('mitra.dashboard-mitra',compact('maps'));
     }
 
-    public function talas(){
+    public function talas($id_tanaman){
         $data = MonitoringTanaman::
         join('users','monitoring_tanamen.user_id','users.id')
         ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
         ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
-        ->where('nama_tanaman','talas')->where('users.id',auth()->user()->id)
+        ->where('nama_tanaman','talas')->where('tanamen.id',$id_tanaman)
         // ->orderBy('tanggal','asc')
         ->get();
+        $datas =Tanaman::
+        where('nama_tanaman','talas')->where('id',$id_tanaman)
+        ->orderBy('id','desc')
+        ->first();
         // return $data;
-        return view('mitra.talas',compact('data'));
+        return view('mitra.talas',compact('data','datas'));
     }
 
     public function list_talas(){
         $datas =Tanaman::
-        where('nama_tanaman','talas')->where('users.id',auth()->user()->id)
+        where('nama_tanaman','talas')->where('user_id',auth()->user()->id)
         ->orderBy('id','desc')
         ->get();
         // return $data;
