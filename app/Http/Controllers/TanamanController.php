@@ -101,9 +101,14 @@ class TanamanController extends Controller
             'nama_tanaman'=>'required',
             'no_sertifikat'=>'required',
             'no_registrasi'=>'required',
+            'no_approval'=>'required',
+            'no_id_pemilik'=>'required',
             'kode_area'=>'required',
             'jumlah_bibit'=>'required',
             'alamat_cluster'=>'required',
+            'kemitraan'=>'required',  
+            // 'bukti_transfer'=>'required',
+            'luas_lahan'=>'required',
         ]);
         
         if ($request->hasFile('bukti_transfer')) {

@@ -18,10 +18,10 @@
                     <label for="" class="form-label">Judul</label>
                     <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{$data->judul}}">
                 </div>
-                <!-- <div class="form-group">
-                    <label for="" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{$data->tanggal}}">
-                </div> -->
+                <div class="form-group">
+                    <label for="" class="form-label">keterangan</label>
+                    <input type="text" class="form-control" name="keterangan" value="{{$data->keterangan}}">
+                </div>
 
                 <div class="form-group">
                 <label for="" class="form-label">Foto</label>

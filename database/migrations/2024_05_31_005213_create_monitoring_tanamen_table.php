@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('tanaman_id')->constrained();
             $table->string('judul');
-            // $table->date('tanggal');
+            $table->string('keterangan')->nullable();
             $table->string('foto1')->nullable();
             $table->string('foto2')->nullable();
             $table->string('foto3')->nullable();
