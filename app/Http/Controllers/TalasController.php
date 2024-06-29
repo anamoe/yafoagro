@@ -195,6 +195,7 @@ class TalasController extends Controller
         }
         $data['status'] = $request->status;
         $data['keterangan'] = $request->keterangan;
+
         MonitoringTanaman::findOrFail($id)->update($data);
         return redirect('admin/monitoring-talas')
         ->with('success',' Berhasil DiUpdate');
@@ -248,6 +249,8 @@ class TalasController extends Controller
             $data['foto5'] = $namaFile;
         }
         $data['status'] = $request->status;
+        $data['keterangan'] = $request->keterangan;
+
 
         MonitoringTanaman::findOrFail($id)->update($data);
         return redirect('admin/monitoring-talas/'.$t->tanaman_id)
