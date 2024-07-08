@@ -18,6 +18,9 @@
                         <th>Nama Tanaman</th>
                         <th>Nomor Sertifikat</th>
                         <th>Nomor Registrasi</th>
+                        <th>Kode Area</th>
+                        <th>Jumlah Bibit</th>
+                        <th>Kemitraan</th>
                         <th>Aksi</th>
                         <th>Monitoring</th>
                     </tr>
@@ -30,6 +33,9 @@
                         <td>{{$item->nama_tanaman}}</td>
                         <td>{{$item->no_sertifikat}}</td>
                         <td>{{$item->no_registrasi}}</td>
+                        <td>{{$item->kode_area}}</td>
+                        <td>{{$item->jumlah_bibit}}</td>
+                        <td>{{$item->kemitraan}}</td>
                         <td>
                             <a href="{{url('admin/tanaman/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary" style=" margin-bottom: 5px;">Edit</a>
                             <a href="{{url('admin/tanaman/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
