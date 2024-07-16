@@ -95,7 +95,10 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="form-label">Kemitraan </label>
-                            <input type="number" class="form-control @error('kemitraan') is-invalid @enderror" name="kemitraan">
+                            <input type="text" class="form-control @error('kemitraan') is-invalid @enderror" name="kemitraan" id="kemitraan">
+                        </div>
+                        <div>
+                            <p> <span id="formattedRupiah">Rp. 0</span></p>
                         </div>
                     </div>
                 </div>
@@ -107,6 +110,7 @@
                             <label for="" class="form-label">Bukti Transfer </label>
                             <input type="file" class="form-control" name="bukti_transfer" accept="*\image">
                         </div>
+                       
                     </div>
                 </div>
 
@@ -119,3 +123,29 @@
 </div>
 
 @endsection
+@push('js')
+<script>
+        function formatRupiah(angka, prefix) {
+            var number_string = angka.replace(/[^,\d]/g, '').toString(),
+                split = number_string.split(','),
+                sisa = split[0].length % 3,
+                rupiah = split[0].substr(0, sisa),
+                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
+
+        document.getElementById('kemitraan').addEventListener('keyup', function(e) {
+            var formattedValue = formatRupiah(this.value, 'Rp. ');
+            // this.value = formattedValue;
+            document.getElementById('formattedRupiah').innerText = formattedValue;
+        });
+    </script>
+
+@endpush

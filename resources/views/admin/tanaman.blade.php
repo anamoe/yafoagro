@@ -1,6 +1,11 @@
 @extends('layouts-admin.master')
 @section('content')
 
+<?php
+function formatRupiah($angka){
+    return 'Rp. ' . number_format($angka, 0, ',', '.');
+}
+?>
 <div class="card">
     <div class="card-header bg-primary">
         <h6 class="mb-0 text-white">Tanaman
@@ -35,7 +40,7 @@
                         <td>{{$item->no_registrasi}}</td>
                         <td>{{$item->kode_area}}</td>
                         <td>{{$item->jumlah_bibit}}</td>
-                        <td>{{$item->kemitraan}}</td>
+                        <td><?php echo formatRupiah($item->kemitraan); ?></td>
                         <td>
                             <a href="{{url('admin/tanaman/'.$item->id.'/edit')}}" class="btn btn-sm btn-primary" style=" margin-bottom: 5px;">Edit</a>
                             <a href="{{url('admin/tanaman/'.$item->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>

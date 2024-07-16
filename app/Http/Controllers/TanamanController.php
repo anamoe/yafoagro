@@ -225,7 +225,7 @@ class TanamanController extends Controller
 
         ]);
         MonitoringTanaman::create([
-            'judul'=>'UJI SAMPING DAN PEMUPUKAN',
+            'judul'=>'UJI SAMPLING DAN PEMUPUKAN',
             'tanaman_id'=>$id,
             'user_id'=>$t->user_id,
 
