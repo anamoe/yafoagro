@@ -26,6 +26,7 @@
                     <label for="" class="form-label">Nama Tanaman</label>
                     <select name="nama_tanaman" class="form-control">
                         <option value="Talas">Talas</option>
+                        <option value="Alpukat">Alpukat</option>
                         <!-- <option value="Alpukat">Alpukat</option> -->
                     </select>
 

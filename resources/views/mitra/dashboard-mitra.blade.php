@@ -21,6 +21,7 @@
             background-color: #f8f9fa;
         }
 
+
         .content {
             flex: 1;
             overflow-y: auto;
@@ -147,11 +148,13 @@
             border: none;
             background-color: transparent;
         }
+
         @media (min-width: 768px) {
-    .card-title {
-        margin-left: -100px; /* Adjust this value according to your needs */
-    }
-}
+            .card-title {
+                margin-left: -100px;
+                /* Adjust this value according to your needs */
+            }
+        }
     </style>
 </head>
 
@@ -234,7 +237,7 @@
                     </div>
 
                     <div class="col-6 col-md-3 mb-1">
-                    <div class="inner-card text-center mx-auto">
+                        <!-- <div class="inner-card text-center mx-auto">
                             <div class="card-body">
                                 <a href="{{url('mitra/term')}}">
 
@@ -249,30 +252,74 @@
                                 <h5 class="card-title">Term & Condition</h5>
                             </div>
                         </div>
+                    </div> -->
+                        <div class="inner-card text-center mx-auto">
+                            <div class="card-body">
+                                <!-- <a href="#" data-toggle="modal" data-target="#termModal"> -->
+                                @if ($showPopup)
+                                <a href="#" data-toggle="modal" data-target="#termModal">
+                                @else
+                                <a href="{{ $redirectTo }}">
+                                @endif
+
+
+                                <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%; background-color:green;">
+                                    <div class="card-body d-flex justify-content-center align-items-center">
+                                        <img src="{{ url('public/icon/term.png') }}" alt="" height="50px" width="50px">
+                                    </div>
+                                </div>
+                                </a>
+                                <h5 class="card-title">Term & Condition</h5>
+                            </div>
+                        </div>
+
+
+
                     </div>
 
                 </div>
             </div>
         </div>
-    </div>
-    <div class="bottom-nav">
-        <a href="#" class="active" style="text-decoration:underline;">
-            <i class="fas fa-home"></i><br>
-            Beranda
-        </a>
-        <a href="{{url('mitra/profil-mitra')}}">
-            <i class="fas fa-user"></i><br>
-            Profil
-        </a>
-        <a href="{{url('logout')}}">
-            <i class="fas fa-arrow-right"></i><br>
-            Keluar
-        </a>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="termModalLabel">Terms & Conditions</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        @if($showTalasButton)
+                        <a href="{{ url('mitra/term/talas') }}" class="btn btn-primary mb-2">Term Talas</a>
+                        @endif
+                        @if($showAlpukatButton)
+                        <a href="{{ url('mitra/term/alpukat') }}" class="btn btn-primary mb-2">Term Alpukat</a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="#" class="active" style="text-decoration:underline;">
+                <i class="fas fa-home"></i><br>
+                Beranda
+            </a>
+            <a href="{{url('mitra/profil-mitra')}}">
+                <i class="fas fa-user"></i><br>
+                Profil
+            </a>
+            <a href="{{url('logout')}}">
+                <i class="fas fa-arrow-right"></i><br>
+                Keluar
+            </a>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

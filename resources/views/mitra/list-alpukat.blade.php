@@ -159,43 +159,28 @@
 
 <body>
     <div class="topbar">
-        <h2>KEBUNKU</h2>
-        <h5>{{$datas->nama_tanaman}} - {{$datas->no_sertifikat}}</h5>
+        <h2>Tanaman Alpukat</h2>
     </div>
 
+    
     <div class="content">
-        
-        <div class="container mt-4">
-            <ul class="list-group">
-                @foreach($data as $item)
-                <li class="list-group-item" style="background-color:#dee0de">
-                    <div class="progress-container">
-                        <div class="progress-line {{ $item->status == 'selesai' ? 'completed' : '' }}"></div>
-                        <div class="progress-step {{ $item->status == 'selesai' ? 'completed' : '' }}"></div>
-                    </div>
+    @foreach($datas as $data)
 
-                    <div class="item-titles">{{$item->judul}}</div>
+    <a href="{{url('mitra/list-alpukat/'.$data->id)}}">
 
-                    <div class="image-container">
-                        @for($i = 1; $i <= 5; $i++)
-                        @php $foto = 'foto' . $i; @endphp
-                        @if(!is_null($item->$foto) && !empty($item->$foto))
-                        <div class="contact text-center mr-3">
-                            <a href="{{ url('public/monitoring-talas/' . $item->$foto) }}" target="_blank">
-                                <div class="card rounded">
-                                    <img src="{{ url('public/monitoring-talas/' . $item->$foto) }}" class="card-img-top" alt="...">
-                                </div>
-                            </a>
-                        </div>
-                        @else
-                        <!-- <p>{{ $foto }} kosong atau null</p> -->
-                        @endif
-                        @endfor
-                    </div>
-                </li>
-                @endforeach
-            </ul>
+        <div class="card custom-card rounded" style="background-color: #f0f0f0;margin:20px;border-radius:40px">
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+
+                    <span style="color: black; ">No. Sertifikat</span> <span style="color: green;font-weight: bold;">{{$data->no_sertifikat}}</span><br>
+                   
+                </ul>
+            </div>
+
         </div>
+        </a>
+        @endforeach
+
     </div>
 
     <div class="bottom-nav">
@@ -204,7 +189,6 @@
             Kebunku
         </a>
         <a href="{{url('mitra/profil-mitra' )}}">
-        
             <i class="fas fa-user"></i><br>
             Profil
         </a>

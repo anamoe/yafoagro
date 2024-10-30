@@ -89,8 +89,9 @@ Route::middleware(['role:mitra'])->group(function () {
 
         Route::get('dashboard', [MitraController::class, 'dashboard']);
         Route::get('list-talas/{id_tanaman}', [MitraController::class, 'talas']);
+        Route::get('list-alpukat/{id_tanaman}', [MitraController::class, 'alpukat']);
         Route::get('list-talas', [MitraController::class, 'list_talas']);
-        Route::get('alpukat', [MitraController::class, 'alpukat']);
+        Route::get('list-alpukat', [MitraController::class, 'list_alpukat']);
         Route::get('profil-mitra', [MitraController::class, 'profilmitra']);
         Route::get('info-mitra', [MitraController::class, 'infomitra']);
 
@@ -98,8 +99,11 @@ Route::middleware(['role:mitra'])->group(function () {
         Route::get('simulasi-panen', [MitraController::class, 'simulasi_panen']);
         Route::get('tanaman', [MitraController::class, 'tanaman']);
         Route::get('kebunku', [MitraController::class, 'kebunku']);
-        Route::get('/term', function () {
+        Route::get('/term/talas', function () {
             return view('mitra.term-mitra');
+        });
+        Route::get('/term/alpukat', function () {
+            return view('mitra.term-mitra-alpukat');
         });
     });
   

@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header bg-primary">
-        <h6 class="mb-0 text-white">Monitoring Talas -{{$tanaman->no_sertifikat}}
+        <h6 class="mb-0 text-white">Monitoring {{$tanaman->nama_tanaman}} -{{$tanaman->no_sertifikat}}
             <a href="{{url('admin/tanaman')}}" class="btn btn-sm float-end btn-light">Kembali</a>
         </h6>
         <h6 class="mb-0 text-white">Nama Mitra :{{$u->name}}

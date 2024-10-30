@@ -126,119 +126,168 @@
     <div class="content">
         <div class="card custom-card rounded" style="background-color: #f0f0f0;margin:10px;border-radius:40px">
             <div class="card-body">
-              <center>
-              <h5>
-              <span style="color: black; font-weight: bold; text-align: center;">
-                    KETENTUAN DAN SYARAT PEMBELIAN PAKET
-                    BIBIT TALAS PRATAMA DARI PT. YAFO AGRO INDONESIA
+                <center>
+                    <h5>
+                        <span style="color: black; font-weight: bold; text-align: center;">
+                            KETENTUAN DAN SYARAT PEMBELIAN PAKET
+                            POHON ALPUKAT DARI PT. YAFO AGRO INDONESIA (PT. YAI)
+                            <br>
+                            NOMOR: SBM/004.AL.002.24-YAI
 
-                </span>
-              </h5>
-              </center>
+
+                        </span>
+                    </h5>
+                </center>
                 <div class="text-justify" style="margin: 0 auto; max-width: 600px;">
                     <br>
                     <span style="color: black;">
-                        Ketentuan dan syarat-syarat harus ditaati dan dipatuhi oleh pembeli tanaman bibit talas pratama dan syarat-syarat lainnya yang
-                        nanti lebih lanjut disepakati bersama-sama dengan PT. YAI. Kami yang memiliki 3/sertifkat kepemilikan bibit ini
-                        secara sadar dan tanpa paksaan, bersedia dan melaksanakan semua ketentuan dan syarat pembelian bibit talas pratama atau
-                        PT. YAI sebagai berikut:
+                        Ketentuan dan syarat-syarat harus ditaati dan dipatuhi oleh pembeli tanaman pohon
+                        alpukat dan syarat-syarat lainnya yang nanti lebih lanjut disepakati bersama-sama
+                        dengan PT. YAI. Kami yang memiliki sertifkat kepemilikan pohon alpukat ini secara
+                        sadar dan tanpa paksaan, bersedia dan melaksanakan semua ketentuan dan syarat
+                        pembelian pohon alpukat atau PT. YAI sebagai berikut:
                     </span>
                     <br><br>
                     <span style="color: black;  text-align: justify;">
-                        1) Kami memahami sepenuhnya bahwa PT. YAI bukanlah sebagai lembaga investasi, dan sepenuhnya memahami bahwa dengan membeli bibit talas pratama PT. YAI, adalah sebagai penyedia bibit dengan berbagai fasilitas didalamnya seperti pencarian lahan yang sesuai, pengurusan legalitas, perawatan,
-                        penyedia tenaga ahli, dan pelaporan perkembangan pertumbuhan bibit.
+                        1) Kami memahami sepenuhnya bahwa PT. YAI bukanlah sebagai lembaga
+                        investasi, dan sepenuhnya memahami bahwa dengan membeli pohon alpukat PT.
+                        YAI, adalah sebagai penyedia pohon dengan berbagai fasilitas didalamnya seperti
+                        pencarian lahan yang sesuai, pengurusan legalitas, perawatan, penyedia tenaga
+                        ahli, dan pelaporan perkembangan pertumbuhan pohon.
+
                     </span>
                     <br><br>
                     <span style="color: black;  text-align: justify;">
-                        2) Kami bersama dengan ini pula memberikan kuasa kepada PT. YAI agar mencarikan dan menguruskan lahan tempat bibit talas pratama milik kami.
+                        2) Kami bersama dengan ini pula memberikan kuasa kepada PT. YAI agar
+                        mencarikan dan menguruskan lahan tempat pohon alpukat milik kami.
+
                     </span>
                     <br><br>
                     <span style="color: black;  text-align: justify;">
-                        3) Kami sepakat bahwa masa berkebun talas pratama sebagai bahan baku industri makanan adalah bibit talas pratama 2 dengan rata-rata berat tonase antara 1-5 Kg/umbi dengan masa panen antara 7-8 bulan dalam sekali periode tanam.
+                        3) Kami sepakat bahwa masa berkebun alpukat 10 tahun dengan rata-rata berat
+                        tonase antara 0-70 kg per pohon alpukat dengan masa panen antara setelah usia
+                        tanam 3 tahun dan masa produktif tanaman alpukat usia 3 – 10 tahun.
                     </span>
                     <br><br>
                     <span style="color: black;  text-align: justify;">
-                        4) Kami sepenuhnya memahami dan menyetujui syarat dan ketentuan pengelolaan kebun talas pratama oleh PT. YAI yaitu sebagai berikut:
-                    </span>
-                    <br>
-                    <span style="color: black; text-align: left;margin-left:10px">
-                        a. Dalam waktu 7-8 bulan masa tanam jika terjadi kematian bibit maka setiap kematian bibit akan mendapat ganti dengan bibit baru dengan penanaman ulang oleh PT. YAI
-                    </span>
-                    <br>
-                    <span style="color: black; text-align: left;margin-left:10px">
+                        4) Kami sepenuhnya memahami dan menyetujui syarat dan ketentuan pengelolaan
+                        kebun alpukat oleh PT. YAI yaitu sebagai berikut:
 
-                        b. Apabila terjadi bencana alam dan mengakibatkan kematian bibit pada masa sebelum panen akan diganti oleh PT. YAI dari jumlah bibit cadangan dari lahan cluster blok yang sama dan apabila bibit cadangan tersebut habis rusak semua dalam satu lahan petak (cluster blok) sebelum dipanen maka akan diganti dengan cadangan bibit dari lahan di tempat (cluster blok) yang lain, kemudian apabila sudah tidak ada lagi cadangan bibit yang dimiliki PT. YAI maka akan dilakukan penggantian dengan penanaman bibit yang baru.
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
+                        a. Dalam waktu 0-3 tahun masa tanam jika terjadi kematian pohon maka setiap
+                        kematian pohon akan mendapat ganti dengan pohon baru dengan penanaman
+                        ulang oleh PT. YAI
 
-                        c. Apabila tanaman bibit talas pratama hilang dikarenakan pencurian maka akan mendapatkan ganti dari bibit cadangan yang ada.
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        d. Apabila pemilik bibit/ahli warisnya akan mengalihkan kepemilikan aset bibit talas pratama kepada pihak ketiga maka wajib memberitahukan pengalihan tersebut kepada PT. YAI, untuk dapat diproses administrasi balik nama sesuai peraturan yang berlaku dan seluruh pembiayaan akibat dari hal tersebut ditanggung oleh pemilik bibit.
+                        b. Apabila terjadi bencana alam atau terkena hama dan penyakit yang
+                        mengakibatkan kematian pohon alpukat pada masa usia sebelum panen akan
+                        diganti oleh PT. YAI dari jumlah pohon cadangan
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        e. PT. YAI dikuasakan untuk menyelasaikan segala permasalahan yang terjadi di lapangan berkaitan dengan penanaman bibit talas pratama ini.
+                        c. Apabila tanaman pohon alpukat hilang dikarenakan pencurian maka akan
+                        mendapatkan ganti dari pohon cadangan yang ada
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        f. PT. YAI akan memfasilitasi penjualan hasil panen bibit talas pratama, dengan harga jual bibit talas pratama sesuai dengan harga jual pada saat masa panen.
+                        d. Apabila pemilik pohon/ahli warisnya akan mengalihkan kepemilikan aset pohon
+                        alpukat kepada pihak ketiga maka wajib memberitahukan pengalihan tersebut
+                        kepada PT. YAI, untuk dapat diproses administrasi balik nama sesuai peraturan
+                        yang berlaku dan seluruh pembiayaan akibat dari hal tersebut ditanggung oleh
+                        pemilik pohon
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        g. Untuk mempermudah proses panen dan perhitungan pembagaian hasil panen maka kami selaku pemlik bibit bersedia untuk mensyirkahkan (menggabungkan hasil panen dalam 1 hektar / cluster blok dengan pemilik bibit yang lain) yang kemudian dapat dibagikan dan dihitung berdasarkan jumiah bibit yang dimiliki masing-masing.
+                        e. PT. YAI dikuasakan untuk menyelasaikan segala permasalahan yang terjadi di
+                        lapangan berkaitan dengan penanaman pohon alpukat ini
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        h. Kami memahami dan sepakat bahwa masa panen terhitung 7-8 bulan, terhitung sejak tanggal penanaman bibit ditambah waktu proses masa panen.
+                        f. PT. YAI akan memfasilitasi penjualan hasil panen pohon alpukat, dengan harga
+                        jual pohon alpukat sesuai dengan harga jual pada saat masa panen.
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        i. Kami memahami dan sepakat untuk mendapatkan hasil panen senilai 70% untuk pemilik bibit dan 30% kepada pengelola atau PT. YAI.
+                        g. Untuk mempermudah proses panen dan perhitungan pembagaian hasil panen
+                        maka kami selaku pemlik pohon bersedia untuk mensyirkahkan
+                        (menggabungkan hasil panen dalam 1 hektar / cluster blok dengan pemilik
+                        pohon yang lain) yang kemudian dapat dibagikan dan dihitung berdasarkan
+                        jumiah pohon yang dimiliki masing-masing.
                     </span>
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        j. Kami memahami bahwa hasil panen di setiap cluster blok dapat berbeda-beda antara cluster blok satu dengan cluster blok lainnya karena faktor alam dan lingkungan yang ikut mempengaruhinya.
+                        h. Kami memahami dan sepakat bahwa masa pertumbuhan dari 0-3 tahun dan
+                        masa panen dimulai pada usia 3-10 tahun, terhitung sejak tanggal penanaman
+                        pohon ditambah waktu proses masa panen.
+                    </span>
+                    <br>
+                    <span style="color: black; text-align: left;margin-left:10px">
+
+                        i. Kami memahami dan sepakat untuk mendapatkan hasil panen senilai 50%
+                        untuk pemilik pohon dan 50% kepada pengelola atau PT. YAI.
+                    </span>
+                    <br>
+                    <span style="color: black; text-align: left;margin-left:10px">
+
+                        j. Kami memahami bahwa hasil panen di setiap cluster blok dapat berbeda-beda
+                        antara cluster blok satu dengan cluster blok lainnya karena faktor alam dan
+                        lingkungan yang ikut mempengaruhinya.
                     </span>
 
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        k. Kami memahami sepenuhnya bahwa PT. YAI tidak menjamin nilai hasil panen bibit talas pratama karena harga umbi ditentukan oleh harga pasar pada saat panen dan nilai tonase umbi.
+                        k. Kami memahami sepenuhnya bahwa PT. YAI tidak menjamin nilai hasil panen
+                        pohon alpukat karena harga ditentukan oleh harga pasar pada saat panen dan
+                        nilai tonase
 
 
                     </span>
 
                     <br>
                     <span style="color: black; text-align: left;margin-left:10px">
-                        l. Kami memahami dan menyetujui bahwa ilustrasi dalam presentasi merupakan proyeksi keuntungan berdasarkan pengalaman.
+                        l. Kami memahami dan menyetujui bahwa ilustrasi dalam presentasi merupakan
+                        proyeksi keuntungan berdasarkan pengalaman dan bukan hitungan pasti (fixed
+                        rate).
                     </span>
 
                     <br>
 
                     <span style="color: black; text-align: left;margin-left:10px">
 
-                        m. Kami memahami dan menyetujui bahwa ketika masa panen, pemilik bibit bisa ikut terlibat dalam memasarkan/menjual umbi talas pratama miliknya dan PT. YAI memfasilitasi prosesnya termasuk ikut juga mencarikan pembelinya dengan ketentuan, pembeli diputuskan berdasarkan penawaran harga tertinggi.
+                        m. Kami memahami dan menyetujui bahwa ketika masa panen, pemilik pohon bisa
+                        ikut terlibat dalam memasarkan/menjual buah alpukat miliknya dan PT. YAI
+                        memfasilitasi prosesnya termasuk ikut juga mencarikan pembelinya dengan
+                        ketentuan, pembeli diputuskan berdasarkan penawaran harga tertinggi.
+
                     </span>
 
                     <br>
                     <br>
 
                     <span style="color: black;  text-align: justify;">
-                        5) Kami memahami dan menyetujui bahwa dana pembelian bibit yang sudah dibayarkan kepada PT. YAI tidak bisa ditarik kembali apabila telah melewati masa tenggang 7 (tujuh) hari, kecuali diperjual belikan/di-takeover kepada pihak ketiga dengan sepengetahuan PT. YAI.
+                        5) Kami memahami dan menyetujui bahwa dana pembelian bibit yang sudah dibayarkan kepada
+                         PT. YAI tidak bisa ditarik kembali apabila telah melewati masa tenggang 7 (tujuh) hari, 
+                         kecuali diperjual belikan/di-takeover kepada pihak ketiga dengan sepengetahuan PT. YAI.
                     </span>
                     <br><br>
                     <span style="color: black;  text-align: justify;">
-                        6) Hal-hal yang dapat dianggap sebagai Force Majeure dalam perjanjian ini adalah perang, huru-hara besar yang melumpuhkan sendi-sendi pemerintahan negara, dan kebijakan pemerintah yang secara resmi berkaitan langsung dengan pelaksanaan pekerjaan ini dan secara wajar tidak dapat dihindari karena berada diluar kemampuan para pihak, sehingga salah satu pihak atau kedua pihak tidak dapat melaksanakan hak dan kewajibannya.
+                        6) Hal-hal yang dapat dianggap sebagai Force Majeure dalam perjanjian ini adalah perang, 
+                        huru-hara besar yang melumpuhkan sendi-sendi pemerintahan negara, dan kebijakan pemerintah
+                         yang secara resmi berkaitan langsung dengan pelaksanaan pekerjaan ini dan secara wajar 
+                         tidak dapat dihindari karena berada diluar kemampuan para pihak, sehingga salah satu pihak 
+                         atau kedua pihak tidak dapat melaksanakan hak dan kewajibannya.
                     </span>
                     <br><br>
                     <span style="color: black;  text-align: justify;">
@@ -259,12 +308,11 @@
     </div>
 
     <div class="bottom-nav">
-    <a href="{{url('mitra/dashboard')}}" class="active" style="text-decoration:underline;">
-
+        <a href="{{url('mitra/dashboard')}}" class="active" style="text-decoration:underline;">
             <i class="fas fa-home"></i><br>
             Beranda
         </a>
-        <a href="{{url('mitra/profil-mitra')}}" >
+        <a href="{{url('mitra/profil-mitra')}}">
             <i class="fas fa-user"></i><br>
             Profil
         </a>

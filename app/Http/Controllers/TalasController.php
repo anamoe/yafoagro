@@ -18,7 +18,7 @@ class TalasController extends Controller
         leftjoin('users','monitoring_tanamen.user_id','users.id')
         ->leftjoin('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
         ->select('users.name','tanamen.*','monitoring_tanamen.*')
-        ->where('nama_tanaman','talas')
+        // ->where('nama_tanaman','talas')
         ->get();
         // return $data;
         return view('admin.monitoringtalas',compact('data'));
@@ -32,7 +32,8 @@ class TalasController extends Controller
         leftjoin('users','monitoring_tanamen.user_id','users.id')
         ->leftjoin('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
         ->select('users.name','tanamen.*','monitoring_tanamen.*')
-        ->where('nama_tanaman','talas')->where('tanaman_id',$id_tanaman)
+        // ->where('nama_tanaman','talas')
+        ->where('tanaman_id',$id_tanaman)
         ->get();
         // return $data;
        
@@ -127,7 +128,8 @@ class TalasController extends Controller
         join('users','monitoring_tanamen.user_id','users.id')
         ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
         ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
-        ->where('nama_tanaman','talas')->where('monitoring_tanamen.id',$id)
+        // ->where('nama_tanaman','talas')
+        ->where('monitoring_tanamen.id',$id)
         ->first();
         return view('admin.monitoringtalas-edit',compact('data','id'));
     }
@@ -139,7 +141,8 @@ class TalasController extends Controller
         join('users','monitoring_tanamen.user_id','users.id')
         ->join('tanamen','monitoring_tanamen.tanaman_id','tanamen.id')
         ->select('users.name','tanamen.nama_tanaman','monitoring_tanamen.*')
-        ->where('nama_tanaman','talas')->where('monitoring_tanamen.id',$id)
+        // ->where('nama_tanaman','talas')
+        ->where('monitoring_tanamen.id',$id)
         ->first();
         return view('admin.monitoring.monitoringtalas-edit',compact('data','id'));
     }
