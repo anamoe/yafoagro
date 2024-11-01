@@ -18,6 +18,7 @@
                     <tr>
                         <th>No</th>
                         <th>Judul</th>
+                        <th>Keterangan</th>
                         <th>Status</th>
                         <th>Foto1</th>
                         <th>Foto2</th>
@@ -32,6 +33,7 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->judul}}</td>
+                        <td>{{$item->keterangan}}</td>
                         <td>{{$item->status}}</td>
                         <td>
                             <img src="{{asset('public/monitoring-talas/'.$item->foto1)}}" width="50" alt="">
