@@ -237,22 +237,7 @@
                     </div>
 
                     <div class="col-6 col-md-3 mb-1">
-                        <!-- <div class="inner-card text-center mx-auto">
-                            <div class="card-body">
-                                <a href="{{url('mitra/term')}}">
-
-                                    <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%;background-color:green;">
-                                        <div class="card-body d-flex justify-content-center align-items-center">
-                                            <img src="{{url('public/icon/term.png')}}" style="" alt="" height="50px" width="50px">
-                                        </div>
-                                    </div>
-                                </a>
-
-
-                                <h5 class="card-title">Term & Condition</h5>
-                            </div>
-                        </div>
-                    </div> -->
+                       
                         <div class="inner-card text-center mx-auto">
                             <div class="card-body">
                                 <!-- <a href="#" data-toggle="modal" data-target="#termModal"> -->
@@ -276,6 +261,28 @@
 
 
                     </div>
+
+                    <div class="col-6 col-md-3 mb-1">
+                       
+                       <div class="inner-card text-center mx-auto">
+                           <div class="card-body">
+                           
+                               <a href="{{('stream-lab')}}">
+                            
+
+                               <div class="card custom-card text-center" style="width: 90px; height: 90px; border-radius: 50%; background-color:green;">
+                                   <div class="card-body d-flex justify-content-center align-items-center">
+                                       <img src="{{ url('public/icon/term.png') }}" alt="" height="50px" width="50px">
+                                   </div>
+                               </div>
+                               </a>
+                               <h5 class="card-title">Stream Lab</h5>
+                           </div>
+                       </div>
+
+
+
+                   </div>
 
                 </div>
             </div>

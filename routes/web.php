@@ -11,6 +11,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfilMitraController;
 use App\Http\Controllers\TalasController;
 use App\Http\Controllers\TanamanController;
+use App\Models\Tanaman;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,6 +82,14 @@ Route::middleware(['role:admin'])->group(function () {
 
         Route::get('tentangkami', [KontakController::class, 'index_tentangkami']);
         Route::patch('tentangkami/{id}', [KontakController::class, 'update_tentangkami']);
+
+        Route::get('tanaman-cadangan', [TanamanController::class, 'tanaman_cadangan']);
+        Route::get('plasma', [TanamanController::class, 'plasma']);
+        Route::get('list-talas/{id_tanaman}', [TanamanController::class, 'talas']);
+        Route::get('list-alpukat/{id_tanaman}', [TanamanController::class, 'alpukat']);
+        Route::get('list-talas', [TanamanController::class, 'list_talas']);
+        Route::get('list-alpukat', [TanamanController::class, 'list_alpukat']);
+
     });
 });
 
@@ -104,6 +113,9 @@ Route::middleware(['role:mitra'])->group(function () {
         });
         Route::get('/term/alpukat', function () {
             return view('mitra.term-mitra-alpukat');
+        });
+        Route::get('/stream-lab', function () {
+            return view('mitra.stream-lab');
         });
     });
   
